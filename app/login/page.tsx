@@ -1,8 +1,32 @@
+"use client";
+
 import { Button } from "@/components/ui/Button";
-import { Card, CardTitle, CardDescription } from "@/components/ui/Card";
+import { Card, CardTitle } from "@/components/ui/Card";
 import { ButtonLink } from "@/components/ui/Button";
 import Image from "next/image";
 import { Instagram, Facebook, Mail } from "lucide-react";
+
+async function triggerBalbirdWebhook(name: string, email: string) {
+  try {
+    const res = await fetch(
+      "https://n8n.srv1463077.hstgr.cloud/webhook/demo-login",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+        }),
+      }
+    );
+
+    console.log("Webhook triggered:", res.status);
+  } catch (err) {
+    console.error("Webhook error:", err);
+  }
+}
 
 export default function LoginPage() {
   return (
@@ -15,6 +39,7 @@ export default function LoginPage() {
             Enter your credentials to access your personalized dashboard and ecosystem tools.
           </p>
         </div>
+
         <div className="grid gap-8 lg:grid-cols-2">
           <Card>
             <div className="grid gap-4">
@@ -22,52 +47,66 @@ export default function LoginPage() {
                 <label className="text-sm font-medium">Email</label>
                 <input
                   type="email"
-                  name="email"
-                  className="h-11 w-full rounded-xl border border-border bg-background px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring/40"
+                  className="h-11 w-full rounded-xl border border-border bg-background px-3 text-sm outline-none"
                   placeholder="you@company.com"
-                  autoComplete="email"
                 />
               </div>
+
               <div className="grid gap-2">
                 <label className="text-sm font-medium">Password</label>
                 <input
                   type="password"
-                  name="password"
-                  className="h-11 w-full rounded-xl border border-border bg-background px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring/40"
+                  className="h-11 w-full rounded-xl border border-border bg-background px-3 text-sm outline-none"
                   placeholder="••••••••"
-                  autoComplete="current-password"
                 />
               </div>
-              <Button type="button" className="mt-2 h-11">Sign in</Button>
+
+              <Button
+                type="button"
+                className="mt-2 h-11"
+                onClick={() =>
+                  triggerBalbirdWebhook(
+                    "Demo User",
+                    "ganesh5006pal@gmail.com"
+                  )
+                }
+              >
+                Demo Login
+              </Button>
             </div>
           </Card>
 
           <Card>
             <CardTitle>Post-login access (by role)</CardTitle>
+
             <div className="grid gap-4 text-sm text-foreground/80">
               <div className="rounded-xl bg-muted px-4 py-3">
                 <div className="font-medium">Manufacturer</div>
-                <div className="mt-1">Update Capacity Data · Respond to Requirements · Access Program Dashboard</div>
+                <div className="mt-1">
+                  Update Capacity Data · Respond to Requirements · Access
+                  Program Dashboard
+                </div>
               </div>
+
               <div className="rounded-xl bg-muted px-4 py-3">
                 <div className="font-medium">OEM / Tier</div>
-                <div className="mt-1">Post Requirements · Review Responses</div>
+                <div className="mt-1">
+                  Post Requirements · Review Responses
+                </div>
               </div>
+
               <div className="rounded-xl bg-muted px-4 py-3">
                 <div className="font-medium">Associations</div>
-                <div className="mt-1">View Cluster Summaries · Submit Program Proposals</div>
+                <div className="mt-1">
+                  View Cluster Summaries · Submit Program Proposals
+                </div>
               </div>
+
               <div className="rounded-xl bg-muted px-4 py-3">
                 <div className="font-medium">Students</div>
-                <div className="mt-1">Track Exposure Programs · Download Training Logs</div>
-              </div>
-              <div className="rounded-xl bg-muted px-4 py-3">
-                <div className="font-medium">Financial Institution</div>
-                <div className="mt-1">Review Operational Summaries</div>
-              </div>
-              <div className="rounded-xl bg-muted px-4 py-3">
-                <div className="font-medium">Strategic Advisor</div>
-                <div className="mt-1">Access Assigned Program Data</div>
+                <div className="mt-1">
+                  Track Exposure Programs · Download Training Logs
+                </div>
               </div>
             </div>
           </Card>
@@ -76,15 +115,18 @@ export default function LoginPage() {
 
       {/* CTA */}
       <section className="rounded-2xl border border-border bg-muted px-8 py-10 text-center">
-        <h3 className="text-2xl font-semibold tracking-tight">New to the Platform?</h3>
+        <h3 className="text-2xl font-semibold tracking-tight">
+          New to the Platform?
+        </h3>
+
         <p className="mt-2 text-foreground/75">
-          Join our ecosystem to access role-specific tools and collaborative opportunities.
+          Join our ecosystem to access role-specific tools and collaborative
+          opportunities.
         </p>
+
         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
-          <ButtonLink href="/join-network" variant="primary" className="w-full sm:w-auto">
-            Join Network
-          </ButtonLink>
-          <ButtonLink href="/request-strategic-discussion" variant="secondary" className="w-full sm:w-auto">
+          <ButtonLink href="/join-network">Join Network</ButtonLink>
+          <ButtonLink href="/request-strategic-discussion">
             Request Discussion
           </ButtonLink>
         </div>
@@ -96,36 +138,49 @@ export default function LoginPage() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <Image src="/logo.png" alt="Balbird Industries" width={40} height={40} className="rounded-full" />
-                <span className="text-lg font-semibold">Balbird Industries</span>
+                <Image
+                  src="/logo.png"
+                  alt="Balbird Industries"
+                  width={40}
+                  height={40}
+                  className="rounded-full"
+                />
+                <span className="text-lg font-semibold">
+                  Balbird Industries
+                </span>
               </div>
             </div>
+
             <div>
               <h4 className="font-semibold mb-4">Company</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="/about" className="hover:text-foreground transition-colors">About</a></li>
-                <li><a href="/careers" className="hover:text-foreground transition-colors">Careers</a></li>
+                <li>
+                  <a href="/about">About</a>
+                </li>
+                <li>
+                  <a href="/careers">Careers</a>
+                </li>
               </ul>
             </div>
+
             <div>
               <h4 className="font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="/help" className="hover:text-foreground transition-colors">Help Center</a></li>
-                <li><a href="/contact" className="hover:text-foreground transition-colors">Contact Us</a></li>
+                <li>
+                  <a href="/help">Help Center</a>
+                </li>
+                <li>
+                  <a href="/contact">Contact Us</a>
+                </li>
               </ul>
             </div>
+
             <div>
               <h4 className="font-semibold mb-4">Follow Us</h4>
               <div className="flex gap-4">
-                <a href="#" className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center hover:bg-accent/30 transition-colors">
-                  <Instagram className="w-5 h-5" />
-                </a>
-                <a href="#" className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center hover:bg-accent/30 transition-colors">
-                  <Facebook className="w-5 h-5" />
-                </a>
-                <a href="#" className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center hover:bg-accent/30 transition-colors">
-                  <Mail className="w-5 h-5" />
-                </a>
+                <Instagram className="w-5 h-5" />
+                <Facebook className="w-5 h-5" />
+                <Mail className="w-5 h-5" />
               </div>
             </div>
           </div>
