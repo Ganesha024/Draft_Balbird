@@ -8,23 +8,26 @@ import { Instagram, Facebook, Mail } from "lucide-react";
 
 async function triggerBalbirdWebhook(name: string, email: string) {
   try {
-    const res = await fetch(
-      "https://n8n.srv1463077.hstgr.cloud/webhook/demo-login",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name,
-          email,
-        }),
-      }
-    );
+    const res = await fetch("/api/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: "Ganesh",
+        email: "ganesh5006pal@gmail.com",
+      }),
+    });
 
-    console.log("Webhook triggered:", res.status);
+    console.log("API call triggered:", res.status);
+    
+    // Store user data and redirect to dashboard
+    if (res.ok) {
+      localStorage.setItem('userData', JSON.stringify({ name: "Ganesh", email: "ganesh5006pal@gmail.com" }));
+      window.location.href = '/dashboard';
+    }
   } catch (err) {
-    console.error("Webhook error:", err);
+    console.error("API error:", err);
   }
 }
 
