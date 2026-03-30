@@ -67,14 +67,11 @@ export default function LoginPage() {
               <Button
                 type="button"
                 className="mt-2 h-11"
-                onClick={() =>
-                  triggerBalbirdWebhook(
-                    "Demo User",
-                    "ganesh5006pal@gmail.com"
-                  )
-                }
+                onClick={() => {
+                  alert("CLICK WORKING");
+                }}
               >
-                Demo Login
+                Sign in
               </Button>
             </div>
           </Card>
