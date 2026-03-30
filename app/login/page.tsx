@@ -68,24 +68,30 @@ export default function LoginPage() {
   type="button"
   className="mt-2 h-11"
   onClick={async () => {
-
     alert("Calling API");
 
-    const res = await fetch("/api/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: "Ganesh",
-        email: "ganesh5006pal@gmail.com",
-      }),
-    });
+    try {
+      const res = await fetch("/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: "Ganesh",
+          email: "ganesh5006pal@gmail.com",
+        }),
+      });
 
-    console.log("API Response:", res.status);
+      alert("Status: " + res.status);
+      console.log("Response:", await res.text());
+
+    } catch (err) {
+      alert("Error occurred");
+      console.error(err);
+    }
   }}
 >
-  Sign in
+  Demo Login
 </Button>
             </div>
           </Card>
