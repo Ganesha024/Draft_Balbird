@@ -65,17 +65,28 @@ export default function LoginPage() {
               </div>
 
               <Button
-                type="button"
-                className="mt-2 h-11"
-                onClick={() =>
-                  triggerBalbirdWebhook(
-                    "Demo User",
-                    "ganesh5006pal@gmail.com"
-                  )
-                }
-              >
-                Demo Login
-              </Button>
+  type="button"
+  className="mt-2 h-11"
+  onClick={async () => {
+
+    alert("Calling API");
+
+    const res = await fetch("/api/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: "Ganesh",
+        email: "ganesh5006pal@gmail.com",
+      }),
+    });
+
+    console.log("API Response:", res.status);
+  }}
+>
+  Sign in
+</Button>
             </div>
           </Card>
 
