@@ -1,13 +1,14 @@
+import { NextRequest, NextResponse } from 'next/server';
 import clientPromise from "@/lib/mongodb";
 
-export async function POST(req: Request) {
+export async function POST(request: NextRequest) {
   try {
-    const body = await req.json();
+    const body = await request.json();
 
     const client = await clientPromise;
     const db = client.db("balbird");
 
-    // 🔹 Save login data in MongoDB
+    // Save login data in MongoDB
     await db.collection("logins").insertOne({
       name: body.name,
       email: body.email,
@@ -16,7 +17,7 @@ export async function POST(req: Request) {
 
     console.log("Saved to DB:", body);
 
-    // 🔹 Trigger n8n webhook
+    // Trigger n8n webhook
     await fetch("https://n8n.srv1463077.hstgr.cloud/webhook/demo-login", {
       method: "POST",
       headers: {
@@ -27,10 +28,10 @@ export async function POST(req: Request) {
 
     console.log("n8n triggered");
 
-    return Response.json({ success: true });
+    return NextResponse.json({ success: true });
 
   } catch (error) {
     console.error("API Error:", error);
-    return Response.json({ success: false });
+    return NextResponse.json({ success: false });
   }
 }
