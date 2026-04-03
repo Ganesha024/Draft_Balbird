@@ -14,7 +14,7 @@ interface UserData {
 
 async function triggerBalbirdWebhook(name: string, email: string) {
   try {
-    const res = await fetch("/api/login2", {
+    const res = await fetch("/api/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
