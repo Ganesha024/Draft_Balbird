@@ -1,22 +1,23 @@
 import clientPromise from "@/lib/mongodb";
 
-export async function POST(req: Request) {
+export default async function handler(req, res) {
+  if (req.method !== "POST") {
+    return res.status(405).json({ message: "Method not allowed" });
+  }
+
   try {
-    const body = await req.json();
+    const body = req.body;
 
     const client = await clientPromise;
     const db = client.db("balbird");
 
-    // 🔹 Save login data in MongoDB
     await db.collection("logins").insertOne({
       name: body.name,
       email: body.email,
       createdAt: new Date(),
     });
 
-    console.log("Saved to DB:", body);
-
-    // 🔹 Trigger n8n webhook
+    // trigger n8n
     await fetch("https://n8n.srv1463077.hstgr.cloud/webhook/demo-login", {
       method: "POST",
       headers: {
@@ -25,12 +26,10 @@ export async function POST(req: Request) {
       body: JSON.stringify(body),
     });
 
-    console.log("n8n triggered");
-
-    return Response.json({ success: true });
+    return res.status(200).json({ success: true });
 
   } catch (error) {
-    console.error("API Error:", error);
-    return Response.json({ success: false });
+    console.error(error);
+    return res.status(500).json({ success: false });
   }
 }
