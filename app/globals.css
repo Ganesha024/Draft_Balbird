@@ -1,15 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #0b1220;
-  --accent: #f15a22;
-  --accent-foreground: #ffffff;
-  --navy: #1e3a8a;
-  --muted: #f8f9fa;
-  --border: #e9ecef;
-  --card: #ffffff;
-  --ring: rgba(241, 90, 34, 0.35);
+  --background: #f2f2f2;
+  --foreground: #000000;
+  --accent: #b6b09f;
+  --accent-foreground: #000000;
+  --muted: #eae4d5;
+  --border: #b6b09f;
+  --card: #f2f2f2;
+  --ring: rgba(182, 176, 159, 0.35);
 }
 
 @theme inline {
@@ -17,7 +16,6 @@
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  --color-navy: var(--navy);
   --color-muted: var(--muted);
   --color-border: var(--border);
   --color-card: var(--card);
@@ -27,12 +25,7 @@
 }
 
 body {
-  background:
-    linear-gradient(
-      180deg,
-      color-mix(in oklab, var(--navy) 5%, var(--background)),
-      var(--background) 55%
-    );
+  background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, -apple-system, Segoe UI, Roboto,
     Helvetica, Arial, sans-serif;
