@@ -122,44 +122,6 @@ export default function LoginPage() {
                 <ButtonLink href="/dashboard">Access Dashboard</ButtonLink>
               </div>
             </div>
-            <div className="rounded-xl bg-muted px-4 py-3">
-              <div className="font-medium">Quick Access</div>
-              <div className="mt-1">
-                <ButtonLink href="/profile" className="w-full justify-start">
-                  Profile
-                </ButtonLink>
-                <ButtonLink href="/requirements" className="w-full justify-start">
-                  Requirements
-                </ButtonLink>
-                <ButtonLink href="/capabilities" className="w-full justify-start">
-                  Capabilities
-                </ButtonLink>
-                <ButtonLink href="/projects" className="w-full justify-start">
-                  Projects
-                </ButtonLink>
-                <ButtonLink href="/programs" className="w-full justify-start">
-                  Programs
-                </ButtonLink>
-                <ButtonLink href="/performance" className="w-full justify-start">
-                  Performance
-                </ButtonLink>
-                <ButtonLink href="/documents" className="w-full justify-start">
-                  Documents
-                </ButtonLink>
-                <ButtonLink href="/notifications" className="w-full justify-start">
-                  Notifications
-                </ButtonLink>
-                <ButtonLink href="/multi-role" className="w-full justify-start">
-                  Multi-role
-                </ButtonLink>
-                <ButtonLink href="/requests" className="w-full justify-start">
-                  Requests
-                </ButtonLink>
-                <ButtonLink href="/chatbot" className="w-full justify-start">
-                  Chatbot / Help
-                </ButtonLink>
-              </div>
-            </div>
           </div>
         </Card>
       </div>
