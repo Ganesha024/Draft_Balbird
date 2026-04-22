@@ -1,39 +1,33 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import clientPromise from "@/lib/mongodb";
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method not allowed" });
   }
 
   try {
-    const body = req.body;
+    const { part, quantity, deadline, createdBy } = req.body;
+
+    if (!part || !quantity) {
+      return res.status(400).json({ success: false, message: "Missing fields" });
+    }
 
     const client = await clientPromise;
     const db = client.db("balbird");
 
-    await db.collection("rfqs").insertOne({
-      ...body,
+    const result = await db.collection("rfqs").insertOne({
+      part,
+      quantity,
+      deadline: deadline || null,
+      createdBy: createdBy || "demo_user",
+      status: "new",
       createdAt: new Date(),
-      status: "pending",
     });
 
-    // Trigger n8n webhook for RFQ processing
-    await fetch("https://n8n.srv1463077.hstgr.cloud/webhook/rfq", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body),
-    });
-
-    return res.status(200).json({ success: true, message: "RFQ created successfully" });
-
-  } catch (error) {
-    console.error("RFQ API Error:", error);
-    return res.status(500).json({ success: false, message: "Internal server error" });
+    return res.status(200).json({ success: true, id: result.insertedId });
+  } catch (e) {
+    console.error("RFQ error:", e);
+    return res.status(500).json({ success: false });
   }
 }
