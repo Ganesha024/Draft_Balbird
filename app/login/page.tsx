@@ -12,7 +12,7 @@ interface UserData {
   email: string;
 }
 
-async function triggerBalbirdWebhook(name: string, email: string) {
+async function triggerBalbirdWebhook() {
   try {
     const res = await fetch("/api/rfq", {
       method: "POST",
@@ -20,20 +20,17 @@ async function triggerBalbirdWebhook(name: string, email: string) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name: "Ganesh",
-        email: "ganesh5006pal@gmail.com",
+        part: "demo part",
+        quantity: 50,
       }),
     });
 
-    alert("Calling API");
+    const data = await res.json();
 
-    const response = await res.text();
-    alert("Status: " + res.status);
-    console.log("Response:", response);
-
+    alert("Success: " + JSON.stringify(data));
   } catch (err) {
-    alert("Error occurred");
     console.error(err);
+    alert("Error");
   }
 }
 
@@ -43,7 +40,7 @@ export default function LoginPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    triggerBalbirdWebhook("Demo User", email);
+    triggerBalbirdWebhook();
   };
 
   return (
