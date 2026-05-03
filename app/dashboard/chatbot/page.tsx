@@ -6,51 +6,44 @@ import { MessageCircle, HelpCircle, Book, FileText, Mail } from "lucide-react";
 
 export default function ChatbotPage() {
   return (
-    <div className="min-h-screen bg-background p-6">
+    <div className="min-h-screen bg-background p-4">
       <div className="max-w-4xl mx-auto">
-        <Card>
-          <CardTitle>Chatbot / Help</CardTitle>
-          <div className="p-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card className="p-4">
-                <MessageCircle className="w-8 h-8 text-accent mb-2" />
-                <h3 className="font-semibold text-foreground mb-2">AI Assistant</h3>
-                <p className="text-muted-foreground mb-4">Get instant help with your questions</p>
-                <Button className="w-full">Start Chat</Button>
-              </Card>
-              
-              <Card className="p-4">
-                <HelpCircle className="w-8 h-8 text-accent mb-2" />
-                <h3 className="font-semibold text-foreground mb-2">Help Center</h3>
-                <p className="text-muted-foreground mb-4">Browse documentation and FAQs</p>
-                <Button variant="ghost" className="w-full">Browse Help</Button>
-              </Card>
+        <Card className="p-5">
+          <CardTitle className="mb-4">Chatbot / Help</CardTitle>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-5">
+            <Card className="p-3">
+              <MessageCircle className="w-6 h-6 text-accent mb-1" />
+              <h3 className="font-semibold text-sm text-foreground mb-0.5">AI Assistant</h3>
+              <p className="text-xs text-muted-foreground mb-3">Get instant help with your questions</p>
+              <Button size="sm" className="w-full">Start Chat</Button>
+            </Card>
+
+            <Card className="p-3">
+              <HelpCircle className="w-6 h-6 text-accent mb-1" />
+              <h3 className="font-semibold text-sm text-foreground mb-0.5">Help Center</h3>
+              <p className="text-xs text-muted-foreground mb-3">Browse documentation and FAQs</p>
+              <Button variant="ghost" size="sm" className="w-full">Browse Help</Button>
+            </Card>
+          </div>
+
+          <h3 className="text-sm font-semibold text-foreground mb-3">Quick Actions</h3>
+          <div className="grid grid-cols-2 gap-3">
+            <div className="flex items-center gap-2">
+              <Book className="w-4 h-4 text-muted-foreground" />
+              <span className="text-sm text-foreground">User Guide</span>
             </div>
-            
-            <div className="mt-8">
-              <h3 className="text-xl font-semibold text-foreground mb-4">Quick Actions</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <div className="flex items-center space-x-2">
-                    <Book className="w-5 h-5 text-muted-foreground" />
-                    <span className="text-foreground">User Guide</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <FileText className="w-5 h-5 text-muted-foreground" />
-                    <span className="text-foreground">Documentation</span>
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <div className="flex items-center space-x-2">
-                    <Mail className="w-5 h-5 text-muted-foreground" />
-                    <span className="text-foreground">Contact Support</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <HelpCircle className="w-5 h-5 text-muted-foreground" />
-                    <span className="text-foreground">Report Issue</span>
-                  </div>
-                </div>
-              </div>
+            <div className="flex items-center gap-2">
+              <FileText className="w-4 h-4 text-muted-foreground" />
+              <span className="text-sm text-foreground">Documentation</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Mail className="w-4 h-4 text-muted-foreground" />
+              <span className="text-sm text-foreground">Contact Support</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <HelpCircle className="w-4 h-4 text-muted-foreground" />
+              <span className="text-sm text-foreground">Report Issue</span>
             </div>
           </div>
         </Card>

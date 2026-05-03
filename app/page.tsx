@@ -90,7 +90,7 @@ export default function Home() {
             "Strategic Expansion - Plan scalable growth and cross-border manufacturing.",
           ].map((step, i) => (
             <li key={step}>
-              <Card className="p-5">
+              <Card className="p-4">
                 <div className="text-xs font-medium text-foreground/60">
                   Step {i + 1}
                 </div>
@@ -132,9 +132,9 @@ export default function Home() {
             { name: "Marine", desc: "Corrosion-resistant marine applications and offshore equipment.", icon: Ship },
             { name: "Heavy Mobility", desc: "Large-scale machinery and equipment manufacturing.", icon: Cog },
           ].map((sector) => (
-            <Card key={sector.name} className="p-5">
-              <div className="flex items-center gap-3 mb-3">
-                {typeof sector.icon === 'string' ? <Image src={sector.icon} alt={sector.name} width={32} height={32} className="rounded-full" /> : <sector.icon className="h-8 w-8 text-accent" />}
+            <Card key={sector.name} className="p-4">
+              <div className="flex items-center gap-2 mb-2">
+                {typeof sector.icon === 'string' ? <Image src={sector.icon} alt={sector.name} width={28} height={28} className="rounded-full" /> : <sector.icon className="h-6 w-6 text-accent" />}
                 <CardTitle>{sector.name}</CardTitle>
               </div>
               <CardDescription>{sector.desc}</CardDescription>
@@ -172,7 +172,7 @@ export default function Home() {
             { name: "Students / Workforce", desc: "Educational institutions and skilled labor providers." },
             { name: "Strategic / Financial Institutions", desc: "Advisors and funders supporting ecosystem growth." },
           ].map((role) => (
-            <Card key={role.name} className="p-5">
+            <Card key={role.name} className="p-4">
               <CardTitle>{role.name}</CardTitle>
               <CardDescription>{role.desc}</CardDescription>
             </Card>

@@ -2,74 +2,54 @@
 
 import { Button } from "@/components/ui/Button";
 import { Card, CardTitle } from "@/components/ui/Card";
-import { Briefcase, Calendar, Clock } from "lucide-react";
+import { Briefcase } from "lucide-react";
 
 export default function ProjectsPage() {
   return (
-    <div className="min-h-screen bg-background p-6">
+    <div className="min-h-screen bg-background p-4">
       <div className="max-w-4xl mx-auto">
-        <Card>
-          <CardTitle>Projects</CardTitle>
-          <div className="p-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <Card className="p-4">
-                <Briefcase className="w-8 h-8 text-accent mb-2" />
-                <h3 className="font-semibold text-foreground mb-2">Mobility Platform</h3>
-                <p className="text-muted-foreground mb-4">Core mobility management system</p>
-                <div className="flex justify-between text-sm mb-2">
+        <Card className="p-5">
+          <CardTitle className="mb-4">Projects</CardTitle>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-5">
+            {[
+              { name: "Mobility Platform", desc: "Core mobility management", progress: 75 },
+              { name: "Supply Chain Portal", desc: "Real-time supply chain tracking", progress: 92 },
+              { name: "Analytics Dashboard", desc: "Performance analytics platform", progress: 45 },
+            ].map((project) => (
+              <Card key={project.name} className="p-3">
+                <Briefcase className="w-6 h-6 text-accent mb-1" />
+                <h3 className="font-semibold text-sm text-foreground mb-1">{project.name}</h3>
+                <p className="text-xs text-muted-foreground mb-2">{project.desc}</p>
+                <div className="flex justify-between text-xs mb-1">
                   <span className="text-muted-foreground">Progress</span>
-                  <span className="text-accent">75%</span>
+                  <span className="text-accent">{project.progress}%</span>
                 </div>
-                <Button className="w-full">View Project</Button>
-              </Card>
-              
-              <Card className="p-4">
-                <Briefcase className="w-8 h-8 text-accent mb-2" />
-                <h3 className="font-semibold text-foreground mb-2">Supply Chain Portal</h3>
-                <p className="text-muted-foreground mb-4">Real-time supply chain tracking</p>
-                <div className="flex justify-between text-sm mb-2">
-                  <span className="text-muted-foreground">Progress</span>
-                  <span className="text-accent">92%</span>
+                <div className="w-full bg-muted rounded-full h-1.5 mb-3">
+                  <div className="bg-accent h-1.5 rounded-full" style={{ width: `${project.progress}%` }} />
                 </div>
-                <Button className="w-full">View Project</Button>
+                <Button size="sm" className="w-full">View Project</Button>
               </Card>
-              
-              <Card className="p-4">
-                <Briefcase className="w-8 h-8 text-accent mb-2" />
-                <h3 className="font-semibold text-foreground mb-2">Analytics Dashboard</h3>
-                <p className="text-muted-foreground mb-4">Performance analytics platform</p>
-                <div className="flex justify-between text-sm mb-2">
-                  <span className="text-muted-foreground">Progress</span>
-                  <span className="text-accent">45%</span>
-                </div>
-                <Button className="w-full">View Project</Button>
-              </Card>
+            ))}
+          </div>
+
+          <h3 className="text-sm font-semibold text-foreground mb-3">Overview</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <div className="flex justify-between text-sm">
+              <span className="text-muted-foreground">Active</span>
+              <span className="font-semibold text-foreground">8</span>
             </div>
-            
-            <div className="mt-8">
-              <h3 className="text-xl font-semibold text-foreground mb-4">Project Overview</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Active Projects</span>
-                    <span className="font-semibold text-foreground">8</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Completed This Month</span>
-                    <span className="font-semibold text-green-600">3</span>
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Total Budget Used</span>
-                    <span className="font-semibold text-foreground">$124,500</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Team Members</span>
-                    <span className="font-semibold text-foreground">24</span>
-                  </div>
-                </div>
-              </div>
+            <div className="flex justify-between text-sm">
+              <span className="text-muted-foreground">Completed</span>
+              <span className="font-semibold text-green-600">3</span>
+            </div>
+            <div className="flex justify-between text-sm">
+              <span className="text-muted-foreground">Budget Used</span>
+              <span className="font-semibold text-foreground">$124,500</span>
+            </div>
+            <div className="flex justify-between text-sm">
+              <span className="text-muted-foreground">Team</span>
+              <span className="font-semibold text-foreground">24</span>
             </div>
           </div>
         </Card>

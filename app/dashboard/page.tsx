@@ -236,100 +236,92 @@ export default function DashboardPage() {
         <main className={`flex-1 transition-all duration-300 ${sidebarOpen ? 'lg:ml-64' : ''}`}>
           <div className="p-6">
             {/* Welcome Section */}
-            <div className="mb-8">
-              <h1 className="text-3xl font-bold mb-2">Welcome back, {userData.name}!</h1>
-              <p className="text-foreground/75">Here's what's happening with your account today.</p>
+            <div className="mb-5">
+              <h1 className="text-2xl font-bold mb-1">Welcome back, {userData.name}!</h1>
+              <p className="text-sm text-foreground/75">Here's what's happening with your account today.</p>
             </div>
 
             {/* Quick Stats Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
               {quickStats.map((stat, index) => (
-                <Card key={index}>
-                  <div className="p-6">
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="h-10 w-10 rounded-lg bg-accent/20 flex items-center justify-center">
-                        <stat.icon className="h-5 w-5 text-accent" />
-                      </div>
-                      <span className={`text-sm font-medium ${stat.change.startsWith('+') ? 'text-green-600' : stat.change.startsWith('-') ? 'text-red-600' : 'text-foreground/50'}`}>
-                        {stat.change}
-                      </span>
+                <Card key={index} className="p-4">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="h-8 w-8 rounded-lg bg-accent/20 flex items-center justify-center">
+                      <stat.icon className="h-4 w-4 text-accent" />
                     </div>
-                    <div className="text-2xl font-bold">{stat.value}</div>
-                    <div className="text-sm text-foreground/50">{stat.title}</div>
+                    <span className={`text-xs font-medium ${stat.change.startsWith('+') ? 'text-green-600' : stat.change.startsWith('-') ? 'text-red-600' : 'text-foreground/50'}`}>
+                      {stat.change}
+                    </span>
                   </div>
+                  <div className="text-xl font-bold">{stat.value}</div>
+                  <div className="text-xs text-foreground/50">{stat.title}</div>
                 </Card>
               ))}
             </div>
 
             {/* Activity Section */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-              <Card>
-                <div className="p-6">
-                  <CardTitle>Recent Activity</CardTitle>
-                  <CardDescription>Your latest actions and updates</CardDescription>
-                  <div className="mt-4 space-y-3">
-                    {recentActivities.map(activity => (
-                      <div key={activity.id} className="flex items-start gap-3 p-3 rounded-lg bg-muted/50">
-                        <Activity className="h-4 w-4 text-accent mt-0.5" />
-                        <div className="flex-1">
-                          <p className="text-sm font-medium">{activity.action}</p>
-                          <p className="text-xs text-foreground/50">{activity.detail}</p>
-                          <p className="text-xs text-foreground/30 mt-1">{activity.time}</p>
-                        </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
+              <Card className="p-4">
+                <CardTitle>Recent Activity</CardTitle>
+                <CardDescription>Your latest actions and updates</CardDescription>
+                <div className="mt-3 space-y-2">
+                  {recentActivities.map(activity => (
+                    <div key={activity.id} className="flex items-start gap-2 p-2 rounded-lg bg-muted/50">
+                      <Activity className="h-3.5 w-3.5 text-accent mt-0.5" />
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium truncate">{activity.action}</p>
+                        <p className="text-xs text-foreground/50 truncate">{activity.detail}</p>
+                        <p className="text-xs text-foreground/30">{activity.time}</p>
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
                 </div>
               </Card>
 
-              <Card>
-                <div className="p-6">
-                  <CardTitle>Quick Actions</CardTitle>
-                  <CardDescription>Frequently used features</CardDescription>
-                  <div className="mt-4 grid grid-cols-2 gap-3">
-                    <Button className="h-auto p-4 flex flex-col gap-2">
-                      <Plus className="h-5 w-5" />
-                      <span className="text-sm">Create Requirement</span>
-                    </Button>
-                    <Button className="h-auto p-4 flex flex-col gap-2">
-                      <UserCircle className="h-5 w-5" />
-                      <span className="text-sm">Update Profile</span>
-                    </Button>
-                    <Button className="h-auto p-4 flex flex-col gap-2">
-                      <Upload className="h-5 w-5" />
-                      <span className="text-sm">Upload Document</span>
-                    </Button>
-                    <Button className="h-auto p-4 flex flex-col gap-2">
-                      <HelpCircle className="h-5 w-5" />
-                      <span className="text-sm">Request Support</span>
-                    </Button>
-                  </div>
+              <Card className="p-4">
+                <CardTitle>Quick Actions</CardTitle>
+                <CardDescription>Frequently used features</CardDescription>
+                <div className="mt-3 grid grid-cols-2 gap-2">
+                  <Button className="h-auto p-3 flex flex-col gap-1">
+                    <Plus className="h-4 w-4" />
+                    <span className="text-xs">Create Requirement</span>
+                  </Button>
+                  <Button className="h-auto p-3 flex flex-col gap-1">
+                    <UserCircle className="h-4 w-4" />
+                    <span className="text-xs">Update Profile</span>
+                  </Button>
+                  <Button className="h-auto p-3 flex flex-col gap-1">
+                    <Upload className="h-4 w-4" />
+                    <span className="text-xs">Upload Document</span>
+                  </Button>
+                  <Button className="h-auto p-3 flex flex-col gap-1">
+                    <HelpCircle className="h-4 w-4" />
+                    <span className="text-xs">Request Support</span>
+                  </Button>
                 </div>
               </Card>
             </div>
 
             {/* Recent Updates */}
-            <Card>
-              <div className="p-6">
-                <CardTitle>System Updates</CardTitle>
-                <CardDescription>Latest platform updates and announcements</CardDescription>
-                <div className="mt-4 space-y-3">
-                  <div className="p-4 rounded-lg bg-accent/5 border border-accent/20">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Bell className="h-4 w-4 text-accent" />
-                      <span className="font-medium text-sm">New Feature Released</span>
-                    </div>
-                    <p className="text-sm text-foreground/75">Advanced filtering system now available in Requirements module</p>
-                    <p className="text-xs text-foreground/50 mt-2">2 days ago</p>
+            <Card className="p-4">
+              <CardTitle>System Updates</CardTitle>
+              <CardDescription>Latest platform updates and announcements</CardDescription>
+              <div className="mt-3 space-y-2">
+                <div className="p-3 rounded-lg bg-accent/5 border border-accent/20">
+                  <div className="flex items-center gap-1.5 mb-1">
+                    <Bell className="h-3.5 w-3.5 text-accent" />
+                    <span className="font-medium text-sm">New Feature Released</span>
                   </div>
-                  <div className="p-4 rounded-lg bg-muted/50">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Settings className="h-4 w-4 text-foreground/50" />
-                      <span className="font-medium text-sm">System Maintenance</span>
-                    </div>
-                    <p className="text-sm text-foreground/75">Scheduled maintenance this weekend - expect brief downtime</p>
-                    <p className="text-xs text-foreground/50 mt-2">3 days ago</p>
+                  <p className="text-xs text-foreground/75">Advanced filtering system now available in Requirements module</p>
+                  <p className="text-xs text-foreground/50 mt-1">2 days ago</p>
+                </div>
+                <div className="p-3 rounded-lg bg-muted/50">
+                  <div className="flex items-center gap-1.5 mb-1">
+                    <Settings className="h-3.5 w-3.5 text-foreground/50" />
+                    <span className="font-medium text-sm">System Maintenance</span>
                   </div>
+                  <p className="text-xs text-foreground/75">Scheduled maintenance this weekend - expect brief downtime</p>
+                  <p className="text-xs text-foreground/50 mt-1">3 days ago</p>
                 </div>
               </div>
             </Card>

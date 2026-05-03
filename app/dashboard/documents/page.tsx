@@ -6,85 +6,62 @@ import { FileText, Download, Upload, Search } from "lucide-react";
 
 export default function DocumentsPage() {
   return (
-    <div className="min-h-screen bg-background p-6">
+    <div className="min-h-screen bg-background p-4">
       <div className="max-w-4xl mx-auto">
-        <Card>
-          <CardTitle>Documents</CardTitle>
-          <div className="p-6">
-            <div className="mb-6">
-              <div className="flex items-center space-x-2 mb-4">
-                <Search className="w-5 h-5 text-muted-foreground" />
-                <input
-                  type="text"
-                  placeholder="Search documents..."
-                  className="flex-1 px-4 py-2 border border-border rounded-lg bg-background text-foreground"
-                />
-              </div>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <Card className="p-4">
-                <FileText className="w-8 h-8 text-accent mb-2" />
-                <h3 className="font-semibold text-foreground mb-2">Manufacturing Specs</h3>
-                <p className="text-muted-foreground mb-4">Technical specifications and requirements</p>
-                <div className="flex justify-between text-sm mb-2">
+        <Card className="p-5">
+          <CardTitle className="mb-3">Documents</CardTitle>
+
+          <div className="flex items-center gap-2 mb-4">
+            <Search className="w-4 h-4 text-muted-foreground" />
+            <input
+              type="text"
+              placeholder="Search documents..."
+              className="flex-1 h-9 px-3 border border-border rounded-lg bg-background text-sm text-foreground outline-none focus:ring-2 focus:ring-accent"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-5">
+            {[
+              { title: "Manufacturing Specs", desc: "Technical specifications", updated: "2 days ago" },
+              { title: "Quality Manual", desc: "Quality assurance procedures", updated: "1 week ago" },
+              { title: "Compliance Report", desc: "Regulatory documentation", updated: "3 days ago" },
+            ].map((doc) => (
+              <Card key={doc.title} className="p-3">
+                <FileText className="w-5 h-5 text-accent mb-1" />
+                <h3 className="font-semibold text-sm text-foreground mb-0.5">{doc.title}</h3>
+                <p className="text-xs text-muted-foreground mb-2">{doc.desc}</p>
+                <div className="flex justify-between text-xs mb-2">
                   <span className="text-muted-foreground">Updated</span>
-                  <span className="text-foreground">2 days ago</span>
+                  <span className="text-foreground">{doc.updated}</span>
                 </div>
-                <Button className="w-full">View Document</Button>
+                <Button size="sm" className="w-full">View</Button>
               </Card>
-              
-              <Card className="p-4">
-                <FileText className="w-8 h-8 text-accent mb-2" />
-                <h3 className="font-semibold text-foreground mb-2">Quality Manual</h3>
-                <p className="text-muted-foreground mb-4">Quality assurance procedures</p>
-                <div className="flex justify-between text-sm mb-2">
-                  <span className="text-muted-foreground">Updated</span>
-                  <span className="text-foreground">1 week ago</span>
+            ))}
+          </div>
+
+          <div className="flex items-center justify-between mb-3">
+            <h3 className="text-sm font-semibold text-foreground">Recent</h3>
+            <Button variant="ghost" size="sm">
+              <Upload className="w-3.5 h-3.5 mr-1" />
+              Upload
+            </Button>
+          </div>
+
+          <div className="space-y-1.5">
+            {[1, 2, 3, 4, 5].map((doc) => (
+              <div key={doc} className="flex items-center justify-between p-2 border border-border rounded-lg">
+                <div className="flex items-center gap-2">
+                  <FileText className="w-4 h-4 text-accent" />
+                  <div>
+                    <div className="text-sm font-medium text-foreground">Document {doc}</div>
+                    <div className="text-xs text-muted-foreground">PDF • 2.4 MB</div>
+                  </div>
                 </div>
-                <Button className="w-full">View Document</Button>
-              </Card>
-              
-              <Card className="p-4">
-                <FileText className="w-8 h-8 text-accent mb-2" />
-                <h3 className="font-semibold text-foreground mb-2">Compliance Report</h3>
-                <p className="text-muted-foreground mb-4">Regulatory compliance documentation</p>
-                <div className="flex justify-between text-sm mb-2">
-                  <span className="text-muted-foreground">Updated</span>
-                  <span className="text-foreground">3 days ago</span>
-                </div>
-                <Button className="w-full">View Document</Button>
-              </Card>
-            </div>
-            
-            <div className="mt-8">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-semibold text-foreground">Recent Documents</h3>
-                <Button variant="ghost">
-                  <Upload className="w-4 h-4 mr-2" />
-                  Upload New
+                <Button variant="ghost" size="sm">
+                  <Download className="w-3.5 h-3.5" />
                 </Button>
               </div>
-              
-              <div className="space-y-2">
-                {[1, 2, 3, 4, 5].map((doc) => (
-                  <div key={doc} className="flex items-center justify-between p-3 border border-border rounded-lg">
-                    <div className="flex items-center space-x-3">
-                      <FileText className="w-5 h-5 text-accent" />
-                      <div>
-                        <div className="font-medium text-foreground">Document {doc}</div>
-                        <div className="text-sm text-muted-foreground">PDF • 2.4 MB</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Button variant="ghost" size="sm">
-                        <Download className="w-4 h-4" />
-                      </Button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            ))}
           </div>
         </Card>
       </div>
