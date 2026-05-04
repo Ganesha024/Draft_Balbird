@@ -37,7 +37,7 @@ export default function LoginPage() {
         <div className="lg:col-span-2 flex flex-col gap-4">
           <Card className="p-6">
             <h1 className="text-2xl font-bold text-foreground mb-1">Welcome Back</h1>
-            <CardDescription className="mb-5">
+            <CardDescription>
               Sign in to access your manufacturing portal
             </CardDescription>
 

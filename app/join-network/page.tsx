@@ -264,9 +264,6 @@ export default function JoinNetworkPage() {
           <ButtonLink href="/about" variant="primary" className="w-full sm:w-auto">
             Learn More About Us
           </ButtonLink>
-          <ButtonLink href="/request-strategic-discussion" variant="secondary" className="w-full sm:w-auto">
-            Request Strategic Discussion
-          </ButtonLink>
         </div>
       </section>
 

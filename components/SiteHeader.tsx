@@ -23,7 +23,7 @@ const nav = {
       label: "Programs",
       items: [
         { href: "/strategic-programs", label: "Strategic Programs" },
-        { href: "/active-requirements", label: "Active Requirements" },
+        { href: "/active-requirements", label: "Execution Ready Facilities" },
       ],
     },
     {
