@@ -9,10 +9,7 @@ import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/Button";
 
 const nav = {
-  primary: [
-    { href: "/about", label: "About" },
-    { href: "/login", label: "Login" },
-  ],
+  primary: [{ href: "/about", label: "About" }],
   groups: [
     {
       label: "Ecosystem",
@@ -40,7 +37,7 @@ const nav = {
       label: "Network",
       items: [
         { href: "https://wa.link/bspaba", label: "Join Network" },
-        { href: "https://wa.link/bspaba", label: "Help Center" },
+        { href: "/login", label: "Login" },
       ],
     },
   ],
