@@ -9,7 +9,10 @@ import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/Button";
 
 const nav = {
-  primary: [{ href: "/about", label: "About" }],
+  primary: [
+    { href: "/about", label: "About" },
+    { href: "/login", label: "Login" },
+  ],
   groups: [
     {
       label: "Ecosystem",
