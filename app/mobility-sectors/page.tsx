@@ -67,9 +67,9 @@ const sectors = {
 
 export default function MobilitySectorsPage() {
   return (
-    <div className="flex flex-col gap-14">
+    <div className="flex flex-col gap-10">
       {/* Hero */}
-      <section className="relative overflow-hidden rounded-3xl border border-border bg-card px-6 py-14 shadow-sm">
+      <section className="relative overflow-hidden rounded-3xl border border-border bg-card px-6 py-10 shadow-sm">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1000px_420px_at_12%_10%,color-mix(in_oklab,var(--navy)_10%,transparent),transparent_60%),radial-gradient(900px_380px_at_90%_20%,color-mix(in_oklab,var(--accent)_18%,transparent),transparent_60%)] opacity-90" />
         <div className="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex flex-col gap-4">
@@ -87,7 +87,7 @@ export default function MobilitySectorsPage() {
       </section>
 
       {/* Sectors Overview */}
-      <section className="space-y-6">
+      <section className="space-y-4">
         <div className="flex flex-col gap-3">
           <h2 className="text-2xl font-semibold tracking-tight">Sector Overview</h2>
           <p className="max-w-3xl text-foreground/75">
@@ -95,7 +95,7 @@ export default function MobilitySectorsPage() {
           </p>
         </div>
         <Card className="overflow-hidden">
-          <div className="flex flex-col gap-6 p-6 lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex flex-col gap-4 p-4 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex-1 space-y-4">
               <p className="text-foreground/80">
                 From high-precision aerospace components to heavy machinery, we provide structured capacity alignment across diverse mobility manufacturing sectors. Each sector has unique technical requirements and regulatory standards.
@@ -120,40 +120,40 @@ export default function MobilitySectorsPage() {
               </div>
             </div>
             <div className="relative h-40 w-full max-w-xs shrink-0 overflow-hidden rounded-xl border border-border bg-muted lg:h-48">
-              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=600&fit=crop" alt="Five mobility sectors overview" className="object-contain p-3 w-full h-full" />
+              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=600&fit=crop" alt="Five mobility sectors overview" className="object-contain p-4 w-full h-full" />
             </div>
           </div>
         </Card>
       </section>
 
       {/* Sector Characteristics */}
-      <section className="space-y-6">
+      <section className="space-y-4">
         <div className="flex flex-col gap-3">
           <h2 className="text-2xl font-semibold tracking-tight">Sector Characteristics</h2>
           <p className="max-w-3xl text-foreground/75">
             Programs are long-term. Compliance is strict. Traceability is non-negotiable. Volume expectations are high. Only structured ecosystems survive this environment. Unstructured growth collapses under complexity.
           </p>
         </div>
-        <div className="grid gap-6 md:grid-cols-2">
-          <Card className="p-6">
+        <div className="grid gap-4 md:grid-cols-2">
+          <Card className="p-4">
             <CardTitle>Long-Term Commitments</CardTitle>
             <CardDescription>
               Mobility programs span years, requiring stable partnerships and predictable capacity. Short-term thinking leads to disruptions and missed opportunities.
             </CardDescription>
           </Card>
-          <Card className="p-6">
+          <Card className="p-4">
             <CardTitle>Strict Compliance Frameworks</CardTitle>
             <CardDescription>
               Safety, environmental, and quality standards are non-negotiable. Every component must meet rigorous certification requirements across global markets.
             </CardDescription>
           </Card>
-          <Card className="p-6">
+          <Card className="p-4">
             <CardTitle>Complete Traceability</CardTitle>
             <CardDescription>
               From raw materials to finished products, every step must be documented and verifiable. Supply chain transparency is critical for liability and quality assurance.
             </CardDescription>
           </Card>
-          <Card className="p-6">
+          <Card className="p-4">
             <CardTitle>High Volume Scaling</CardTitle>
             <CardDescription>
               Mobility manufacturing demands consistent high-volume production with zero-defect quality. Structured processes ensure scalable, reliable output.
@@ -163,17 +163,17 @@ export default function MobilitySectorsPage() {
       </section>
 
       {/* Sector Details */}
-      <section className="space-y-6">
+      <section className="space-y-4">
         <div className="flex flex-col gap-3">
           <h2 className="text-2xl font-semibold tracking-tight">Sector Details</h2>
           <p className="max-w-3xl text-foreground/75">
             Explore specific capabilities and focus areas across each mobility sector.
           </p>
         </div>
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid gap-4 lg:grid-cols-2">
           {Object.values(sectors).map((sector, index) => (
             <Card key={sector.title}>
-              <div className="p-6">
+              <div className="p-4">
                 <div className="flex items-start gap-4">
                   <sector.icon className="h-8 w-8 text-accent" />
                   <div className="flex-1">
@@ -196,7 +196,7 @@ export default function MobilitySectorsPage() {
       </section>
 
       {/* CTA */}
-      <section className="rounded-2xl border border-border bg-muted px-8 py-10 text-center">
+      <section className="rounded-2xl border border-border bg-muted px-6 py-8 text-center">
         <h3 className="text-2xl font-semibold tracking-tight">Find Your Sector</h3>
         <p className="mt-2 text-foreground/75">
           Explore manufacturing capabilities across mobility sectors.
@@ -212,9 +212,9 @@ export default function MobilitySectorsPage() {
       </section>
 
       {/* Footer */}
-      <section className="bg-gradient-to-br from-accent/5 to-accent/10 border-t border-border py-16">
+      <section className="bg-gradient-to-br from-accent/5 to-accent/10 border-t border-border py-10">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Image src="/logo.png" alt="Balbird Industries" width={40} height={40} className="rounded-full" />

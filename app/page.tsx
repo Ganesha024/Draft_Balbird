@@ -7,8 +7,8 @@ import { Instagram, Facebook, Mail, Plane, Car, Zap, Train, Ship, Cog } from "lu
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-16">
-      <section className="relative overflow-hidden rounded-3xl border border-border bg-card px-6 py-14 shadow-sm">
+    <div className="flex flex-col gap-10">
+      <section className="relative overflow-hidden rounded-3xl border border-border bg-card px-6 py-10 shadow-sm">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1000px_420px_at_12%_10%,color-mix(in_oklab,var(--navy)_10%,transparent),transparent_60%),radial-gradient(900px_380px_at_90%_20%,color-mix(in_oklab,var(--accent)_18%,transparent),transparent_60%)] opacity-90" />
         <div className="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex flex-col gap-4">
@@ -64,7 +64,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="grid gap-8 lg:grid-cols-2">
+      <section className="grid gap-6 lg:grid-cols-2">
         <div className="flex flex-col gap-3">
           <div className="text-xs font-semibold tracking-[0.2em] text-foreground/60">
             EXECUTION MODEL
@@ -75,12 +75,12 @@ export default function Home() {
           </p>
         </div>
         <div className="relative h-60 w-full max-w-xs shrink-0 overflow-hidden rounded-xl border border-border bg-muted lg:h-72 ml-auto">
-          <Image src="/images/executionmodel_home.png" alt="Execution model steps visualization" fill className="object-contain p-3" />
+          <Image src="/images/executionmodel_home.png" alt="Execution model steps visualization" fill className="object-contain p-4" />
         </div>
       </section>
 
-      <section className="grid gap-8 lg:grid-cols-2">
-        <ol className="grid gap-3 sm:grid-cols-2">
+      <section>
+        <ol className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {[
             "Capacity Mapping - Identify and verify manufacturing capabilities across facilities.",
             "Capability Validation - Certify technical standards and process capabilities.",
@@ -102,7 +102,7 @@ export default function Home() {
         </ol>
       </section>
 
-      <section className="grid gap-8 lg:grid-cols-2">
+      <section className="grid gap-6 lg:grid-cols-2">
         <div className="flex flex-col gap-3">
           <div className="text-xs font-semibold tracking-[0.2em] text-foreground/60">
             SECTORS
@@ -122,15 +122,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="grid gap-8 lg:grid-cols-2">
-        <div className="grid gap-3 sm:grid-cols-2">
+      <section>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {[
             { name: "Aerospace", desc: "Precision components with strict certification and traceability standards.", icon: Plane },
             { name: "Automotive", desc: "High-volume production for traditional and electric vehicles.", icon: Car },
-            { name: "Electric Vehicles", desc: "Battery systems, motors, and EV-specific manufacturing.", icon: Zap },
+            { name: "EV", desc: "Battery systems, motors, and EV-specific manufacturing.", icon: Zap },
             { name: "Railway", desc: "Heavy-duty rail systems with safety and reliability focus.", icon: Train },
             { name: "Marine", desc: "Corrosion-resistant marine applications and offshore equipment.", icon: Ship },
-            { name: "Heavy Mobility", desc: "Large-scale machinery and equipment manufacturing.", icon: Cog },
+            { name: "Heavy", desc: "Large-scale machinery and equipment manufacturing.", icon: Cog },
           ].map((sector) => (
             <Card key={sector.name} className="p-4">
               <div className="flex items-center gap-2 mb-2">
@@ -143,14 +143,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="grid gap-8 lg:grid-cols-2">
+      <section className="grid gap-6 lg:grid-cols-2">
         <div className="flex flex-col gap-3">
           <div className="text-xs font-semibold tracking-[0.2em] text-foreground/60">
             STAKEHOLDERS
           </div>
           <h2 className="text-2xl font-semibold tracking-tight">Stakeholders</h2>
           <p className="text-foreground/75">
-            Role-defined participation across manufacturers, programs, associations, workforce, advisors, and finance. Each stakeholder type brings unique value and receives tailored support within the ecosystem.
+            Role-defined participation across manufacturers, OEMs, associations, workforce, strategic advisors, and referral networks. Each stakeholder type brings unique value and receives tailored support within the ecosystem.
           </p>
           <div>
             <Link href="/stakeholders" className="text-sm font-medium hover:underline">
@@ -163,14 +163,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="grid gap-8 lg:grid-cols-2">
-        <div className="grid gap-3 sm:grid-cols-2">
+      <section>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {[
             { name: "Manufacturers", desc: "Core production facilities providing capacity and capabilities." },
             { name: "OEM / Tier", desc: "Original equipment manufacturers driving market requirements." },
-            { name: "Industrial Associations", desc: "Sector bodies facilitating collaboration and standards." },
-            { name: "Students / Workforce", desc: "Educational institutions and skilled labor providers." },
-            { name: "Strategic / Financial Institutions", desc: "Advisors and funders supporting ecosystem growth." },
+            { name: "Associations", desc: "Sector bodies facilitating collaboration and standards." },
+            { name: "Workforce", desc: "Educational institutions and skilled labor providers." },
+            { name: "Strategic Advisors", desc: "Strategic advisors and funders supporting ecosystem growth." },
+            { name: "Referral Network", desc: "Industry connectors, ex-manufacturing professionals, and freelancers bridging ecosystem gaps." },
           ].map((role) => (
             <Card key={role.name} className="p-4">
               <CardTitle>{role.name}</CardTitle>
@@ -181,9 +182,9 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <section className="bg-gradient-to-br from-accent/5 to-accent/10 border-t border-border py-16">
+      <section className="bg-gradient-to-br from-accent/5 to-accent/10 border-t border-border py-10">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Image src="/logo.png" alt="Balbird Industries" width={40} height={40} className="rounded-full" />

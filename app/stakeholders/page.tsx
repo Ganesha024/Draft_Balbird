@@ -57,9 +57,9 @@ const roles = [
 
 export default function StakeholdersPage() {
   return (
-    <div className="flex flex-col gap-14">
+    <div className="flex flex-col gap-10">
       {/* Hero */}
-      <section className="relative overflow-hidden rounded-3xl border border-border bg-card px-6 py-14 shadow-sm">
+      <section className="relative overflow-hidden rounded-3xl border border-border bg-card px-6 py-10 shadow-sm">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1000px_420px_at_12%_10%,color-mix(in_oklab,var(--navy)_10%,transparent),transparent_60%),radial-gradient(900px_380px_at_90%_20%,color-mix(in_oklab,var(--accent)_18%,transparent),transparent_60%)] opacity-90" />
         <div className="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex flex-col gap-4">
@@ -77,7 +77,7 @@ export default function StakeholdersPage() {
       </section>
 
       {/* Stakeholders Overview */}
-      <section className="space-y-6">
+      <section className="space-y-4">
         <div className="flex flex-col gap-3">
           <h2 className="text-2xl font-semibold tracking-tight">Stakeholder Ecosystem</h2>
           <p className="max-w-3xl text-foreground/75">
@@ -85,7 +85,7 @@ export default function StakeholdersPage() {
           </p>
         </div>
         <Card className="overflow-hidden">
-          <div className="flex flex-col gap-6 p-6 lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex flex-col gap-4 p-4 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex-1 space-y-4">
               <p className="text-foreground/80">
                 The Balbird stakeholder ecosystem is built on role-defined participation, ensuring that each organization contributes according to its capabilities and receives value aligned with its needs. This structured approach enables efficient collaboration across the entire mobility manufacturing value chain.
@@ -110,19 +110,19 @@ export default function StakeholdersPage() {
               </div>
             </div>
             <div className="relative h-40 w-full max-w-xs shrink-0 overflow-hidden rounded-xl border border-border bg-muted lg:h-48">
-              <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&h=600&fit=crop" alt="Stakeholder ecosystem overview" className="object-contain p-3 w-full h-full" />
+              <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&h=600&fit=crop" alt="Stakeholder ecosystem overview" className="object-contain p-4 w-full h-full" />
             </div>
           </div>
         </Card>
       </section>
 
       {/* Why Defined Roles Matter */}
-      <section className="space-y-6">
+      <section className="space-y-4">
         <div className="flex flex-col gap-3">
           <h2 className="text-2xl font-semibold tracking-tight">Why Defined Roles Matter</h2>
         </div>
-        <div className="grid gap-6 md:grid-cols-2">
-          <Card className="p-6">
+        <div className="grid gap-4 md:grid-cols-2">
+          <Card className="p-4">
             <div className="mb-4">
               <CardTitle>When roles are unclear</CardTitle>
             </div>
@@ -157,7 +157,7 @@ export default function StakeholdersPage() {
               </div>
             </div>
           </Card>
-          <Card className="p-6">
+          <Card className="p-4">
             <div className="mb-4">
               <CardTitle>When roles are defined</CardTitle>
             </div>
@@ -203,17 +203,17 @@ export default function StakeholdersPage() {
       </section>
 
       {/* Stakeholder Roles */}
-      <section className="space-y-6">
+      <section className="space-y-4">
         <div className="flex flex-col gap-3">
           <h2 className="text-2xl font-semibold tracking-tight">Stakeholder Roles</h2>
           <p className="max-w-3xl text-foreground/75">
             Each stakeholder type plays a critical role in the ecosystem, contributing specific capabilities and receiving tailored benefits.
           </p>
         </div>
-        <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
           {roles.map((role) => (
             <Card key={role.key}>
-              <div className="p-6">
+              <div className="p-4">
                 <div className="flex items-start gap-4">
                   <role.icon className="h-8 w-8 text-accent" />
                   <div className="flex-1">
@@ -239,7 +239,7 @@ export default function StakeholdersPage() {
       </section>
 
       {/* CTA */}
-      <section className="rounded-2xl border border-border bg-muted px-8 py-10 text-center">
+      <section className="rounded-2xl border border-border bg-muted px-6 py-8 text-center">
         <h3 className="text-2xl font-semibold tracking-tight">Find Your Role</h3>
         <p className="mt-2 text-foreground/75">
           Discover how your organization can participate in the mobility manufacturing ecosystem.
@@ -255,9 +255,9 @@ export default function StakeholdersPage() {
       </section>
 
       {/* Footer */}
-      <section className="bg-gradient-to-br from-accent/5 to-accent/10 border-t border-border py-16">
+      <section className="bg-gradient-to-br from-accent/5 to-accent/10 border-t border-border py-10">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Image src="/logo.png" alt="Balbird Industries" width={40} height={40} className="rounded-full" />

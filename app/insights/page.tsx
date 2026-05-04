@@ -33,9 +33,9 @@ const articleStructure = {
 
 export default function InsightsPage() {
   return (
-    <div className="flex flex-col gap-14">
+    <div className="flex flex-col gap-10">
       {/* Hero */}
-      <section className="relative overflow-hidden rounded-3xl border border-border bg-card px-6 py-14 shadow-sm">
+      <section className="relative overflow-hidden rounded-3xl border border-border bg-card px-6 py-10 shadow-sm">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1000px_420px_at_12%_10%,color-mix(in_oklab,var(--navy)_10%,transparent),transparent_60%),radial-gradient(900px_380px_at_90%_20%,color-mix(in_oklab,var(--accent)_18%,transparent),transparent_60%)] opacity-90" />
         <div className="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex flex-col gap-4">
@@ -53,7 +53,7 @@ export default function InsightsPage() {
       </section>
 
       {/* Insights Overview */}
-      <section className="space-y-6">
+      <section className="space-y-4">
         <div className="flex flex-col gap-3">
           <h2 className="text-2xl font-semibold tracking-tight">Knowledge Hub</h2>
           <p className="max-w-3xl text-foreground/75">
@@ -61,7 +61,7 @@ export default function InsightsPage() {
           </p>
         </div>
         <Card className="overflow-hidden">
-          <div className="flex flex-col gap-6 p-6 lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex flex-col gap-4 p-4 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex-1 space-y-4">
               <p className="text-foreground/80">
                 Our insights platform provides structured, actionable information to help stakeholders navigate the complex mobility manufacturing landscape. Articles are carefully curated and tagged to ensure relevance and accessibility.
@@ -86,23 +86,23 @@ export default function InsightsPage() {
               </div>
             </div>
             <div className="relative h-40 w-full max-w-xs shrink-0 overflow-hidden rounded-xl border border-border bg-muted lg:h-48">
-              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop" alt="Insights structure and filters overview" className="object-contain p-3 w-full h-full" />
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop" alt="Insights structure and filters overview" className="object-contain p-4 w-full h-full" />
             </div>
           </div>
         </Card>
       </section>
 
       {/* Filters and Articles */}
-      <section className="space-y-6">
+      <section className="space-y-4">
         <div className="flex flex-col gap-3">
           <h2 className="text-2xl font-semibold tracking-tight">Browse Insights</h2>
           <p className="max-w-3xl text-foreground/75">
             Filter articles by sector and topic to find relevant insights and analysis.
           </p>
         </div>
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="grid gap-4 lg:grid-cols-3">
           <Card>
-            <div className="p-6">
+            <div className="p-4">
               <CardTitle>Filters</CardTitle>
               <CardDescription>{filters.description}</CardDescription>
               <ul className="space-y-2 text-sm text-foreground/80">
@@ -118,7 +118,7 @@ export default function InsightsPage() {
 
           <div className="lg:col-span-2">
             <Card>
-              <div className="p-6">
+              <div className="p-4">
                 <CardTitle>Article Structure</CardTitle>
                 <CardDescription>{articleStructure.description}</CardDescription>
                 <div className="grid gap-3 sm:grid-cols-2">
@@ -137,7 +137,7 @@ export default function InsightsPage() {
         </div>
 
         <Card>
-          <div className="p-6">
+          <div className="p-4">
             <CardTitle>Latest Articles</CardTitle>
             <CardDescription>
               Curated insights and analysis from across the mobility manufacturing ecosystem.
@@ -150,7 +150,7 @@ export default function InsightsPage() {
       </section>
 
       {/* CTA */}
-      <section className="rounded-2xl border border-border bg-muted px-8 py-10 text-center">
+      <section className="rounded-2xl border border-border bg-muted px-6 py-8 text-center">
         <h3 className="text-2xl font-semibold tracking-tight">Stay Informed</h3>
         <p className="mt-2 text-foreground/75">
           Get the latest insights on mobility manufacturing trends and opportunities.
@@ -166,9 +166,9 @@ export default function InsightsPage() {
       </section>
 
       {/* Footer */}
-      <section className="bg-gradient-to-br from-accent/5 to-accent/10 border-t border-border py-16">
+      <section className="bg-gradient-to-br from-accent/5 to-accent/10 border-t border-border py-10">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Image src="/logo.png" alt="Balbird Industries" width={40} height={40} className="rounded-full" />
