@@ -170,10 +170,10 @@ export default function AboutPage() {
           Join a structured ecosystem built for mobility manufacturing excellence.
         </p>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
-          <ButtonLink href="/join-network" variant="primary" className="w-full sm:w-auto">
+          <ButtonLink href="https://wa.link/bspaba" variant="primary" className="w-full sm:w-auto">
             Join Network
           </ButtonLink>
-          <ButtonLink href="/request-strategic-discussion" variant="secondary" className="w-full sm:w-auto">
+          <ButtonLink href="https://wa.link/bspaba" variant="secondary" className="w-full sm:w-auto">
             Request Strategic Discussion
           </ButtonLink>
         </div>
@@ -184,23 +184,24 @@ export default function AboutPage() {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div>
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-2 mb-2">
                 <Image src="/logo.png" alt="Balbird Industries" width={40} height={40} className="rounded-full" />
                 <span className="text-lg font-semibold">Balbird Industries</span>
               </div>
+              <p className="text-xs text-foreground/60 pl-12">empowering industries</p>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Company</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="/about" className="hover:text-foreground transition-colors">About</a></li>
-                <li><a href="/careers" className="hover:text-foreground transition-colors">Careers</a></li>
+                <li><a href="https://wa.link/bspaba" className="hover:text-foreground transition-colors">About</a></li>
+                <li><a href="https://wa.link/bspaba" className="hover:text-foreground transition-colors">Careers</a></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="/help" className="hover:text-foreground transition-colors">Help Center</a></li>
-                <li><a href="/contact" className="hover:text-foreground transition-colors">Contact Us</a></li>
+                <li><a href="https://wa.link/bspaba" className="hover:text-foreground transition-colors">Help Center</a></li>
+                <li><a href="https://wa.link/bspaba" className="hover:text-foreground transition-colors">Contact Us</a></li>
               </ul>
             </div>
             <div>

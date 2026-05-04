@@ -234,10 +234,10 @@ export default function RequestStrategicDiscussionPage() {
           Learn more about our network and strategic programs while we prepare your discussion.
         </p>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
-          <ButtonLink href="/join-network" variant="primary" className="w-full sm:w-auto">
+          <ButtonLink href="https://wa.link/bspaba" variant="primary" className="w-full sm:w-auto">
             Join Network
           </ButtonLink>
-          <ButtonLink href="/strategic-programs" variant="secondary" className="w-full sm:w-auto">
+          <ButtonLink href="https://wa.link/bspaba" variant="secondary" className="w-full sm:w-auto">
             View Strategic Programs
           </ButtonLink>
         </div>

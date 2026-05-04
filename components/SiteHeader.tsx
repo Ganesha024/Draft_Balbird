@@ -36,8 +36,8 @@ const nav = {
     {
       label: "Network",
       items: [
-        { href: "/join-network", label: "Join Network" },
-        { href: "/login", label: "Login" },
+        { href: "https://wa.link/bspaba", label: "Join Network" },
+        { href: "https://wa.link/bspaba", label: "Help Center" },
       ],
     },
   ],
@@ -63,7 +63,7 @@ function DesktopGroup({
         <div className="translate-y-1 rounded-2xl border border-border bg-background p-2 shadow-lg transition-transform group-hover:translate-y-0 group-focus-within:translate-y-0">
           {items.map((i) => (
             <Link
-              key={i.href}
+              key={i.label}
               href={i.href}
               className="block rounded-xl px-3 py-2 text-sm text-foreground/80 hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/40"
             >
@@ -93,7 +93,10 @@ export function SiteHeader() {
             height={40} 
             className="h-10 w-auto"
           />
-          <span className="text-lg font-semibold tracking-tight">Balbird Industries</span>
+          <div className="flex flex-col">
+            <span className="text-lg font-semibold tracking-tight">Balbird Industries</span>
+            <span className="text-xs text-foreground/60">empowering industries</span>
+          </div>
         </Link>
 
         <nav className="hidden items-center gap-5 text-sm md:flex">
@@ -138,7 +141,7 @@ export function SiteHeader() {
           <div className="flex flex-col gap-2">
             {primaryItems.map((i) => (
               <Link
-                key={i.href}
+                key={i.label}
                 href={i.href}
                 onClick={() => setOpen(false)}
                 className="rounded-xl px-3 py-2 text-sm text-foreground/80 hover:bg-muted hover:text-foreground"
@@ -154,7 +157,7 @@ export function SiteHeader() {
                 <div className="flex flex-col gap-1">
                   {g.items.map((i) => (
                     <Link
-                      key={i.href}
+                      key={i.label}
                       href={i.href}
                       onClick={() => setOpen(false)}
                       className="rounded-xl px-3 py-2 text-sm text-foreground/80 hover:bg-muted hover:text-foreground"
