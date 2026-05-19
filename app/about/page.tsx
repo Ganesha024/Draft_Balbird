@@ -1,223 +1,366 @@
 import { Card, CardTitle, CardDescription } from "@/components/ui/Card";
 import { ButtonLink } from "@/components/ui/Button";
 import Image from "next/image";
-import { Instagram, Facebook, Mail, Factory, CheckCircle, Shield } from "lucide-react";
+import {
+  Factory,
+  CheckCircle,
+  Shield,
+  Users,
+  Target,
+  ClipboardList,
+  Network,
+  Workflow,
+  GraduationCap,
+  Palette,
+  BarChart3,
+  Code,
+  Globe,
+} from "lucide-react";
 
 export default function AboutPage() {
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-12 py-24 md:py-32">
       {/* Hero */}
-      <section className="relative overflow-hidden rounded-3xl border border-border bg-card px-6 py-10 shadow-sm">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1000px_420px_at_12%_10%,color-mix(in_oklab,var(--navy)_10%,transparent),transparent_60%),radial-gradient(900px_380px_at_90%_20%,color-mix(in_oklab,var(--accent)_18%,transparent),transparent_60%)] opacity-90" />
-        <div className="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-          <div className="flex flex-col gap-4">
-            <h1 className="text-balance text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
-              About Balbird Industries
-            </h1>
-            <p className="max-w-2xl text-lg text-foreground/75">
-              Balbird is a structured ecosystem platform focused on mobility manufacturing only—built to align capacity, capabilities, compliance, and traceability across stakeholders.
-            </p>
-          </div>
-          <div className="relative h-64 w-full max-w-sm shrink-0 overflow-hidden rounded-2xl border border-border bg-muted lg:h-80">
-            <Image src="/images/about-hero.svg" alt="Balbird ecosystem visualization" fill className="object-contain p-4" />
-          </div>
-        </div>
-      </section>
-
-      {/* Our Story */}
-      <section className="space-y-4">
-        <div className="flex flex-col gap-3">
-          <h2 className="text-2xl font-semibold tracking-tight">Our Story</h2>
-          <p className="max-w-3xl text-foreground/75">
-            Balbird emerged from the critical challenges faced in mobility manufacturing ecosystems. As global demand for sustainable transportation grows, the complexity of aligning capacity, capabilities, and compliance across borders has become a major bottleneck.
-          </p>
-        </div>
-        <div className="grid gap-4 md:grid-cols-2">
-          <Card className="p-4">
-            <CardTitle>The Problem</CardTitle>
-            <CardDescription>
-              Traditional manufacturing networks lack structure, leading to mismatched expectations, wasted capacity, and compliance failures. Unstructured growth creates fragility in critical supply chains.
-            </CardDescription>
-          </Card>
-          <Card className="p-4">
-            <CardTitle>Our Solution</CardTitle>
-            <CardDescription>
-              Balbird provides a role-defined framework that structures mobility manufacturing capacity across stakeholders—manufacturers, OEMs, associations, workforce, and finance—ensuring transparency and scalability.
-            </CardDescription>
-          </Card>
-          <Card className="p-4">
-            <CardTitle>Why It Matters</CardTitle>
-            <CardDescription>
-              In mobility sectors, programs are long-term, compliance is strict, and traceability is non-negotiable. Only structured ecosystems can scale sustainably in this environment.
-            </CardDescription>
-          </Card>
-          <Card className="p-4">
-            <CardTitle>The Future</CardTitle>
-            <CardDescription>
-              We're building foundation for resilient, cross-border manufacturing networks that power next generation of mobility solutions—from aerospace to electric vehicles.
-            </CardDescription>
-          </Card>
-        </div>
-      </section>
-
-      {/* Three Pillars */}
-      <section className="space-y-4">
-        <Card className="overflow-hidden">
-          <div className="flex flex-col gap-4 p-4 lg:flex-row lg:items-center lg:justify-between">
-            <div className="grid flex-1 gap-4 sm:grid-cols-3">
-              <div className="flex flex-col gap-2">
-                <Factory className="h-6 w-6 text-accent" />
-                <h3 className="text-lg font-semibold">Capacity</h3>
-                <p className="text-sm text-foreground/70">
-                  Verified production capacity across facilities with real-time availability and utilization metrics.
-                </p>
-              </div>
-              <div className="flex flex-col gap-2">
-                <CheckCircle className="h-6 w-6 text-accent" />
-                <h3 className="text-lg font-semibold">Capability</h3>
-                <p className="text-sm text-foreground/70">
-                  Certified capabilities, process standards, and technology readiness levels for each manufacturing node.
-                </p>
-              </div>
-              <div className="flex flex-col gap-2">
-                <Shield className="h-6 w-6 text-accent" />
-                <h3 className="text-lg font-semibold">Continuity</h3>
-                <p className="text-sm text-foreground/70">
-                  Risk mitigation, supply chain resilience, and compliance traceability from raw material to finished goods.
-                </p>
+      <section className="container mx-auto px-4 md:px-8 lg:px-16">
+        <div className="relative overflow-hidden rounded-3xl border border-border bg-card px-8 py-14 shadow-sm">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1000px_420px_at_12%_10%,color-mix(in_oklab,var(--accent)_12%,transparent),transparent_60%),radial-gradient(900px_380px_at_90%_20%,color-mix(in_oklab,var(--accent)_8%,transparent),transparent_60%)] opacity-90" />
+          <div className="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+            <div className="flex flex-col gap-4 max-w-2xl">
+              <span className="inline-block text-accent font-bold tracking-widest uppercase text-xs w-fit">
+                About Balbird
+              </span>
+              <h1 className="text-balance text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">
+                Cross-Border Manufacturing<br />Execution Partner
+              </h1>
+              <p className="text-lg text-foreground/75 leading-relaxed">
+                Balbird is a cross-border manufacturing execution partner operating
+                in the <strong>mobility components manufacturing sector</strong>. We help
+                companies, manufacturers, suppliers, and partners execute
+                manufacturing-related projects and operations together — with structure,
+                traceability, and consistency.
+              </p>
+            </div>
+            <div className="relative h-64 w-full max-w-sm shrink-0 overflow-hidden rounded-2xl border border-border bg-slate-900 lg:h-80 flex items-center justify-center">
+              <div className="text-center p-6">
+                <Globe className="w-16 h-16 text-accent mx-auto mb-4" />
+                <p className="text-white font-bold text-xl">Mobility Components</p>
+                <p className="text-white/60 text-sm mt-1">Manufacturing Sector</p>
               </div>
             </div>
-            <div className="relative h-40 w-full max-w-xs shrink-0 overflow-hidden rounded-xl border border-border bg-muted lg:h-48">
-              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop" alt="Three pillars visualization" className="object-contain p-4 w-full h-full" />
+          </div>
+        </div>
+      </section>
+
+      {/* What We Are / What We Are Not */}
+      <section className="container mx-auto px-4 md:px-8 lg:px-16 space-y-6">
+        <div className="flex flex-col gap-3">
+          <h2 className="text-3xl font-extrabold tracking-tight">Our Identity</h2>
+          <p className="max-w-3xl text-foreground/75">
+            Understanding what Balbird is — and what it is not — is critical to how we work with every stakeholder.
+          </p>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2">
+          <Card className="p-6 border-l-4 border-l-accent">
+            <CardTitle>What We Are</CardTitle>
+            <CardDescription>
+              <ul className="mt-3 space-y-3">
+                {[
+                  'A cross-border manufacturing execution partner',
+                  'Project-based — every engagement is a defined project',
+                  'Focused exclusively on mobility components manufacturing',
+                  'A facilitator of structured collaboration between stakeholders',
+                  'Commission-based on production work + fees from execution cell',
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <CheckCircle className="w-4 h-4 text-accent shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </CardDescription>
+          </Card>
+          <Card className="p-6 border-l-4 border-l-red-300">
+            <CardTitle>What We Are Not</CardTitle>
+            <CardDescription>
+              <ul className="mt-3 space-y-3">
+                {[
+                  'Not a broker — we don\'t take positions or trade margins',
+                  'Not a marketplace — no open listings or spot trades',
+                  'Not a trading company — we don\'t buy or resell',
+                  'Not a listing platform — we maintain qualified, validated nodes',
+                  'Not ad-hoc — every engagement follows structured execution',
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <span className="w-4 h-4 rounded-full bg-red-100 flex items-center justify-center shrink-0 mt-0.5">
+                      <span className="text-red-400 text-xs font-bold">✕</span>
+                    </span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </CardDescription>
+          </Card>
+        </div>
+      </section>
+
+      {/* What We Provide (Services Overview) */}
+      <section className="container mx-auto px-4 md:px-8 lg:px-16 space-y-6">
+        <div className="flex flex-col gap-3">
+          <h2 className="text-3xl font-extrabold tracking-tight">What We Provide</h2>
+          <p className="max-w-3xl text-foreground/75">
+            Contract Development Manufacturing Operations (CDMO) — structured execution across the mobility supply chain.
+          </p>
+        </div>
+        <Card className="overflow-hidden">
+          <div className="p-6">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                { icon: Factory, title: 'Manufacturing Operations', desc: 'Coordinated production workflows across verified manufacturers.' },
+                { icon: Workflow, title: 'Execution Coordination', desc: 'Project-level coordination from scoping through delivery.' },
+                { icon: Shield, title: 'Manufacturing Traceability', desc: 'End-to-end documentation and compliance at every node.' },
+                { icon: Network, title: 'Consortium Coordination', desc: 'Multi-stakeholder consortium alignment for large programs.' },
+                { icon: Users, title: 'Execution Cell (HR)', desc: 'Student workforce support for HR and operational functions.' },
+                { icon: BarChart3, title: 'Execution Cell (BD)', desc: 'Business development, outreach, and stakeholder research.' },
+              ].map((service, idx) => (
+                <div key={idx} className="rounded-xl bg-foreground/[0.03] px-5 py-4">
+                  <div className="flex items-center gap-3 mb-2">
+                    <service.icon className="h-5 w-5 text-accent" />
+                    <h4 className="font-bold text-sm">{service.title}</h4>
+                  </div>
+                  <p className="text-sm text-foreground/70">{service.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </Card>
       </section>
 
-      {/* Not a */}
-      <section className="space-y-4">
+      {/* Operational Verticals */}
+      <section className="container mx-auto px-4 md:px-8 lg:px-16 space-y-6">
         <div className="flex flex-col gap-3">
-          <h2 className="text-2xl font-semibold tracking-tight">What We Are Not</h2>
+          <h2 className="text-3xl font-extrabold tracking-tight">Operational Verticals</h2>
           <p className="max-w-3xl text-foreground/75">
-            We are not another marketplace or broker. We are a structured platform that enforces standards and transparency.
+            Four operational verticals structure everything we build and execute.
           </p>
         </div>
-        <div className="grid gap-4 md:grid-cols-3">
-          <Card>
-            <CardTitle>Not a Broker</CardTitle>
-            <CardDescription>
-              We don’t take positions or trade margins. We provide verified data and structured workflows for direct engagement.
-            </CardDescription>
-          </Card>
-          <Card>
-            <CardTitle>Not a Trading Intermediary</CardTitle>
-            <CardDescription>
-              We don’t facilitate spot trades or speculative transactions. All engagements are role-defined and compliance-bound.
-            </CardDescription>
-          </Card>
-          <Card>
-            <CardTitle>Not a Listing Platform</CardTitle>
-            <CardDescription>
-              We don’t host open listings. We maintain qualified, validated manufacturing nodes with traceable capabilities.
-            </CardDescription>
-          </Card>
+        <div className="grid gap-4 md:grid-cols-4">
+          {[
+            { icon: ClipboardList, title: 'Communication', desc: 'Stakeholder interaction systems, chatbot, and structured information flow.' },
+            { icon: Target, title: 'Task Management', desc: 'Execution tracking, milestone monitoring, and accountability workflows.' },
+            { icon: Network, title: 'Matchmaking', desc: 'AI-assisted matching of capabilities with requirements.' },
+            { icon: Shield, title: 'Engineering', desc: 'Technical validation, quality assurance, and DFM analysis.' },
+          ].map((vertical, idx) => (
+            <Card key={idx} className="p-5 text-center">
+              <vertical.icon className="h-8 w-8 text-accent mx-auto mb-3" />
+              <CardTitle>{vertical.title}</CardTitle>
+              <CardDescription>{vertical.desc}</CardDescription>
+            </Card>
+          ))}
         </div>
       </section>
 
-      {/* Long-term direction */}
-      <section className="space-y-4">
+      {/* Team Structure */}
+      <section className="container mx-auto px-4 md:px-8 lg:px-16 space-y-6">
         <div className="flex flex-col gap-3">
-          <h2 className="text-2xl font-semibold tracking-tight">Long-term Direction</h2>
+          <h2 className="text-3xl font-extrabold tracking-tight">Team Structure</h2>
           <p className="max-w-3xl text-foreground/75">
-            Our roadmap focuses on strengthening clusters, improving transparency, and enabling seamless OEM integration.
+            A lean, focused team structured around execution — each member owns a critical operational domain.
           </p>
         </div>
-        <Card className="overflow-hidden">
-          <div className="flex flex-col gap-4 p-4 lg:flex-row lg:items-center lg:justify-between">
-            <div className="grid flex-1 gap-3 sm:grid-cols-2">
-              <div className="rounded-xl bg-foreground/[0.03] px-4 py-3">
-                <h4 className="font-semibold">Cluster Strengthening</h4>
-                <p className="mt-1 text-sm text-foreground/70">Build regional manufacturing clusters with shared infrastructure.</p>
-              </div>
-              <div className="rounded-xl bg-foreground/[0.03] px-4 py-3">
-                <h4 className="font-semibold">Acquisition Transparency</h4>
-                <p className="mt-1 text-sm text-foreground/70">End-to-end traceability of component sourcing and costs.</p>
-              </div>
-              <div className="rounded-xl bg-foreground/[0.03] px-4 py-3">
-                <h4 className="font-semibold">Funding Clarity</h4>
-                <p className="mt-1 text-sm text-foreground/70">Clear funding flows and compliance for cross-border programs.</p>
-              </div>
-              <div className="rounded-xl bg-foreground/[0.03] px-4 py-3">
-                <h4 className="font-semibold">OEM Onboarding Structure</h4>
-                <p className="mt-1 text-sm text-foreground/70">Standardized pathways for OEMs to join and integrate.</p>
-              </div>
-              <div className="rounded-xl bg-foreground/[0.03] px-4 py-3">
-                <h4 className="font-semibold">Workforce Integration</h4>
-                <p className="mt-1 text-sm text-foreground/70">Skill mapping and workforce mobility across nodes.</p>
-              </div>
+
+        {/* Execution Architect */}
+        <Card className="p-6 border-l-4 border-l-accent">
+          <div className="flex items-start gap-4">
+            <div className="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center shrink-0">
+              <Globe className="h-7 w-7 text-accent" />
             </div>
-            <div className="relative h-40 w-full max-w-xs shrink-0 overflow-hidden rounded-xl border border-border bg-muted lg:h-48">
-              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=600&fit=crop" alt="Long-term direction roadmap" className="object-contain p-3 w-full h-full" />
+            <div>
+              <CardTitle>Balraj — Execution Architect</CardTitle>
+              <CardDescription>
+                Responsible for overall execution system, structure and coordination, and system planning.
+                Defines how all operational verticals connect and ensures the platform evolves as a cohesive ecosystem.
+              </CardDescription>
             </div>
+          </div>
+        </Card>
+
+        {/* Team Members */}
+        <div className="grid gap-4 md:grid-cols-2">
+          {[
+            {
+              icon: Code,
+              role: 'Member 1 — Frontend & Digital Experience',
+              areas: [
+                'Website and portal sophistication',
+                'Workflow identification and implementation',
+                'Stakeholder UX design',
+                'Supplier capacity display on website',
+                'SEO, trust signals, and continuous improvements',
+                'Project execution through website',
+              ],
+            },
+            {
+              icon: Workflow,
+              role: 'Member 2 — Backend & Operations',
+              areas: [
+                'Workflow implementation and automation',
+                'Data mining and data flow formatting',
+                'Workflow testing and reliability',
+                'Engineering and matchmaking with AI',
+                'Backend alignment with available tools',
+                'System integration across tools',
+              ],
+            },
+            {
+              icon: Palette,
+              role: 'Member 3 — Brand Identity & Media Systems',
+              areas: [
+                'Digital experience and communication tools',
+                'Brand identity themes and PMF content',
+                'LinkedIn, blogs, resources, insights',
+                'Brochures, presentations, and creatives',
+                'Stakeholder-specific content delivery',
+                'Case studies and social media strategy',
+              ],
+            },
+            {
+              icon: BarChart3,
+              role: 'Member 4 — Strategy, Outreach & Business Development',
+              areas: [
+                'Stakeholder research and behavior analysis',
+                'Outreach and demand creation',
+                'Market and stakeholder feedback collection',
+                'Opportunity analysis and conversion strategy',
+                'Legal, financial, and technical factor analysis',
+                'Competitor outperformance strategies',
+              ],
+            },
+          ].map((member, idx) => (
+            <Card key={idx} className="p-5">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
+                  <member.icon className="h-5 w-5 text-accent" />
+                </div>
+                <CardTitle>{member.role}</CardTitle>
+              </div>
+              <ul className="space-y-2">
+                {member.areas.map((area, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm text-foreground/70">
+                    <div className="h-1.5 w-1.5 rounded-full bg-accent mt-1.5 flex-shrink-0" />
+                    {area}
+                  </li>
+                ))}
+              </ul>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Resources We Have */}
+      <section className="container mx-auto px-4 md:px-8 lg:px-16 space-y-6">
+        <div className="flex flex-col gap-3">
+          <h2 className="text-3xl font-extrabold tracking-tight">Resources & Network</h2>
+          <p className="max-w-3xl text-foreground/75">
+            We leverage a strong network of advisors, associations, and industry connections.
+          </p>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            'Legal Advisor',
+            'Financial Advisor',
+            'Tech Advisor',
+            'Supplier Associations',
+            'Student Workforce',
+            'Non-Tech Advisors',
+            'Industrial HR Networks',
+            'Sales Networks',
+            'Quality Networks',
+            'Manufacturer Networks',
+            'Financial Stability',
+            'LinkedIn Premium',
+          ].map((resource, idx) => (
+            <div key={idx} className="flex items-center gap-3 p-4 bg-slate-50 rounded-xl border border-black/5">
+              <CheckCircle className="w-4 h-4 text-accent shrink-0" />
+              <span className="text-sm font-medium text-foreground/80">{resource}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Tools We Use */}
+      <section className="container mx-auto px-4 md:px-8 lg:px-16 space-y-6">
+        <div className="flex flex-col gap-3">
+          <h2 className="text-3xl font-extrabold tracking-tight">Tools & Systems</h2>
+          <p className="max-w-3xl text-foreground/75">
+            Our current operational toolkit — continuously evolving as we scale.
+          </p>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { name: 'Website & Portal', desc: 'Digital presence and stakeholder interface' },
+            { name: 'Communication Chatbot', desc: 'Stakeholder interaction system' },
+            { name: 'Task Management App', desc: 'Execution tracking and coordination' },
+            { name: 'n8n', desc: 'Workflow automation engine' },
+            { name: 'NoteGPT.io', desc: 'Video content and note processing' },
+            { name: 'Google Workspace', desc: 'Collaboration and documents' },
+            { name: 'LinkedIn Premium', desc: 'Professional networking and outreach' },
+            { name: 'Free Tools Stack', desc: 'Additional utility tools as needed' },
+          ].map((tool, idx) => (
+            <div key={idx} className="p-4 rounded-xl bg-foreground/[0.03] border border-black/5">
+              <h4 className="font-bold text-sm mb-1">{tool.name}</h4>
+              <p className="text-xs text-foreground/60">{tool.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Design Expectations */}
+      <section className="container mx-auto px-4 md:px-8 lg:px-16 space-y-6">
+        <div className="flex flex-col gap-3">
+          <h2 className="text-3xl font-extrabold tracking-tight">What We Build Towards</h2>
+          <p className="max-w-3xl text-foreground/75">
+            Our standards for everything we build and deploy.
+          </p>
+        </div>
+        <Card className="p-6">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              'Operationally seamless for stakeholders',
+              'Flexible and not rigid',
+              'Space for continuous evolution',
+              'Externally deployable/configurable',
+              'Designed properly from ground level',
+              'Precise and structured',
+              'Testable with dummy data',
+              'Managed through task management',
+              'Quantifiable with proper justification',
+              'Continuously evolvable',
+              'Multi-stakeholder capable',
+              'AI and automation wherever possible',
+            ].map((expectation, idx) => (
+              <div key={idx} className="flex items-start gap-2 text-sm text-foreground/80">
+                <CheckCircle className="w-4 h-4 text-accent shrink-0 mt-0.5" />
+                <span>{expectation}</span>
+              </div>
+            ))}
           </div>
         </Card>
       </section>
 
       {/* CTA */}
-      <section className="rounded-2xl border border-border bg-muted px-6 py-8 text-center">
-        <h3 className="text-2xl font-semibold tracking-tight">Ready to Engage?</h3>
-        <p className="mt-2 text-foreground/75">
-          Join a structured ecosystem built for mobility manufacturing excellence.
-        </p>
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
-          <ButtonLink href="https://wa.link/bspaba" variant="primary" className="w-full sm:w-auto">
-            Join Network
-          </ButtonLink>
-          <ButtonLink href="https://wa.link/bspaba" variant="secondary" className="w-full sm:w-auto">
-            Request Strategic Discussion
-          </ButtonLink>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <section className="bg-gradient-to-br from-accent/5 to-accent/10 border-t border-border py-10">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <Image src="/logo.png" alt="Balbird Industries" width={40} height={40} className="rounded-full" />
-                <span className="text-lg font-semibold">Balbird Industries</span>
-              </div>
-              <p className="text-xs text-foreground/60 pl-12">empowering industries</p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="https://wa.link/bspaba" className="hover:text-foreground transition-colors">About</a></li>
-                <li><a href="https://wa.link/bspaba" className="hover:text-foreground transition-colors">Careers</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Support</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="https://wa.link/bspaba" className="hover:text-foreground transition-colors">Help Center</a></li>
-                <li><a href="https://wa.link/bspaba" className="hover:text-foreground transition-colors">Contact Us</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Follow Us</h4>
-              <div className="flex gap-4">
-                <a href="#" className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center hover:bg-accent/30 transition-colors">
-                  <Instagram className="w-5 h-5" />
-                </a>
-                <a href="#" className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center hover:bg-accent/30 transition-colors">
-                  <Facebook className="w-5 h-5" />
-                </a>
-                <a href="#" className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center hover:bg-accent/30 transition-colors">
-                  <Mail className="w-5 h-5" />
-                </a>
-              </div>
-            </div>
+      <section className="container mx-auto px-4 md:px-8 lg:px-16">
+        <div className="rounded-2xl border border-border bg-muted px-8 py-10 text-center">
+          <h3 className="text-2xl font-extrabold tracking-tight">Ready to Work Together?</h3>
+          <p className="mt-2 text-foreground/75">
+            Join a structured ecosystem built for mobility manufacturing execution.
+          </p>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
+            <ButtonLink href="/join-network" variant="primary" className="w-full sm:w-auto">
+              Join the Network
+            </ButtonLink>
+            <ButtonLink href="/request-strategic-discussion" variant="secondary" className="w-full sm:w-auto">
+              Request Strategic Discussion
+            </ButtonLink>
           </div>
         </div>
       </section>

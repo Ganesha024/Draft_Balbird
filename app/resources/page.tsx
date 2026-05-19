@@ -186,7 +186,7 @@ export default function ResourcesPage() {
             <div>
               <h4 className="font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="https://wa.link/bspaba" className="hover:text-foreground transition-colors">Help Center</a></li>
+                <li><a href="/login" className="hover:text-foreground transition-colors">Login</a></li>
                 <li><a href="https://wa.link/bspaba" className="hover:text-foreground transition-colors">Contact Us</a></li>
               </ul>
             </div>

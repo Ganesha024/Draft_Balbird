@@ -4,17 +4,12 @@ import { Button } from "@/components/ui/Button";
 import { Card, CardTitle, CardDescription } from "@/components/ui/Card";
 import { ButtonLink } from "@/components/ui/Button";
 import Image from "next/image";
-import { 
-  Instagram, 
-  Facebook, 
-  Mail, 
-  User, 
-  LogOut, 
-  Settings, 
-  Activity, 
-  FileText, 
-  Users, 
-  TrendingUp,
+import {
+  User,
+  LogOut,
+  Settings,
+  Activity,
+  Users,
   Search,
   Bell,
   ChevronDown,
@@ -29,15 +24,15 @@ import {
   Users2,
   MessageCircle,
   Plus,
-  Upload,
   HelpCircle,
   Clock,
   CheckCircle,
   AlertCircle,
-  Folder,
-  Download,
-  Trash2,
-  Menu
+  Menu,
+  Factory,
+  Network,
+  Shield,
+  Workflow,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -79,34 +74,43 @@ export default function DashboardPage() {
 
   const sidebarItems = [
     { icon: Home, label: "Dashboard", href: "/dashboard", active: true },
-    { icon: UserCircle, label: "Profile", href: "/profile" },
-    { icon: ClipboardList, label: "Requirements / Capabilities", href: "/requirements" },
-    { icon: FolderOpen, label: "Projects", href: "/projects" },
-    { icon: Target, label: "Programs", href: "/programs" },
-    { icon: BarChart3, label: "Performance", href: "/performance" },
-    { icon: FileIcon, label: "Documents", href: "/documents" },
-    { icon: NotificationIcon, label: "Notifications", href: "/notifications" },
-    { icon: Users2, label: "Multi-role / Requests", href: "/requests" },
-    { icon: MessageCircle, label: "Chatbot / Help", href: "/help" },
+    { icon: UserCircle, label: "Profile", href: "/dashboard/profile" },
+    { icon: ClipboardList, label: "Requirements", href: "/dashboard/requirements" },
+    { icon: FolderOpen, label: "Projects", href: "/dashboard/projects" },
+    { icon: Target, label: "Programs", href: "/dashboard/programs" },
+    { icon: Network, label: "Matchmaking", href: "/dashboard/capabilities" },
+    { icon: BarChart3, label: "Performance", href: "/dashboard/performance" },
+    { icon: FileIcon, label: "Documents", href: "/dashboard/documents" },
+    { icon: NotificationIcon, label: "Notifications", href: "/dashboard/notifications" },
+    { icon: Users2, label: "Multi-role / Requests", href: "/dashboard/requests" },
+    { icon: MessageCircle, label: "Chatbot / Help", href: "/dashboard/chatbot" },
   ];
 
   const notifications = [
-    { id: 1, icon: CheckCircle, message: "Requirement submitted successfully", time: "2 hours ago", read: false },
-    { id: 2, icon: AlertCircle, message: "New project assignment available", time: "5 hours ago", read: false },
-    { id: 3, icon: Users, message: "Team meeting scheduled for tomorrow", time: "1 day ago", read: true },
+    { id: 1, icon: CheckCircle, message: "New project scope submitted for review", time: "2 hours ago", read: false },
+    { id: 2, icon: AlertCircle, message: "Manufacturer capability match found", time: "5 hours ago", read: false },
+    { id: 3, icon: Users, message: "Consortium meeting scheduled for tomorrow", time: "1 day ago", read: true },
   ];
 
   const quickStats = [
-    { title: "Active Projects", value: "12", change: "+2", icon: FolderOpen },
-    { title: "New Requirements", value: "8", change: "+3", icon: ClipboardList },
-    { title: "Pending Tasks", value: "5", change: "-1", icon: Clock },
+    { title: "Active Projects", value: "4", change: "+1", icon: FolderOpen },
+    { title: "Pending Matches", value: "7", change: "+3", icon: Network },
+    { title: "Execution Tasks", value: "12", change: "-2", icon: ClipboardList },
     { title: "Notifications", value: "3", change: "0", icon: Bell },
   ];
 
   const recentActivities = [
-    { id: 1, action: "Submitted requirement", detail: "EV motor housing production", time: "2 hours ago" },
-    { id: 2, action: "Updated profile", detail: "Company information modified", time: "5 hours ago" },
-    { id: 3, action: "Joined program", detail: "IATF 16949 readiness", time: "1 day ago" },
+    { id: 1, action: "Project scoped", detail: "EV motor housing — cross-border consortium", time: "2 hours ago" },
+    { id: 2, action: "Capability matched", detail: "CNC manufacturer verified for rail components", time: "5 hours ago" },
+    { id: 3, action: "Traceability updated", detail: "Quality documentation submitted for review", time: "1 day ago" },
+    { id: 4, action: "Execution cell assigned", detail: "Student team onboarded for BD outreach", time: "2 days ago" },
+  ];
+
+  const operationalVerticals = [
+    { icon: MessageCircle, name: "Communication", desc: "Stakeholder interaction & chatbot", status: "Active" },
+    { icon: ClipboardList, name: "Task Management", desc: "Execution tracking & milestones", status: "Active" },
+    { icon: Network, name: "Matchmaking", desc: "AI-assisted capability matching", status: "Active" },
+    { icon: Shield, name: "Engineering", desc: "Technical validation & QA", status: "Active" },
   ];
 
   return (
@@ -127,18 +131,18 @@ export default function DashboardPage() {
               <span className="text-lg font-semibold">Balbird Industries</span>
             </div>
           </div>
-          
+
           <div className="flex items-center gap-4">
             {/* Global Search */}
             <div className="hidden md:flex items-center gap-2 bg-muted rounded-lg px-3 py-2">
               <Search className="h-4 w-4 text-foreground/50" />
               <input
                 type="text"
-                placeholder="Search..."
+                placeholder="Search projects, stakeholders..."
                 className="bg-transparent border-none outline-none text-sm w-64"
               />
             </div>
-            
+
             {/* Notifications */}
             <div className="relative">
               <Button
@@ -151,7 +155,7 @@ export default function DashboardPage() {
                   <span className="absolute -top-1 -right-1 h-3 w-3 bg-red-500 rounded-full"></span>
                 )}
               </Button>
-              
+
               {notificationsOpen && (
                 <div className="absolute right-0 mt-2 w-80 bg-card border border-border rounded-lg shadow-lg">
                   <div className="p-4 border-b border-border">
@@ -173,7 +177,7 @@ export default function DashboardPage() {
                 </div>
               )}
             </div>
-            
+
             {/* User Profile Dropdown */}
             <div className="relative">
               <Button
@@ -186,7 +190,7 @@ export default function DashboardPage() {
                 </div>
                 <ChevronDown className="h-4 w-4" />
               </Button>
-              
+
               {profileDropdownOpen && (
                 <div className="absolute right-0 mt-2 w-48 bg-card border border-border rounded-lg shadow-lg">
                   <div className="p-3 border-b border-border">
@@ -236,9 +240,11 @@ export default function DashboardPage() {
         <main className={`flex-1 transition-all duration-300 ${sidebarOpen ? 'lg:ml-64' : ''}`}>
           <div className="p-6">
             {/* Welcome Section */}
-            <div className="mb-5">
+            <div className="mb-6">
               <h1 className="text-2xl font-bold mb-1">Welcome back, {userData.name}!</h1>
-              <p className="text-sm text-foreground/75">Here's what's happening with your account today.</p>
+              <p className="text-sm text-foreground/75">
+                Here&apos;s your execution overview — projects, matches, and operational status.
+              </p>
             </div>
 
             {/* Quick Stats Cards */}
@@ -259,11 +265,31 @@ export default function DashboardPage() {
               ))}
             </div>
 
-            {/* Activity Section */}
+            {/* Operational Verticals Status */}
+            <Card className="p-4 mb-6">
+              <CardTitle>Operational Verticals</CardTitle>
+              <CardDescription>Status of core operational systems</CardDescription>
+              <div className="mt-3 grid grid-cols-2 lg:grid-cols-4 gap-3">
+                {operationalVerticals.map((v, idx) => (
+                  <div key={idx} className="flex items-center gap-3 p-3 rounded-lg bg-muted/50">
+                    <v.icon className="h-5 w-5 text-accent" />
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-medium truncate">{v.name}</p>
+                      <p className="text-xs text-foreground/50 truncate">{v.desc}</p>
+                    </div>
+                    <span className="text-xs font-medium text-green-600 bg-green-50 px-2 py-0.5 rounded-full">
+                      {v.status}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </Card>
+
+            {/* Activity + Quick Actions */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
               <Card className="p-4">
                 <CardTitle>Recent Activity</CardTitle>
-                <CardDescription>Your latest actions and updates</CardDescription>
+                <CardDescription>Latest execution updates</CardDescription>
                 <div className="mt-3 space-y-2">
                   {recentActivities.map(activity => (
                     <div key={activity.id} className="flex items-start gap-2 p-2 rounded-lg bg-muted/50">
@@ -280,48 +306,48 @@ export default function DashboardPage() {
 
               <Card className="p-4">
                 <CardTitle>Quick Actions</CardTitle>
-                <CardDescription>Frequently used features</CardDescription>
+                <CardDescription>Frequently used workflows</CardDescription>
                 <div className="mt-3 grid grid-cols-2 gap-2">
                   <Button className="h-auto p-3 flex flex-col gap-1">
                     <Plus className="h-4 w-4" />
-                    <span className="text-xs">Create Requirement</span>
+                    <span className="text-xs">New Project</span>
                   </Button>
                   <Button className="h-auto p-3 flex flex-col gap-1">
-                    <UserCircle className="h-4 w-4" />
-                    <span className="text-xs">Update Profile</span>
+                    <Network className="h-4 w-4" />
+                    <span className="text-xs">Find Manufacturer</span>
                   </Button>
                   <Button className="h-auto p-3 flex flex-col gap-1">
-                    <Upload className="h-4 w-4" />
-                    <span className="text-xs">Upload Document</span>
+                    <Workflow className="h-4 w-4" />
+                    <span className="text-xs">Track Execution</span>
                   </Button>
                   <Button className="h-auto p-3 flex flex-col gap-1">
                     <HelpCircle className="h-4 w-4" />
-                    <span className="text-xs">Request Support</span>
+                    <span className="text-xs">Get Support</span>
                   </Button>
                 </div>
               </Card>
             </div>
 
-            {/* Recent Updates */}
+            {/* System Updates */}
             <Card className="p-4">
-              <CardTitle>System Updates</CardTitle>
-              <CardDescription>Latest platform updates and announcements</CardDescription>
+              <CardTitle>Platform Updates</CardTitle>
+              <CardDescription>Latest ecosystem updates and announcements</CardDescription>
               <div className="mt-3 space-y-2">
                 <div className="p-3 rounded-lg bg-accent/5 border border-accent/20">
                   <div className="flex items-center gap-1.5 mb-1">
-                    <Bell className="h-3.5 w-3.5 text-accent" />
-                    <span className="font-medium text-sm">New Feature Released</span>
+                    <Factory className="h-3.5 w-3.5 text-accent" />
+                    <span className="font-medium text-sm">Matchmaking Engine Updated</span>
                   </div>
-                  <p className="text-xs text-foreground/75">Advanced filtering system now available in Requirements module</p>
+                  <p className="text-xs text-foreground/75">AI-assisted capability matching now considers certification compatibility and geographic proximity.</p>
                   <p className="text-xs text-foreground/50 mt-1">2 days ago</p>
                 </div>
                 <div className="p-3 rounded-lg bg-muted/50">
                   <div className="flex items-center gap-1.5 mb-1">
-                    <Settings className="h-3.5 w-3.5 text-foreground/50" />
-                    <span className="font-medium text-sm">System Maintenance</span>
+                    <Shield className="h-3.5 w-3.5 text-foreground/50" />
+                    <span className="font-medium text-sm">Traceability Module v2</span>
                   </div>
-                  <p className="text-xs text-foreground/75">Scheduled maintenance this weekend - expect brief downtime</p>
-                  <p className="text-xs text-foreground/50 mt-1">3 days ago</p>
+                  <p className="text-xs text-foreground/75">End-to-end documentation flow now supports IATF 16949 and AS9100 compliance templates.</p>
+                  <p className="text-xs text-foreground/50 mt-1">5 days ago</p>
                 </div>
               </div>
             </Card>
