@@ -7,18 +7,17 @@ import { Menu, X, LayoutDashboard } from 'lucide-react';
 import Image from 'next/image';
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
-
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -37,20 +36,22 @@ export default function Navbar() {
     { name: 'Dashboard', href: '/dashboard' },
   ];
 
-  // Determine if we're on a hero page (dark background at top)
-  const isHeroPage = pathname === '/' || pathname === '/capabilities';
+  if (pathname?.startsWith('/dashboard')) {
+    return null;
+  }
 
-  // Color helpers based on scroll + hero
-  const isTransparent = !isScrolled && isHeroPage;
+  const transparentPages = ['/', '/about', '/capabilities', '/stakeholders'];
+  const isTransparent = transparentPages.includes(pathname || '') && !isScrolled;
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-background/95 backdrop-blur-md shadow-sm border-b border-border py-3'
-          : 'bg-transparent py-5'
-      }`}
-    >
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isTransparent 
+            ? 'bg-transparent py-5' 
+            : 'bg-background/95 backdrop-blur-md shadow-sm border-b border-border py-3'
+        }`}
+      >
       <div className="w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-12 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 shrink-0 z-50">
@@ -61,12 +62,8 @@ export default function Navbar() {
             height={32}
             className="w-8 h-8 object-contain"
           />
-          <span
-            className={`font-bold text-xl tracking-tight transition-colors ${
-              isTransparent ? 'text-white' : 'text-foreground'
-            }`}
-          >
-            Balbird
+          <span className={`font-bold text-xl tracking-tight transition-colors ${isTransparent ? 'text-white' : 'text-foreground'}`}>
+            Balbird Industries
           </span>
         </Link>
 
@@ -79,11 +76,9 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 className={`text-[13px] font-medium whitespace-nowrap transition-colors ${
-                  isActive
-                    ? 'text-accent-foreground border-b-2 border-accent pb-0.5'
-                    : isTransparent
-                      ? 'text-white/90 hover:text-white'
-                      : 'text-foreground/70 hover:text-foreground'
+                  isTransparent
+                    ? isActive ? 'text-white font-bold' : 'text-white/90 hover:text-white'
+                    : isActive ? 'text-foreground font-bold' : 'text-foreground/70 hover:text-foreground'
                 }`}
               >
                 {link.name}
@@ -94,7 +89,7 @@ export default function Navbar() {
           {/* Dashboard icon link */}
           <Link
             href="/dashboard"
-            className={`p-2 rounded-lg transition-colors ${
+            className={`relative p-2 rounded-lg transition-colors ${
               pathname?.startsWith('/dashboard')
                 ? 'bg-accent/20 text-accent-foreground'
                 : isTransparent
@@ -104,6 +99,7 @@ export default function Navbar() {
             title="Dashboard"
           >
             <LayoutDashboard className="w-[18px] h-[18px]" />
+            <span className="absolute -top-1 -right-2 bg-accent text-accent-foreground text-[8px] font-extrabold px-1 rounded-sm shadow-sm">BETA</span>
           </Link>
 
           {/* CTA Button */}
@@ -121,27 +117,29 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className={`lg:hidden z-50 p-2 transition-colors ${
-            mobileMenuOpen
-              ? 'text-foreground'
-              : isTransparent
-                ? 'text-white'
-                : 'text-foreground'
-          }`}
+          className={`lg:hidden z-50 p-2 transition-colors ${isTransparent ? 'text-white' : 'text-foreground'}`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
+    </header>
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 bg-background z-40 transition-transform duration-300 ease-in-out ${
-          mobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
+        className={`lg:hidden fixed inset-0 bg-background z-[100] flex flex-col items-center justify-center transition-all duration-300 ease-in-out ${
+          mobileMenuOpen ? 'opacity-100 visible pointer-events-auto' : 'opacity-0 invisible pointer-events-none'
         }`}
       >
-        <div className="flex flex-col items-center justify-center h-full gap-7">
+        <button
+          className="absolute top-6 right-6 p-2 text-foreground"
+          onClick={() => setMobileMenuOpen(false)}
+          aria-label="Close menu"
+        >
+          <X size={32} />
+        </button>
+        <div className="flex flex-col items-center gap-7">
           {allLinks.map((link) => (
             <Link
               key={link.name}
@@ -165,6 +163,6 @@ export default function Navbar() {
           </Link>
         </div>
       </div>
-    </header>
+    </>
   );
 }

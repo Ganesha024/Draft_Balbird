@@ -30,6 +30,6 @@ export function CardTitle({
   return <h2 className={cn("text-lg font-semibold tracking-tight", className)}>{children}</h2>;
 }
 
-export function CardDescription({ children }: { children: React.ReactNode }) {
-  return <p className="mt-2 text-sm text-foreground/70">{children}</p>;
+export function CardDescription({ children, className }: { children: React.ReactNode; className?: string }) {
+  return <p className={cn("mt-2 text-sm text-foreground/70", className)}>{children}</p>;
 }

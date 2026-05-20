@@ -1,209 +1,155 @@
 import { Card, CardTitle, CardDescription } from "@/components/ui/Card";
 import { ButtonLink } from "@/components/ui/Button";
-import Image from "next/image";
-import { Instagram, Facebook, Mail } from "lucide-react";
+import {
+  BookOpen, Filter, FileText, Tag, Calendar,
+  Lightbulb, ChevronDown, TrendingUp, Shield, Users,
+} from "lucide-react";
 
-const filters = {
-  description: "Filter insights by sector, topic, and stakeholder type to find relevant industry analysis and updates.",
-  items: [
-    "Aerospace",
-    "Automotive EV",
-    "Railway",
-    "Marine",
-    "Heavy Mobility",
-    "Capacity Trends",
-    "Compliance Documentation",
-    "Workforce Development",
-    "Strategic Programs",
-  ],
-} as const;
+const filters = [
+  "Aerospace", "Automotive EV", "Railway", "Marine", "Heavy Mobility",
+  "Capacity Trends", "Compliance Documentation", "Workforce Development", "Strategic Programs",
+] as const;
 
-const articleStructure = {
-  description: "Each insight article follows a structured format to provide comprehensive information and actionable insights.",
-  items: [
-    "Title",
-    "Sector Tag",
-    "Summary",
-    "Date",
-    "Key Takeaways",
-    "Related Resources",
-    "Related Requirements",
-  ],
-} as const;
+const articleStructure = [
+  "Title", "Sector Tag", "Summary", "Date",
+  "Key Takeaways", "Related Resources", "Related Requirements",
+] as const;
 
 export default function InsightsPage() {
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col min-h-screen">
       {/* Hero */}
-      <section className="relative overflow-hidden rounded-3xl border border-border bg-card px-6 py-10 shadow-sm">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1000px_420px_at_12%_10%,color-mix(in_oklab,var(--navy)_10%,transparent),transparent_60%),radial-gradient(900px_380px_at_90%_20%,color-mix(in_oklab,var(--accent)_18%,transparent),transparent_60%)] opacity-90" />
-        <div className="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-          <div className="flex flex-col gap-4">
-            <h1 className="text-balance text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
-              Insights
-            </h1>
-            <p className="max-w-2xl text-lg text-foreground/75">
-              Structured articles tagged to sectors and programs, connected to resources and active requirements for informed decision-making.
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800">
+        <div
+          className="absolute inset-0 opacity-[0.07]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
+        <div className="absolute top-1/3 left-1/3 w-[500px] h-[300px] bg-accent/10 rounded-full blur-[120px]" />
+
+        <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-16 pt-28 pb-16 animate-fade-in">
+          <span className="inline-block text-accent font-bold tracking-widest uppercase text-sm mb-6 px-5 py-1.5 border border-accent/30 rounded-full bg-accent/10 backdrop-blur-sm">
+            Knowledge Hub
+          </span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight leading-[1.1] max-w-3xl">
+            Industry<br />
+            <span className="text-accent">Insights</span>
+          </h1>
+          <p className="text-lg md:text-xl text-slate-300 max-w-2xl mb-8 font-medium leading-relaxed">
+            Structured articles tagged to sectors and programs, connected to resources and active requirements for informed decision-making.
+          </p>
+        </div>
+
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+          <ChevronDown className="text-white/50 w-8 h-8" />
+        </div>
+      </section>
+
+      {/* Knowledge Areas */}
+      <section className="py-24 md:py-32 bg-white">
+        <div className="container mx-auto px-4 md:px-8 lg:px-16">
+          <div className="flex flex-col gap-3 mb-12">
+            <span className="text-accent font-bold tracking-widest uppercase text-xs">Categories</span>
+            <h2 className="text-3xl font-extrabold tracking-tight">Knowledge Areas</h2>
+            <p className="max-w-3xl text-foreground/75">
+              Access industry analysis, market trends, compliance updates, and strategic insights across all mobility manufacturing sectors.
             </p>
           </div>
-          <div className="relative h-64 w-full max-w-sm shrink-0 overflow-hidden rounded-2xl border border-border bg-muted lg:h-80">
-            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=600&fit=crop" alt="Insights and articles visualization" className="object-contain p-4 w-full h-full" />
-          </div>
-        </div>
-      </section>
 
-      {/* Insights Overview */}
-      <section className="space-y-4">
-        <div className="flex flex-col gap-3">
-          <h2 className="text-2xl font-semibold tracking-tight">Knowledge Hub</h2>
-          <p className="max-w-3xl text-foreground/75">
-            Access industry analysis, market trends, compliance updates, and strategic insights across all mobility manufacturing sectors.
-          </p>
-        </div>
-        <Card className="overflow-hidden">
-          <div className="flex flex-col gap-4 p-4 lg:flex-row lg:items-center lg:justify-between">
-            <div className="flex-1 space-y-4">
-              <p className="text-foreground/80">
-                Our insights platform provides structured, actionable information to help stakeholders navigate the complex mobility manufacturing landscape. Articles are carefully curated and tagged to ensure relevance and accessibility.
-              </p>
-              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-                <div className="rounded-xl bg-foreground/[0.03] px-4 py-3">
-                  <h4 className="font-semibold">Sector-Specific Analysis</h4>
-                  <p className="mt-1 text-sm text-foreground/70">Deep dives into aerospace, automotive, railway, marine, and heavy mobility trends.</p>
-                </div>
-                <div className="rounded-xl bg-foreground/[0.03] px-4 py-3">
-                  <h4 className="font-semibold">Regulatory Intelligence</h4>
-                  <p className="mt-1 text-sm text-foreground/70">Compliance updates, documentation requirements, and certification guidance.</p>
-                </div>
-                <div className="rounded-xl bg-foreground/[0.03] px-4 py-3">
-                  <h4 className="font-semibold">Capacity & Workforce Insights</h4>
-                  <p className="mt-1 text-sm text-foreground/70">Market trends, workforce development, and capacity planning strategies.</p>
-                </div>
-                <div className="rounded-xl bg-foreground/[0.03] px-4 py-3">
-                  <h4 className="font-semibold">Strategic Program Updates</h4>
-                  <p className="mt-1 text-sm text-foreground/70">Progress reports and outcomes from ecosystem development initiatives.</p>
-                </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-16">
+            {[
+              { icon: TrendingUp, title: "Sector-Specific Analysis", desc: "Deep dives into aerospace, automotive, railway, marine, and heavy mobility trends." },
+              { icon: Shield, title: "Regulatory Intelligence", desc: "Compliance updates, documentation requirements, and certification guidance." },
+              { icon: Users, title: "Capacity & Workforce", desc: "Market trends, workforce development, and capacity planning strategies." },
+              { icon: Lightbulb, title: "Strategic Updates", desc: "Progress reports and outcomes from ecosystem development initiatives." },
+            ].map((item, idx) => (
+              <div key={idx} className="p-5 bg-slate-50 rounded-xl border border-black/5 hover:shadow-md transition-shadow">
+                <item.icon className="w-6 h-6 text-accent mb-3" />
+                <h4 className="font-bold text-sm mb-1">{item.title}</h4>
+                <p className="text-xs text-foreground/60">{item.desc}</p>
               </div>
-            </div>
-            <div className="relative h-40 w-full max-w-xs shrink-0 overflow-hidden rounded-xl border border-border bg-muted lg:h-48">
-              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop" alt="Insights structure and filters overview" className="object-contain p-4 w-full h-full" />
-            </div>
+            ))}
           </div>
-        </Card>
-      </section>
 
-      {/* Filters and Articles */}
-      <section className="space-y-4">
-        <div className="flex flex-col gap-3">
-          <h2 className="text-2xl font-semibold tracking-tight">Browse Insights</h2>
-          <p className="max-w-3xl text-foreground/75">
-            Filter articles by sector and topic to find relevant insights and analysis.
-          </p>
-        </div>
-        <div className="grid gap-4 lg:grid-cols-3">
-          <Card>
-            <div className="p-4">
-              <CardTitle>Filters</CardTitle>
-              <CardDescription>{filters.description}</CardDescription>
-              <ul className="space-y-2 text-sm text-foreground/80">
-                {filters.items.map((f) => (
-                  <li key={f} className="flex items-center gap-2">
-                    <div className="h-1.5 w-1.5 rounded-full bg-accent" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Card>
-
-          <div className="lg:col-span-2">
-            <Card>
-              <div className="p-4">
-                <CardTitle>Article Structure</CardTitle>
-                <CardDescription>{articleStructure.description}</CardDescription>
-                <div className="grid gap-3 sm:grid-cols-2">
-                  {articleStructure.items.map((item, index) => (
-                    <div key={item} className="flex items-center gap-3 rounded-xl bg-foreground/[0.03] px-4 py-3">
-                      <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent text-xs font-semibold text-accent-foreground">
-                        {String(index + 1).padStart(2, "0")}
-                      </div>
-                      <span className="text-sm font-medium text-foreground/80">{item}</span>
-                    </div>
+          {/* Filters & Article Structure */}
+          <div className="grid gap-6 lg:grid-cols-3">
+            <Card className="hover:shadow-lg transition-shadow">
+              <div className="p-5">
+                <div className="flex items-center gap-2 mb-4">
+                  <Filter className="w-5 h-5 text-accent" />
+                  <CardTitle>Filters</CardTitle>
+                </div>
+                <CardDescription>Filter insights by sector, topic, and stakeholder type.</CardDescription>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {filters.map((f) => (
+                    <span key={f} className="px-3 py-1 text-xs font-medium bg-accent/10 text-accent-foreground rounded-full border border-accent/20">
+                      {f}
+                    </span>
                   ))}
                 </div>
               </div>
             </Card>
-          </div>
-        </div>
 
-        <Card>
-          <div className="p-4">
-            <CardTitle>Latest Articles</CardTitle>
-            <CardDescription>
-              Curated insights and analysis from across the mobility manufacturing ecosystem.
-            </CardDescription>
-            <div className="text-sm text-foreground/70">
-              Articles will be published here as insights become available. Stay tuned for sector-specific analysis and strategic updates.
+            <div className="lg:col-span-2">
+              <Card className="hover:shadow-lg transition-shadow">
+                <div className="p-5">
+                  <div className="flex items-center gap-2 mb-4">
+                    <FileText className="w-5 h-5 text-accent" />
+                    <CardTitle>Article Structure</CardTitle>
+                  </div>
+                  <CardDescription>Each insight follows a structured format for consistency.</CardDescription>
+                  <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                    {articleStructure.map((item, index) => (
+                      <div key={item} className="flex items-center gap-3 px-4 py-3 bg-slate-50 rounded-xl border border-black/5">
+                        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent text-xs font-bold text-accent-foreground">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                        <span className="text-sm font-medium text-foreground/80">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </Card>
             </div>
           </div>
-        </Card>
+        </div>
+      </section>
+
+      {/* Latest Articles Placeholder */}
+      <section className="py-24 md:py-32 bg-slate-50 border-y border-border/30">
+        <div className="container mx-auto px-4 md:px-8 lg:px-16">
+          <div className="flex flex-col gap-3 mb-12">
+            <span className="text-accent font-bold tracking-widest uppercase text-xs">Latest</span>
+            <h2 className="text-3xl font-extrabold tracking-tight">Latest Articles</h2>
+          </div>
+          <Card className="p-8 text-center">
+            <BookOpen className="w-12 h-12 text-accent/30 mx-auto mb-4" />
+            <CardTitle>Coming Soon</CardTitle>
+            <CardDescription>
+              Curated insights and analysis from across the mobility manufacturing ecosystem will be published here. Stay tuned for sector-specific analysis and strategic updates.
+            </CardDescription>
+          </Card>
+        </div>
       </section>
 
       {/* CTA */}
-      <section className="rounded-2xl border border-border bg-muted px-6 py-8 text-center">
-        <h3 className="text-2xl font-semibold tracking-tight">Stay Informed</h3>
-        <p className="mt-2 text-foreground/75">
-          Get the latest insights on mobility manufacturing trends and opportunities.
-        </p>
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
-          <ButtonLink href="https://wa.link/bspaba" variant="primary" className="w-full sm:w-auto">
-            Join Network
-          </ButtonLink>
-          <ButtonLink href="https://wa.link/bspaba" variant="secondary" className="w-full sm:w-auto">
-            View Requirements
-          </ButtonLink>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <section className="bg-gradient-to-br from-accent/5 to-accent/10 border-t border-border py-10">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <Image src="/logo.png" alt="Balbird Industries" width={40} height={40} className="rounded-full" />
-                <span className="text-lg font-semibold">Balbird Industries</span>
-              </div>
-              <p className="text-xs text-foreground/60 pl-12">empowering industries</p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="https://wa.link/bspaba" className="hover:text-foreground transition-colors">About</a></li>
-                <li><a href="https://wa.link/bspaba" className="hover:text-foreground transition-colors">Careers</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Support</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="/login" className="hover:text-foreground transition-colors">Login</a></li>
-                <li><a href="https://wa.link/bspaba" className="hover:text-foreground transition-colors">Contact Us</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Follow Us</h4>
-              <div className="flex gap-4">
-                <a href="#" className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center hover:bg-accent/30 transition-colors">
-                  <Instagram className="w-5 h-5" />
-                </a>
-                <a href="#" className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center hover:bg-accent/30 transition-colors">
-                  <Facebook className="w-5 h-5" />
-                </a>
-                <a href="#" className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center hover:bg-accent/30 transition-colors">
-                  <Mail className="w-5 h-5" />
-                </a>
-              </div>
-            </div>
+      <section className="py-24 md:py-32 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 text-white relative overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/10 rounded-full blur-[100px]" />
+        <div className="container mx-auto px-4 md:px-8 lg:px-16 text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">Stay Informed</h2>
+          <p className="text-xl mb-10 font-medium max-w-2xl mx-auto text-white/80">
+            Get the latest insights on mobility manufacturing trends and opportunities.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <ButtonLink href="/join-network" variant="primary" className="px-10 py-5 text-lg">
+              Join Network
+            </ButtonLink>
+            <ButtonLink href="/active-requirements" variant="secondary" className="px-10 py-5 text-lg border-2 border-white/20 text-white hover:border-white">
+              View Requirements
+            </ButtonLink>
           </div>
         </div>
       </section>

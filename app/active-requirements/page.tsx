@@ -1,13 +1,14 @@
 import { Card, CardTitle, CardDescription } from "@/components/ui/Card";
 import { ButtonLink } from "@/components/ui/Button";
-import Image from "next/image";
-import { Instagram, Facebook, Mail, Settings, Cog, Wrench, Hammer, Flame, Zap, Scissors, Printer, Router } from "lucide-react";
+import {
+  Settings, Cog, Wrench, Hammer, Flame, Zap, Scissors, Printer, Router,
+  CheckCircle, ChevronDown,
+} from "lucide-react";
 
 const capabilities = [
   {
     title: "Engineering / Design Capabilities",
     icon: Settings,
-    image: "/images/engineering-design.jpg",
     features: [
       "AutoCAD, CATIA, SolidWorks",
       "Process planning & manufacturability analysis (DFM)",
@@ -20,7 +21,6 @@ const capabilities = [
   {
     title: "Precision Machining",
     icon: Cog,
-    image: "/images/precision-machining.jpg",
     features: [
       "CNC Turning, VMC (3, 4 & 5 Axis), VTL, Boring",
       "Materials: Carbon Steel, Alloy Steel, Stainless Steel, Aluminum",
@@ -33,7 +33,6 @@ const capabilities = [
   {
     title: "CNC Machining",
     icon: Cog,
-    image: "/images/cnc-machining.jpg",
     features: [
       "Multi-axis machining capability across distributed network",
       "Materials: MS, Aluminum, Stainless Steel, Alloy Steel",
@@ -46,7 +45,6 @@ const capabilities = [
   {
     title: "Drop Forging",
     icon: Hammer,
-    image: "/images/forging.jpg",
     features: [
       "Closed-die forging for high-strength components",
       "Materials: Carbon Steel, Alloy Steel, Stainless Steel",
@@ -59,7 +57,6 @@ const capabilities = [
   {
     title: "Welding & Fabrication",
     icon: Wrench,
-    image: "/images/welding-fabrication.jpg",
     features: [
       "MIG, TIG, ARC & Laser welding capabilities",
       "Materials: MS, Stainless Steel, Aluminum",
@@ -72,7 +69,6 @@ const capabilities = [
   {
     title: "Hydraulic Press Operations",
     icon: Zap,
-    image: "/images/hydraulic-press.jpg",
     features: [
       "Press capacity up to ~300 Tons",
       "Suitable for forming, deep drawing, and shaping",
@@ -85,7 +81,6 @@ const capabilities = [
   {
     title: "Stamping Shop",
     icon: Hammer,
-    image: "/images/stamping.jpg",
     features: [
       "Mechanical presses up to ~250 Tons",
       "Pneumatic presses up to ~400 Tons",
@@ -98,7 +93,6 @@ const capabilities = [
   {
     title: "Laser Cutting",
     icon: Scissors,
-    image: "/images/laser-cutting.jpg",
     features: [
       "High-precision fiber laser cutting",
       "Bed size up to ~6000 mm",
@@ -111,7 +105,6 @@ const capabilities = [
   {
     title: "CNC Bending",
     icon: Settings,
-    image: "/images/cnc-bending.jpg",
     features: [
       "CNC bending up to ~3000 mm length",
       "Thickness up to ~10 mm",
@@ -124,7 +117,6 @@ const capabilities = [
   {
     title: "Laser Welding",
     icon: Flame,
-    image: "/images/laser-welding.jpg",
     features: [
       "High precision, low distortion welding",
       "Suitable for thin and complex components",
@@ -136,7 +128,6 @@ const capabilities = [
   {
     title: "UV Printing",
     icon: Printer,
-    image: "/images/uv-printing.jpg",
     features: [
       "Direct surface printing on multiple materials",
       "High-resolution marking and branding",
@@ -148,7 +139,6 @@ const capabilities = [
   {
     title: "CNC Routing",
     icon: Router,
-    image: "/images/cnc-routing.jpg",
     features: [
       "High-speed routing for panels and non-metal materials",
       "Suitable for plastics, composites, and sheets",
@@ -161,153 +151,137 @@ const capabilities = [
 
 export default function ExecutionReadyFacilitiesPage() {
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col min-h-screen">
       {/* Hero */}
-      <section className="relative overflow-hidden rounded-3xl border border-border bg-card px-6 py-10 shadow-sm">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1000px_420px_at_12%_10%,color-mix(in_oklab,var(--navy)_10%,transparent),transparent_60%),radial-gradient(900px_380px_at_90%_20%,color-mix(in_oklab,var(--accent)_18%,transparent),transparent_60%)] opacity-90" />
-        <div className="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-          <div className="flex flex-col gap-4">
-            <h1 className="text-balance text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
-              Execution Ready Facilities
-            </h1>
-            <p className="max-w-2xl text-lg text-foreground/75">
-              Explore our robust manufacturing infrastructure. From precision machining to advanced fabrication, our network delivers consistent, scalable, and high-quality production capabilities across diverse sectors.
-            </p>
-          </div>
-          <div className="relative h-64 w-full max-w-sm shrink-0 overflow-hidden rounded-2xl border border-border bg-muted lg:h-80">
-            <img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?w=800&h=600&fit=crop" alt="Manufacturing facility infrastructure" className="object-contain p-4 w-full h-full" />
-          </div>
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800">
+        <div
+          className="absolute inset-0 opacity-[0.07]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-accent/10 rounded-full blur-[120px]" />
+
+        <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-16 pt-28 pb-16 animate-fade-in">
+          <span className="inline-block text-accent font-bold tracking-widest uppercase text-sm mb-6 px-5 py-1.5 border border-accent/30 rounded-full bg-accent/10 backdrop-blur-sm">
+            Network Capabilities
+          </span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight leading-[1.1] max-w-3xl">
+            Execution-Ready<br />
+            <span className="text-accent">Manufacturing Facilities</span>
+          </h1>
+          <p className="text-lg md:text-xl text-slate-300 max-w-2xl mb-8 font-medium leading-relaxed">
+            Explore the manufacturing infrastructure across our verified network — from precision machining to advanced fabrication, scaled for mobility component production.
+          </p>
+        </div>
+
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+          <ChevronDown className="text-white/50 w-8 h-8" />
         </div>
       </section>
 
       {/* Capabilities Grid */}
-      <section className="space-y-4">
-        <div className="flex flex-col gap-3">
-          <h2 className="text-2xl font-semibold tracking-tight">Manufacturing Capabilities</h2>
-          <p className="max-w-3xl text-foreground/75">
-            Our distributed network of execution-ready facilities spans comprehensive manufacturing processes, from engineering design to final production. Each capability is verified, standardized, and scaled for flexible capacity allocation.
-          </p>
-        </div>
-        
-        <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
-          {capabilities.map((cap) => (
-            <Card key={cap.title} className="overflow-hidden">
-              <div className="p-4">
-                <div className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/20">
-                    <cap.icon className="h-5 w-5 text-accent" />
-                  </div>
-                  <div className="flex-1">
-                    <CardTitle className="text-lg">{cap.title}</CardTitle>
-                    <ul className="mt-3 space-y-1.5">
-                      {cap.features.map((feature) => (
-                        <li key={feature} className="flex items-start gap-2 text-sm text-foreground/80">
-                          <div className="h-1.5 w-1.5 rounded-full bg-accent mt-1.5 flex-shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                    <button className="mt-4 text-sm font-medium text-accent hover:underline">
-                      More Info
-                    </button>
+      <section className="py-24 md:py-32 bg-white">
+        <div className="container mx-auto px-4 md:px-8 lg:px-16">
+          <div className="flex flex-col gap-3 mb-12">
+            <span className="text-accent font-bold tracking-widest uppercase text-xs">Manufacturing Processes</span>
+            <h2 className="text-3xl font-extrabold tracking-tight">Network Capabilities</h2>
+            <p className="max-w-3xl text-foreground/75">
+              Our distributed network spans comprehensive manufacturing processes. Each capability is verified, standardized, and scaled for flexible capacity allocation.
+            </p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {capabilities.map((cap) => (
+              <Card key={cap.title} className="overflow-hidden hover:shadow-lg transition-shadow">
+                <div className="p-5">
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent/10">
+                      <cap.icon className="h-5 w-5 text-accent" />
+                    </div>
+                    <div className="flex-1">
+                      <CardTitle className="text-lg">{cap.title}</CardTitle>
+                      <ul className="mt-3 space-y-1.5">
+                        {cap.features.map((feature) => (
+                          <li key={feature} className="flex items-start gap-2 text-sm text-foreground/80">
+                            <div className="h-1.5 w-1.5 rounded-full bg-accent mt-1.5 flex-shrink-0" />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Card>
-          ))}
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Production Capacity */}
-      <section className="space-y-4">
-        <Card className="overflow-hidden border-accent/20">
-          <div className="p-6">
-            <div className="flex flex-col gap-6 lg:flex-row lg:items-center">
-              <div className="flex-1">
-                <h2 className="text-2xl font-semibold tracking-tight">Production Capacity</h2>
-                <div className="mt-4 space-y-3">
-                  <div className="flex items-start gap-3">
-                    <div className="h-2 w-2 rounded-full bg-accent mt-2" />
-                    <div>
-                      <p className="font-medium">Precision machining & advanced processes</p>
-                      <p className="text-sm text-foreground/70">1 – 1,000 units</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="h-2 w-2 rounded-full bg-accent mt-2" />
-                    <div>
-                      <p className="font-medium">Forming, stamping & casting</p>
-                      <p className="text-sm text-foreground/70">1,000 – 100,000 units</p>
-                    </div>
+      <section className="py-24 md:py-32 bg-slate-50 border-y border-border/30">
+        <div className="container mx-auto px-4 md:px-8 lg:px-16">
+          <div className="flex flex-col lg:flex-row gap-12 items-start">
+            <div className="w-full lg:w-1/2">
+              <span className="text-accent font-bold tracking-widest uppercase text-xs">Capacity</span>
+              <h2 className="text-3xl font-extrabold tracking-tight mt-2 mb-6">Production Capacity</h2>
+              <div className="space-y-4">
+                <div className="flex items-start gap-4 p-4 bg-white rounded-xl border border-black/5">
+                  <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-bold">Precision machining & advanced processes</p>
+                    <p className="text-sm text-foreground/70">1 – 1,000 units per batch</p>
                   </div>
                 </div>
-                <p className="mt-4 text-foreground/80">
-                  Capacity is dynamically aligned across multiple facilities and suppliers, enabling scalable, flexible, and reliable execution.
-                </p>
+                <div className="flex items-start gap-4 p-4 bg-white rounded-xl border border-black/5">
+                  <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-bold">Forming, stamping & casting</p>
+                    <p className="text-sm text-foreground/70">1,000 – 100,000 units per batch</p>
+                  </div>
+                </div>
               </div>
-              <div className="relative h-48 w-full max-w-sm shrink-0 overflow-hidden rounded-xl border border-border bg-muted lg:h-56">
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop" alt="Production capacity overview" className="object-contain p-4 w-full h-full" />
+              <p className="mt-6 text-foreground/80 leading-relaxed">
+                Capacity is dynamically aligned across multiple facilities and suppliers, enabling scalable, flexible, and reliable execution for mobility component projects.
+              </p>
+            </div>
+            <div className="w-full lg:w-1/2 bg-slate-900 text-white rounded-2xl p-8">
+              <h3 className="font-bold text-lg mb-4">Materials Processed</h3>
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  'Carbon Steel', 'Alloy Steel', 'Stainless Steel', 'Aluminum',
+                  'MS (Mild Steel)', 'Composites', 'Plastics', 'Specialty Alloys',
+                ].map((m, idx) => (
+                  <div key={idx} className="flex items-center gap-2 px-3 py-2 bg-white/5 rounded-lg">
+                    <div className="w-2 h-2 rounded-full bg-accent" />
+                    <span className="text-sm">{m}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
-        </Card>
-      </section>
-
-      {/* CTA */}
-      <section className="rounded-2xl border border-border bg-muted px-6 py-8 text-center">
-        <h3 className="text-2xl font-semibold tracking-tight">Connect With Our Network</h3>
-        <p className="mt-2 text-foreground/75">
-          Access execution-ready manufacturing capabilities tailored to your production needs.
-        </p>
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
-          <ButtonLink href="https://wa.link/bspaba" variant="primary" className="w-full sm:w-auto">
-            Join Network
-          </ButtonLink>
-          <ButtonLink href="https://wa.link/bspaba" variant="secondary" className="w-full sm:w-auto">
-            Request Strategic Discussion
-          </ButtonLink>
         </div>
       </section>
 
-      {/* Footer */}
-      <section className="bg-gradient-to-br from-accent/5 to-accent/10 border-t border-border py-10">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <Image src="/logo.png" alt="Balbird Industries" width={40} height={40} className="rounded-full" />
-                <span className="text-lg font-semibold">Balbird Industries</span>
-              </div>
-              <p className="text-xs text-foreground/60 pl-12">empowering industries</p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="https://wa.link/bspaba" className="hover:text-foreground transition-colors">About</a></li>
-                <li><a href="https://wa.link/bspaba" className="hover:text-foreground transition-colors">Careers</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Support</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="/login" className="hover:text-foreground transition-colors">Login</a></li>
-                <li><a href="https://wa.link/bspaba" className="hover:text-foreground transition-colors">Contact Us</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Follow Us</h4>
-              <div className="flex gap-4">
-                <a href="#" className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center hover:bg-accent/30 transition-colors">
-                  <Instagram className="w-5 h-5" />
-                </a>
-                <a href="#" className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center hover:bg-accent/30 transition-colors">
-                  <Facebook className="w-5 h-5" />
-                </a>
-                <a href="#" className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center hover:bg-accent/30 transition-colors">
-                  <Mail className="w-5 h-5" />
-                </a>
-              </div>
-            </div>
+      {/* CTA */}
+      <section className="py-24 md:py-32 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 text-white relative overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/10 rounded-full blur-[100px]" />
+        <div className="container mx-auto px-4 md:px-8 lg:px-16 text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
+            Connect With Our Network
+          </h2>
+          <p className="text-xl mb-10 font-medium max-w-2xl mx-auto text-white/80">
+            Access execution-ready manufacturing capabilities tailored to your production needs.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <ButtonLink href="/join-network" variant="primary" className="px-10 py-5 text-lg">
+              Join Network
+            </ButtonLink>
+            <ButtonLink href="/request-strategic-discussion" variant="secondary" className="px-10 py-5 text-lg border-2 border-white/20 text-white hover:border-white">
+              Request Strategic Discussion
+            </ButtonLink>
           </div>
         </div>
       </section>

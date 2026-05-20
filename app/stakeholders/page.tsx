@@ -130,29 +130,42 @@ const stakeholders = [
 
 export default function StakeholdersPage() {
   return (
-    <div className="flex flex-col gap-12 py-24 md:py-32">
+    <div className="flex flex-col min-h-screen">
       {/* Hero */}
-      <section className="container mx-auto px-4 md:px-8 lg:px-16">
-        <div className="relative overflow-hidden rounded-3xl border border-border bg-card px-8 py-14 shadow-sm">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1000px_420px_at_12%_10%,color-mix(in_oklab,var(--accent)_12%,transparent),transparent_60%),radial-gradient(900px_380px_at_90%_20%,color-mix(in_oklab,var(--accent)_8%,transparent),transparent_60%)] opacity-90" />
-          <div className="relative flex flex-col gap-6 max-w-3xl">
-            <span className="inline-block text-accent font-bold tracking-widest uppercase text-xs w-fit">
-              Who&apos;s Involved
-            </span>
-            <h1 className="text-balance text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">
-              Stakeholder Ecosystem
-            </h1>
-            <p className="text-lg text-foreground/75 leading-relaxed">
-              Balbird operates with a defined set of stakeholders — each with a clear role,
-              structured access, and aligned outcomes. We don&apos;t do open listings.
-              Every participant is role-defined by design.
-            </p>
-          </div>
+      <section 
+        className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/images/hero-stakeholders.png')" }}
+      >
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-slate-950/80" />
+
+        <div
+          className="absolute inset-0 opacity-[0.15]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-accent/20 rounded-full blur-[120px]" />
+
+        <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-16 text-center animate-fade-in mt-16">
+          <span className="inline-block text-accent font-bold tracking-widest uppercase text-sm mb-6 px-5 py-1.5 border border-accent/30 rounded-full bg-accent/10 backdrop-blur-sm">
+            Who&apos;s Involved
+          </span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 tracking-tight leading-[1.1]">
+            Stakeholder<br />
+            <span className="text-accent">Ecosystem</span>
+          </h1>
+          <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10 font-medium leading-relaxed">
+            Balbird operates with a defined set of stakeholders — each with a clear role, structured access, and aligned outcomes. Every participant is role-defined by design.
+          </p>
         </div>
       </section>
 
-      {/* Overview: Why Defined Roles */}
-      <section className="container mx-auto px-4 md:px-8 lg:px-16 space-y-6">
+      <div className="flex flex-col gap-12 py-12 md:py-20">
+        {/* Overview: Why Defined Roles */}
+        <section className="container mx-auto px-4 md:px-8 lg:px-16 space-y-6">
         <div className="flex flex-col gap-3">
           <h2 className="text-3xl font-extrabold tracking-tight">Why Defined Roles Matter</h2>
           <p className="max-w-3xl text-foreground/75">
@@ -273,6 +286,7 @@ export default function StakeholdersPage() {
           </div>
         </div>
       </section>
+      </div>
     </div>
   );
 }
