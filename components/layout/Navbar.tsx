@@ -27,12 +27,13 @@ export default function Navbar() {
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/capabilities' },
     { name: 'Stakeholders', href: '/stakeholders' },
+    { name: 'Insights', href: '/insights' },
+    { name: 'Active Programs', href: '/active-programs' },
   ];
 
   // All links (shown in mobile menu)
   const allLinks = [
     ...navLinks,
-    { name: 'Insights', href: '/insights' },
     { name: 'Dashboard', href: '/dashboard' },
   ];
 
@@ -40,7 +41,7 @@ export default function Navbar() {
     return null;
   }
 
-  const transparentPages = ['/', '/about', '/capabilities', '/stakeholders'];
+  const transparentPages = ['/', '/about', '/capabilities', '/stakeholders', '/active-programs'];
   const isTransparent = transparentPages.includes(pathname || '') && !isScrolled;
 
   return (
