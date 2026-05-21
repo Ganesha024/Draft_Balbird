@@ -169,7 +169,7 @@ export default function Home() {
               },
               {
                 icon: Workflow,
-                title: 'Execution Coordination',
+                title: 'Execution Consistency',
                 desc: 'Project-level coordination across stakeholders — from scoping through delivery — with structured task management and clear ownership.',
               },
               {

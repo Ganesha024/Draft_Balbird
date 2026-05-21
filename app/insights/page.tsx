@@ -1,8 +1,11 @@
+'use client';
+
+import React, { useState } from 'react';
 import { Card, CardTitle, CardDescription } from "@/components/ui/Card";
 import { ButtonLink } from "@/components/ui/Button";
 import {
   BookOpen, Filter, FileText, Tag, Calendar,
-  Lightbulb, ChevronDown, TrendingUp, Shield, Users,
+  Lightbulb, ChevronDown, TrendingUp, Shield, Users, Download
 } from "lucide-react";
 
 const filters = [
@@ -16,6 +19,8 @@ const articleStructure = [
 ] as const;
 
 export default function InsightsPage() {
+  const [expandedSection, setExpandedSection] = useState<number | null>(null);
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero */}
@@ -55,7 +60,7 @@ export default function InsightsPage() {
             <span className="text-accent font-bold tracking-widest uppercase text-xs">Categories</span>
             <h2 className="text-3xl font-extrabold tracking-tight">Knowledge Areas</h2>
             <p className="max-w-3xl text-foreground/75">
-              Access industry analysis, market trends, compliance updates, and strategic insights across all mobility manufacturing sectors.
+              Access industry analysis, market trends, compliance updates, and strategic insights across all mobility manufacturing sectors. Click on any section below to download its detailed PDF report.
             </p>
           </div>
 
@@ -65,13 +70,36 @@ export default function InsightsPage() {
               { icon: Shield, title: "Regulatory Intelligence", desc: "Compliance updates, documentation requirements, and certification guidance." },
               { icon: Users, title: "Capacity & Workforce", desc: "Market trends, workforce development, and capacity planning strategies." },
               { icon: Lightbulb, title: "Strategic Updates", desc: "Progress reports and outcomes from ecosystem development initiatives." },
-            ].map((item, idx) => (
-              <div key={idx} className="p-5 bg-slate-50 rounded-xl border border-black/5 hover:shadow-md transition-shadow">
-                <item.icon className="w-6 h-6 text-accent mb-3" />
-                <h4 className="font-bold text-sm mb-1">{item.title}</h4>
-                <p className="text-xs text-foreground/60">{item.desc}</p>
-              </div>
-            ))}
+            ].map((item, idx) => {
+              const isExpanded = expandedSection === idx;
+              return (
+                <div 
+                  key={idx} 
+                  onClick={() => setExpandedSection(isExpanded ? null : idx)}
+                  className={`p-5 rounded-xl border transition-all duration-300 cursor-pointer ${
+                    isExpanded 
+                      ? 'bg-accent/5 border-accent shadow-md' 
+                      : 'bg-slate-50 border-black/5 hover:shadow-md hover:border-black/10'
+                  }`}
+                >
+                  <div className="flex items-start justify-between">
+                    <item.icon className={`w-6 h-6 mb-3 ${isExpanded ? 'text-accent' : 'text-accent/80'}`} />
+                    <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isExpanded ? 'rotate-180 text-accent' : 'text-slate-400'}`} />
+                  </div>
+                  <h4 className="font-bold text-sm mb-1">{item.title}</h4>
+                  <p className="text-xs text-foreground/60 mb-4">{item.desc}</p>
+                  
+                  {/* Expanded Content */}
+                  <div className={`overflow-hidden transition-all duration-300 ${isExpanded ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}>
+                    <div className="pt-3 border-t border-accent/20">
+                      <button className="flex items-center justify-center gap-2 w-full py-2.5 bg-accent text-accent-foreground font-bold text-xs uppercase tracking-wider rounded-md hover:bg-accent/90 transition-colors">
+                        <Download className="w-4 h-4" /> Download PDF
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
           {/* Filters & Article Structure */}
@@ -147,8 +175,8 @@ export default function InsightsPage() {
             <ButtonLink href="/join-network" variant="primary" className="px-10 py-5 text-lg">
               Join Network
             </ButtonLink>
-            <ButtonLink href="/active-requirements" variant="secondary" className="px-10 py-5 text-lg border-2 border-white/20 text-white hover:border-white">
-              View Requirements
+            <ButtonLink href="/capacity-ecosystem" variant="outline" className="px-10 py-5 text-lg border-2 border-white/20 text-white hover:text-black hover:bg-white hover:border-white">
+              Capacity Ecosystem
             </ButtonLink>
           </div>
         </div>

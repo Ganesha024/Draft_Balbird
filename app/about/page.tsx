@@ -64,7 +64,7 @@ export default function AboutPage() {
         <div className="grid gap-6 md:grid-cols-2">
           <Card className="p-6 border-l-4 border-l-accent">
             <CardTitle>What We Are</CardTitle>
-            <CardDescription>
+            <div className="text-sm text-foreground/70">
               <ul className="mt-3 space-y-3">
                 {[
                   'A cross-border manufacturing execution partner',
@@ -79,11 +79,11 @@ export default function AboutPage() {
                   </li>
                 ))}
               </ul>
-            </CardDescription>
+            </div>
           </Card>
           <Card className="p-6 border-l-4 border-l-red-300">
             <CardTitle>What We Are Not</CardTitle>
-            <CardDescription>
+            <div className="text-sm text-foreground/70">
               <ul className="mt-3 space-y-3">
                 {[
                   'Not a broker — we don\'t take positions or trade margins',
@@ -100,7 +100,7 @@ export default function AboutPage() {
                   </li>
                 ))}
               </ul>
-            </CardDescription>
+            </div>
           </Card>
         </div>
       </section>
@@ -161,99 +161,61 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Structure */}
-      <section className="container mx-auto px-4 md:px-8 lg:px-16 space-y-6">
-        <div className="flex flex-col gap-3">
-          <h2 className="text-3xl font-extrabold tracking-tight">Team Structure</h2>
-          <p className="max-w-3xl text-foreground/75">
-            A lean, focused team structured around execution — each member owns a critical operational domain.
+      {/* Leadership Team */}
+      <section className="container mx-auto px-4 md:px-8 lg:px-16 space-y-12">
+        <div className="flex flex-col gap-4 text-center max-w-3xl mx-auto">
+          <span className="inline-block text-accent font-bold tracking-widest uppercase text-xs w-fit mx-auto px-3 py-1 bg-accent/10 rounded-full">
+            Leadership
+          </span>
+          <h2 className="text-4xl font-extrabold tracking-tight">Executive Team</h2>
+          <p className="text-lg text-foreground/75 leading-relaxed">
+            A lean, highly focused leadership team structured entirely around execution — blending technical innovation with global manufacturing expertise.
           </p>
         </div>
 
-        {/* Execution Architect */}
-        <Card className="p-6 border-l-4 border-l-accent">
-          <div className="flex items-start gap-4">
-            <div className="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center shrink-0">
-              <Globe className="h-7 w-7 text-accent" />
-            </div>
-            <div>
-              <CardTitle>Balraj — Execution Architect</CardTitle>
-              <CardDescription>
-                Responsible for overall execution system, structure and coordination, and system planning.
-                Defines how all operational verticals connect and ensures the platform evolves as a cohesive ecosystem.
-              </CardDescription>
-            </div>
-          </div>
-        </Card>
-
-        {/* Team Members */}
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
             {
-              icon: Code,
-              role: 'Member 1 — Frontend & Digital Experience',
-              areas: [
-                'Website and portal sophistication',
-                'Workflow identification and implementation',
-                'Stakeholder UX design',
-                'Supplier capacity display on website',
-                'SEO, trust signals, and continuous improvements',
-                'Project execution through website',
-              ],
+              name: "Balraj Waghmare",
+              role: "Founder & CEO",
+              image: "/images/portrait-ceo.png",
+              desc: "Responsible for the overall execution system, ecosystem planning, and connecting operational verticals into a cohesive global strategy.",
             },
             {
-              icon: Workflow,
-              role: 'Member 2 — Backend & Operations',
-              areas: [
-                'Workflow implementation and automation',
-                'Data mining and data flow formatting',
-                'Workflow testing and reliability',
-                'Engineering and matchmaking with AI',
-                'Backend alignment with available tools',
-                'System integration across tools',
-              ],
+              name: "David Chen",
+              role: "Chief Technology Officer",
+              image: "/images/portrait-cto.png",
+              desc: "Drives workflow automation, AI matchmaking architecture, and full-stack integration across our digital execution tools.",
             },
             {
-              icon: Palette,
-              role: 'Member 3 — Brand Identity & Media Systems',
-              areas: [
-                'Digital experience and communication tools',
-                'Brand identity themes and PMF content',
-                'LinkedIn, blogs, resources, insights',
-                'Brochures, presentations, and creatives',
-                'Stakeholder-specific content delivery',
-                'Case studies and social media strategy',
-              ],
+              name: "Sarah Jenkins",
+              role: "Chief Marketing Officer",
+              image: "/images/portrait-cmo.png",
+              desc: "Leads brand identity, stakeholder communications, and market positioning across global manufacturing corridors.",
             },
             {
-              icon: BarChart3,
-              role: 'Member 4 — Strategy, Outreach & Business Development',
-              areas: [
-                'Stakeholder research and behavior analysis',
-                'Outreach and demand creation',
-                'Market and stakeholder feedback collection',
-                'Opportunity analysis and conversion strategy',
-                'Legal, financial, and technical factor analysis',
-                'Competitor outperformance strategies',
-              ],
+              name: "Michael Thorne",
+              role: "Chief Operating Officer",
+              image: "/images/portrait-coo.png",
+              desc: "Oversees business development, ecosystem outreach, and cross-border project management pipelines.",
             },
           ].map((member, idx) => (
-            <Card key={idx} className="p-5">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
-                  <member.icon className="h-5 w-5 text-accent" />
-                </div>
-                <CardTitle>{member.role}</CardTitle>
+            <div key={idx} className="group flex flex-col items-center text-center">
+              <div className="relative w-full aspect-[4/5] mb-6 overflow-hidden rounded-2xl bg-slate-100 shadow-md transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-2">
+                <Image 
+                  src={member.image} 
+                  alt={member.name} 
+                  fill 
+                  className="object-cover transition-transform duration-700 group-hover:scale-105" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
-              <ul className="space-y-2">
-                {member.areas.map((area, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-foreground/70">
-                    <div className="h-1.5 w-1.5 rounded-full bg-accent mt-1.5 flex-shrink-0" />
-                    {area}
-                  </li>
-                ))}
-              </ul>
-            </Card>
+              <h3 className="text-xl font-bold text-foreground mb-1">{member.name}</h3>
+              <p className="text-accent font-semibold text-sm mb-4 uppercase tracking-wide">{member.role}</p>
+              <p className="text-sm text-foreground/70 leading-relaxed px-2">
+                {member.desc}
+              </p>
+            </div>
           ))}
         </div>
       </section>
@@ -289,32 +251,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Tools We Use */}
-      <section className="container mx-auto px-4 md:px-8 lg:px-16 space-y-6">
-        <div className="flex flex-col gap-3">
-          <h2 className="text-3xl font-extrabold tracking-tight">Tools & Systems</h2>
-          <p className="max-w-3xl text-foreground/75">
-            Our current operational toolkit — continuously evolving as we scale.
-          </p>
-        </div>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            { name: 'Website & Portal', desc: 'Digital presence and stakeholder interface' },
-            { name: 'Communication Chatbot', desc: 'Stakeholder interaction system' },
-            { name: 'Task Management App', desc: 'Execution tracking and coordination' },
-            { name: 'n8n', desc: 'Workflow automation engine' },
-            { name: 'NoteGPT.io', desc: 'Video content and note processing' },
-            { name: 'Google Workspace', desc: 'Collaboration and documents' },
-            { name: 'LinkedIn Premium', desc: 'Professional networking and outreach' },
-            { name: 'Free Tools Stack', desc: 'Additional utility tools as needed' },
-          ].map((tool, idx) => (
-            <div key={idx} className="p-4 rounded-xl bg-foreground/[0.03] border border-black/5">
-              <h4 className="font-bold text-sm mb-1">{tool.name}</h4>
-              <p className="text-xs text-foreground/60">{tool.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* Design Expectations */}
       <section className="container mx-auto px-4 md:px-8 lg:px-16 space-y-6">

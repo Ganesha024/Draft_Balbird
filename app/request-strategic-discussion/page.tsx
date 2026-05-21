@@ -2,7 +2,7 @@ import { Card, CardTitle, CardDescription } from "@/components/ui/Card";
 import { ButtonLink } from "@/components/ui/Button";
 import {
   ChevronDown, MessageSquare, ClipboardList,
-  Shield, Target,
+  Shield, Target, MessageCircle
 } from "lucide-react";
 
 export default function RequestStrategicDiscussionPage() {
@@ -176,12 +176,22 @@ export default function RequestStrategicDiscussionPage() {
                       placeholder="Describe the key topics you'd like to discuss"
                     />
                   </div>
-                  <button
-                    type="submit"
-                    className="h-11 w-full rounded-xl bg-accent px-4 text-sm font-medium text-accent-foreground transition-colors hover:brightness-110"
-                  >
-                    Submit Request
-                  </button>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <button
+                      type="submit"
+                      className="h-11 w-full rounded-xl bg-accent px-4 text-sm font-medium text-accent-foreground transition-colors hover:brightness-110"
+                    >
+                      Submit Request
+                    </button>
+                    <a
+                      href="https://wa.me/919561127357"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-[#25D366] px-4 text-sm font-medium text-white transition-colors hover:bg-[#20b858]"
+                    >
+                      <MessageCircle className="w-5 h-5" /> Chat on WhatsApp
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

@@ -4,7 +4,7 @@ import { Card, CardTitle, CardDescription } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import {
   Factory, Building2, Globe, GraduationCap, Handshake, Briefcase,
-  ChevronDown, CheckCircle,
+  ChevronDown, CheckCircle, MessageCircle
 } from "lucide-react";
 import { useMemo, useState } from "react";
 
@@ -191,13 +191,34 @@ export default function JoinNetworkPage() {
                     </div>
                   )}
 
-                  <Button type="button" className="mt-2 h-11">
-                    Submit Registration
-                  </Button>
+                  <div className="mt-2">
+                    <Button type="button" className="h-11 w-full">
+                      Submit Registration
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
           </Card>
+
+          {/* WhatsApp Bot Section */}
+          <div className="mt-16 text-center max-w-2xl mx-auto bg-slate-50 border border-black/5 rounded-2xl p-8 hover:shadow-md transition-shadow">
+            <div className="w-16 h-16 bg-[#25D366]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <MessageCircle className="w-8 h-8 text-[#25D366]" />
+            </div>
+            <h3 className="text-xl font-bold mb-3">Need quick assistance?</h3>
+            <p className="text-foreground/70 mb-8">
+              Our automated WhatsApp bot can help you with registration details, answer common questions, and guide you through the initial onboarding process instantly.
+            </p>
+            <a
+              href="https://wa.me/919561127357"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#25D366] px-8 text-sm font-bold text-white transition-colors hover:bg-[#20b858]"
+            >
+              <MessageCircle className="w-5 h-5" /> Chat with bot here
+            </a>
+          </div>
         </div>
       </section>
     </div>

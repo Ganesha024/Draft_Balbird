@@ -118,7 +118,7 @@ export default function ServicesPage() {
             </div>
           </div>
 
-          {/* Service 2: Execution Coordination */}
+          {/* Service 2: Execution Consistency */}
           <div className="mb-20 pt-12 border-t border-border/50">
             <div className="flex flex-col lg:flex-row-reverse gap-12 items-start">
               <div className="w-full lg:w-1/2">
@@ -126,7 +126,7 @@ export default function ServicesPage() {
                   <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
                     <Workflow className="w-6 h-6 text-accent" />
                   </div>
-                  <h3 className="text-2xl font-extrabold">Execution Coordination</h3>
+                  <h3 className="text-2xl font-extrabold">Execution Consistency</h3>
                 </div>
                 <p className="text-foreground/80 leading-relaxed mb-6">
                   Project-level coordination across all stakeholders — from initial scoping

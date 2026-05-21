@@ -175,7 +175,7 @@ export default function StakeholdersPage() {
         <div className="grid gap-6 md:grid-cols-2">
           <Card className="p-6 border-l-4 border-l-red-300">
             <CardTitle>When roles are unclear</CardTitle>
-            <CardDescription>
+            <div className="text-sm text-foreground/70">
               <ul className="mt-3 space-y-2">
                 {[
                   'Expectations mismatch between stakeholders',
@@ -192,11 +192,11 @@ export default function StakeholdersPage() {
                   </li>
                 ))}
               </ul>
-            </CardDescription>
+            </div>
           </Card>
           <Card className="p-6 border-l-4 border-l-accent">
             <CardTitle>When roles are defined</CardTitle>
-            <CardDescription>
+            <div className="text-sm text-foreground/70">
               <ul className="mt-3 space-y-2">
                 {[
                   'Capacity aligns with actual demand',
@@ -211,7 +211,7 @@ export default function StakeholdersPage() {
                   </li>
                 ))}
               </ul>
-            </CardDescription>
+            </div>
           </Card>
         </div>
       </section>

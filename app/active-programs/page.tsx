@@ -9,7 +9,8 @@ import {
   PlayCircle,
   BarChart3,
   Globe,
-  Settings
+  Settings,
+  MessageCircle
 } from 'lucide-react';
 
 export default function ActiveProgramsPage() {
@@ -165,12 +166,22 @@ export default function ActiveProgramsPage() {
                 <p className="text-white/70 mb-8 max-w-sm mx-auto">
                   Whether you are a manufacturer, buyer, or strategic partner, there is a role for you in our execution ecosystem.
                 </p>
-                <Link
-                  href="/request-strategic-discussion"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground font-bold rounded-md hover:bg-accent/90 transition-all"
-                >
-                  Join a Program <ArrowRight className="w-4 h-4" />
-                </Link>
+                <div className="flex flex-col items-center gap-4 w-full max-w-sm mx-auto">
+                  <Link
+                    href="/request-strategic-discussion"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-accent text-accent-foreground font-bold rounded-md hover:bg-accent/90 transition-all w-full"
+                  >
+                    Join a Program <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <a
+                    href="https://wa.me/919561127357"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] text-white font-bold rounded-md hover:bg-[#20b858] transition-all w-full"
+                  >
+                    <MessageCircle className="w-5 h-5" /> Chat on WhatsApp for details
+                  </a>
+                </div>
               </div>
             </Card>
           </div>
