@@ -22,7 +22,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
       <div className="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-5 gap-6">
         {/* Login Form — 2 cols */}
         <div className="lg:col-span-2 flex flex-col gap-4">
@@ -105,7 +105,7 @@ export default function LoginPage() {
                     <span className="font-bold text-sm text-foreground">{role.label}</span>
                   </div>
                   <p className="text-xs text-foreground/60 mb-2">{role.desc}</p>
-                  <ButtonLink href="/dashboard" size="sm" className={`w-full text-white ${role.btn}`}>
+                  <ButtonLink href="/dashboard" size="sm" className={`w-full text-foreground ${role.btn}`}>
                     Access
                   </ButtonLink>
                 </div>

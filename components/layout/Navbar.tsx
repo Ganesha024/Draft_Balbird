@@ -64,7 +64,7 @@ export default function Navbar() {
             height={32}
             className="w-8 h-8 object-contain"
           />
-          <span className={`font-bold text-xl tracking-tight transition-colors ${isTransparent ? 'text-white' : 'text-foreground'}`}>
+          <span className={`font-bold text-xl tracking-tight transition-colors text-foreground`}>
             Balbird Industries
           </span>
         </Link>
@@ -78,9 +78,7 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 className={`text-[13px] font-medium whitespace-nowrap transition-colors ${
-                  isTransparent
-                    ? isActive ? 'text-white font-bold' : 'text-white/90 hover:text-white'
-                    : isActive ? 'text-foreground font-bold' : 'text-foreground/70 hover:text-foreground'
+                  isActive ? 'text-accent font-bold' : 'text-foreground/80 hover:text-accent'
                 }`}
               >
                 {link.name}
@@ -93,10 +91,8 @@ export default function Navbar() {
             href="/dashboard"
             className={`relative p-2 rounded-lg transition-colors ${
               pathname?.startsWith('/dashboard')
-                ? 'bg-accent/20 text-accent-foreground'
-                : isTransparent
-                  ? 'text-white/80 hover:text-white hover:bg-background/10'
-                  : 'text-foreground/60 hover:text-foreground hover:bg-foreground/5'
+                ? 'bg-accent/20 text-accent'
+                : 'text-foreground/70 hover:text-accent hover:bg-foreground/5'
             }`}
             title="Dashboard"
           >
@@ -109,8 +105,8 @@ export default function Navbar() {
             href="/request-strategic-discussion"
             className={`shrink-0 px-5 py-2 rounded-md font-medium text-sm whitespace-nowrap transition-all ${
               isTransparent
-                ? 'bg-background text-foreground hover:bg-gray-100'
-                : 'bg-foreground text-background hover:bg-foreground/90'
+                ? 'bg-accent text-white hover:bg-accent/90'
+                : 'bg-accent text-white hover:bg-accent/90 shadow-sm'
             }`}
           >
             Start a Project
@@ -119,7 +115,7 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className={`lg:hidden z-50 p-2 transition-colors ${isTransparent ? 'text-white' : 'text-foreground'}`}
+          className={`lg:hidden z-50 p-2 transition-colors text-foreground`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -148,7 +144,7 @@ export default function Navbar() {
               href={link.href}
               className={`text-2xl font-bold ${
                 pathname === link.href
-                  ? 'text-accent-foreground'
+                  ? 'text-accent'
                   : 'text-foreground'
               }`}
               onClick={() => setMobileMenuOpen(false)}

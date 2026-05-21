@@ -42,12 +42,12 @@ export default function JoinNetworkPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero */}
-      <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800">
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-slate-50">
         <div
           className="absolute inset-0 opacity-[0.07]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+              "linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)",
             backgroundSize: "60px 60px",
           }}
         />
@@ -57,17 +57,17 @@ export default function JoinNetworkPage() {
           <span className="inline-block text-accent font-bold tracking-widest uppercase text-sm mb-6 px-5 py-1.5 border border-accent/30 rounded-full bg-accent/10 backdrop-blur-sm">
             Network Registration
           </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight leading-[1.1] max-w-3xl">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground mb-6 tracking-tight leading-[1.1] max-w-3xl">
             Join the<br />
             <span className="text-accent">Network</span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-8 font-medium leading-relaxed">
+          <p className="text-lg md:text-xl text-foreground/70 max-w-2xl mb-8 font-medium leading-relaxed">
             Role-based registration for a structured mobility manufacturing capacity & capability network.
           </p>
         </div>
 
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <ChevronDown className="text-white/50 w-8 h-8" />
+          <ChevronDown className="text-foreground/50 w-8 h-8" />
         </div>
       </section>
 
@@ -214,7 +214,7 @@ export default function JoinNetworkPage() {
               href="https://wa.me/919561127357"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#25D366] px-8 text-sm font-bold text-white transition-colors hover:bg-[#20b858]"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#25D366] px-8 text-sm font-bold text-foreground transition-colors hover:bg-[#20b858]"
             >
               <MessageCircle className="w-5 h-5" /> Chat with bot here
             </a>

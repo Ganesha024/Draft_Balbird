@@ -10,7 +10,7 @@ export default function ProjectsPage() {
       <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold mb-1">Projects</h1>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-foreground/70">
             Track and manage your ongoing execution projects.
           </p>
         </div>
@@ -38,15 +38,15 @@ export default function ProjectsPage() {
                 {project.status}
               </span>
             </div>
-            <h3 className="font-bold text-base text-white mb-1">{project.name}</h3>
-            <p className="text-sm text-muted-foreground mb-6 flex-1">{project.desc}</p>
+            <h3 className="font-bold text-base text-foreground mb-1">{project.name}</h3>
+            <p className="text-sm text-foreground/70 mb-6 flex-1">{project.desc}</p>
             
             <div className="mt-auto">
               <div className="flex justify-between items-center text-xs mb-2 font-medium">
                 <span>Progress</span>
                 <span className="text-accent">{project.progress}%</span>
               </div>
-              <div className="w-full bg-background/5/10 rounded-full h-2 mb-4 overflow-hidden border border-white/10/50">
+              <div className="w-full bg-background/5/10 rounded-full h-2 mb-4 overflow-hidden border border-border/50">
                 <div className="bg-accent h-full rounded-full transition-all" style={{ width: `${project.progress}%` }} />
               </div>
               <Button size="sm" variant="outline" className="w-full">
@@ -58,23 +58,23 @@ export default function ProjectsPage() {
       </div>
 
       <Card className="p-6">
-        <h3 className="text-lg font-bold text-white mb-4 border-b border-white/10/50 pb-2">Portfolio Overview</h3>
+        <h3 className="text-lg font-bold text-foreground mb-4 border-b border-border/50 pb-2">Portfolio Overview</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="p-4 bg-background/5/5 rounded-xl border border-white/10">
-            <span className="text-xs text-muted-foreground uppercase tracking-wider font-semibold block mb-1">Active Projects</span>
-            <span className="text-2xl font-bold text-white">8</span>
+          <div className="p-4 bg-background/5/5 rounded-xl border border-border">
+            <span className="text-xs text-foreground/70 uppercase tracking-wider font-semibold block mb-1">Active Projects</span>
+            <span className="text-2xl font-bold text-foreground">8</span>
           </div>
           <div className="p-4 bg-green-50 rounded-xl border border-green-100">
             <span className="text-xs text-green-700 uppercase tracking-wider font-semibold block mb-1">Completed</span>
             <span className="text-2xl font-bold text-green-700">3</span>
           </div>
-          <div className="p-4 bg-background/5/5 rounded-xl border border-white/10">
-            <span className="text-xs text-muted-foreground uppercase tracking-wider font-semibold block mb-1">Budget Utilized</span>
-            <span className="text-2xl font-bold text-white">$124,500</span>
+          <div className="p-4 bg-background/5/5 rounded-xl border border-border">
+            <span className="text-xs text-foreground/70 uppercase tracking-wider font-semibold block mb-1">Budget Utilized</span>
+            <span className="text-2xl font-bold text-foreground">$124,500</span>
           </div>
-          <div className="p-4 bg-background/5/5 rounded-xl border border-white/10">
-            <span className="text-xs text-muted-foreground uppercase tracking-wider font-semibold block mb-1">Team Members</span>
-            <span className="text-2xl font-bold text-white">24</span>
+          <div className="p-4 bg-background/5/5 rounded-xl border border-border">
+            <span className="text-xs text-foreground/70 uppercase tracking-wider font-semibold block mb-1">Team Members</span>
+            <span className="text-2xl font-bold text-foreground">24</span>
           </div>
         </div>
       </Card>

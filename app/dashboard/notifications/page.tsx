@@ -17,7 +17,7 @@ export default function NotificationsPage() {
       <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold mb-1">Notifications</h1>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-foreground/70">
             Stay updated on project milestones and team activity.
           </p>
         </div>
@@ -29,8 +29,8 @@ export default function NotificationsPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 space-y-4">
           <Card className="p-0 overflow-hidden">
-            <div className="flex items-center justify-between p-4 border-b border-white/10 bg-background/5/5">
-              <h3 className="font-bold text-white flex items-center gap-2">
+            <div className="flex items-center justify-between p-4 border-b border-border bg-background/5/5">
+              <h3 className="font-bold text-foreground flex items-center gap-2">
                 <Bell className="w-4 h-4 text-accent" /> Recent Alerts
               </h3>
               <Button variant="ghost" size="sm" className="h-8 text-xs font-medium">Mark all as read</Button>
@@ -45,10 +45,10 @@ export default function NotificationsPage() {
                   }`} />
                   <div className="flex-1 min-w-0">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
-                      <h4 className="font-bold text-sm text-white">{notification.title}</h4>
-                      <span className="text-xs font-medium text-muted-foreground whitespace-nowrap">{notification.time}</span>
+                      <h4 className="font-bold text-sm text-foreground">{notification.title}</h4>
+                      <span className="text-xs font-medium text-foreground/70 whitespace-nowrap">{notification.time}</span>
                     </div>
-                    <p className="text-sm text-muted-foreground mb-3">{notification.message}</p>
+                    <p className="text-sm text-foreground/70 mb-3">{notification.message}</p>
                     
                     {!notification.read && (
                       <div className="flex items-center gap-2">
@@ -69,32 +69,32 @@ export default function NotificationsPage() {
 
         <div className="lg:col-span-1 space-y-6">
           <Card className="p-5">
-            <h3 className="font-bold text-lg mb-4 border-b border-white/10/50 pb-2">Email Preferences</h3>
+            <h3 className="font-bold text-lg mb-4 border-b border-border/50 pb-2">Email Preferences</h3>
             <div className="space-y-3">
               <label className="flex items-center gap-3 cursor-pointer">
-                <input type="checkbox" defaultChecked className="w-4 h-4 rounded border-white/10 text-accent focus:ring-accent" />
+                <input type="checkbox" defaultChecked className="w-4 h-4 rounded border-border text-accent focus:ring-accent" />
                 <span className="text-sm font-medium">Project updates</span>
               </label>
               <label className="flex items-center gap-3 cursor-pointer">
-                <input type="checkbox" defaultChecked className="w-4 h-4 rounded border-white/10 text-accent focus:ring-accent" />
+                <input type="checkbox" defaultChecked className="w-4 h-4 rounded border-border text-accent focus:ring-accent" />
                 <span className="text-sm font-medium">Deadline reminders</span>
               </label>
               <label className="flex items-center gap-3 cursor-pointer">
-                <input type="checkbox" className="w-4 h-4 rounded border-white/10 text-accent focus:ring-accent" />
+                <input type="checkbox" className="w-4 h-4 rounded border-border text-accent focus:ring-accent" />
                 <span className="text-sm font-medium">Team notifications</span>
               </label>
             </div>
           </Card>
 
           <Card className="p-5">
-            <h3 className="font-bold text-lg mb-4 border-b border-white/10/50 pb-2">In-App Preferences</h3>
+            <h3 className="font-bold text-lg mb-4 border-b border-border/50 pb-2">In-App Preferences</h3>
             <div className="space-y-3">
               <label className="flex items-center gap-3 cursor-pointer">
-                <input type="checkbox" defaultChecked className="w-4 h-4 rounded border-white/10 text-accent focus:ring-accent" />
+                <input type="checkbox" defaultChecked className="w-4 h-4 rounded border-border text-accent focus:ring-accent" />
                 <span className="text-sm font-medium">Desktop notifications</span>
               </label>
               <label className="flex items-center gap-3 cursor-pointer">
-                <input type="checkbox" defaultChecked className="w-4 h-4 rounded border-white/10 text-accent focus:ring-accent" />
+                <input type="checkbox" defaultChecked className="w-4 h-4 rounded border-border text-accent focus:ring-accent" />
                 <span className="text-sm font-medium">Sound alerts</span>
               </label>
             </div>

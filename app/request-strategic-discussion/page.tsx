@@ -9,12 +9,12 @@ export default function RequestStrategicDiscussionPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero */}
-      <section className="relative min-h-[50vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800">
+      <section className="relative min-h-[50vh] flex items-center overflow-hidden bg-slate-50">
         <div
           className="absolute inset-0 opacity-[0.07]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+              "linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)",
             backgroundSize: "60px 60px",
           }}
         />
@@ -24,11 +24,11 @@ export default function RequestStrategicDiscussionPage() {
           <span className="inline-block text-accent font-bold tracking-widest uppercase text-sm mb-6 px-5 py-1.5 border border-accent/30 rounded-full bg-accent/10 backdrop-blur-sm">
             Start a Conversation
           </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight leading-[1.1] max-w-3xl">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground mb-6 tracking-tight leading-[1.1] max-w-3xl">
             Request Strategic<br />
             <span className="text-accent">Discussion</span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-8 font-medium leading-relaxed">
+          <p className="text-lg md:text-xl text-foreground/70 max-w-2xl mb-8 font-medium leading-relaxed">
             Connect with our strategic team for in-depth discussions on mobility manufacturing opportunities, capacity planning, and ecosystem participation.
           </p>
         </div>
@@ -187,7 +187,7 @@ export default function RequestStrategicDiscussionPage() {
                       href="https://wa.me/919561127357"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-[#25D366] px-4 text-sm font-medium text-white transition-colors hover:bg-[#20b858]"
+                      className="flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-[#25D366] px-4 text-sm font-medium text-foreground transition-colors hover:bg-[#20b858]"
                     >
                       <MessageCircle className="w-5 h-5" /> Chat on WhatsApp
                     </a>

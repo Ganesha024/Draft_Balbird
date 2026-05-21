@@ -153,12 +153,12 @@ export default function ExecutionReadyFacilitiesPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero */}
-      <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800">
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-slate-50">
         <div
           className="absolute inset-0 opacity-[0.07]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+              "linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)",
             backgroundSize: "60px 60px",
           }}
         />
@@ -168,17 +168,17 @@ export default function ExecutionReadyFacilitiesPage() {
           <span className="inline-block text-accent font-bold tracking-widest uppercase text-sm mb-6 px-5 py-1.5 border border-accent/30 rounded-full bg-accent/10 backdrop-blur-sm">
             Network Capabilities
           </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight leading-[1.1] max-w-3xl">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground mb-6 tracking-tight leading-[1.1] max-w-3xl">
             Execution-Ready<br />
             <span className="text-accent">Manufacturing Facilities</span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-8 font-medium leading-relaxed">
+          <p className="text-lg md:text-xl text-foreground/70 max-w-2xl mb-8 font-medium leading-relaxed">
             Explore the manufacturing infrastructure across our verified network — from precision machining to advanced fabrication, scaled for mobility component production.
           </p>
         </div>
 
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <ChevronDown className="text-white/50 w-8 h-8" />
+          <ChevronDown className="text-foreground/50 w-8 h-8" />
         </div>
       </section>
 
@@ -247,7 +247,7 @@ export default function ExecutionReadyFacilitiesPage() {
                 Capacity is dynamically aligned across multiple facilities and suppliers, enabling scalable, flexible, and reliable execution for mobility component projects.
               </p>
             </div>
-            <div className="w-full lg:w-1/2 bg-slate-900 text-white rounded-2xl p-8">
+            <div className="w-full lg:w-1/2 bg-slate-50 text-foreground rounded-2xl p-8">
               <h3 className="font-bold text-lg mb-4">Materials Processed</h3>
               <div className="grid grid-cols-2 gap-3">
                 {[
@@ -266,20 +266,20 @@ export default function ExecutionReadyFacilitiesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 md:py-32 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 text-white relative overflow-hidden">
+      <section className="py-24 md:py-32 bg-slate-50 text-foreground relative overflow-hidden">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/10 rounded-full blur-[100px]" />
         <div className="container mx-auto px-4 md:px-8 lg:px-16 text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
             Connect With Our Network
           </h2>
-          <p className="text-xl mb-10 font-medium max-w-2xl mx-auto text-white/80">
+          <p className="text-xl mb-10 font-medium max-w-2xl mx-auto text-foreground/80">
             Access execution-ready manufacturing capabilities tailored to your production needs.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <ButtonLink href="/join-network" variant="primary" className="px-10 py-5 text-lg">
               Join Network
             </ButtonLink>
-            <ButtonLink href="/request-strategic-discussion" variant="secondary" className="px-10 py-5 text-lg border-2 border-white/20 text-white hover:border-white">
+            <ButtonLink href="/request-strategic-discussion" variant="secondary" className="px-10 py-5 text-lg border-2 border-border text-foreground hover:border-foreground">
               Request Strategic Discussion
             </ButtonLink>
           </div>

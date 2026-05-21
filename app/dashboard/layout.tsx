@@ -71,7 +71,7 @@ export default function DashboardLayout({
                 <div className="h-8 w-8 rounded-full bg-accent/20 flex items-center justify-center border border-accent/20">
                   <User className="h-4 w-4 text-accent" />
                 </div>
-                <ChevronDown className="h-3 w-3 hidden sm:block text-muted-foreground" />
+                <ChevronDown className="h-3 w-3 hidden sm:block text-foreground/70" />
               </button>
 
               {profileOpen && (
@@ -80,7 +80,7 @@ export default function DashboardLayout({
                   <div className="absolute right-0 mt-2 w-56 bg-background border border-border rounded-xl shadow-lg z-50 overflow-hidden">
                     <div className="p-4 border-b border-border bg-card">
                       <p className="font-bold text-sm text-foreground">Ganesh</p>
-                      <p className="text-xs text-muted-foreground mt-0.5">ganesh5006pal@gmail.com</p>
+                      <p className="text-xs text-foreground/70 mt-0.5">ganesh5006pal@gmail.com</p>
                     </div>
                     <div className="p-2 space-y-1">
                       <ButtonLink href="/dashboard/profile" variant="ghost" className="w-full justify-start text-sm">
@@ -113,12 +113,12 @@ export default function DashboardLayout({
                     className={`
                       flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors
                       ${isActive
-                        ? "bg-accent text-accent-foreground shadow-sm"
+                        ? "bg-accent text-white shadow-sm"
                         : "text-foreground/70 hover:bg-slate-100 hover:text-foreground"
                       }
                     `}
                   >
-                    <item.icon className={`h-4 w-4 shrink-0 ${isActive ? "text-accent-foreground" : "text-muted-foreground"}`} />
+                    <item.icon className={`h-4 w-4 shrink-0 ${isActive ? "text-accent-foreground" : "text-foreground/70"}`} />
                     <span>{item.label}</span>
                   </Link>
                 );

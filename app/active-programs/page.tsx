@@ -22,13 +22,13 @@ export default function ActiveProgramsPage() {
         style={{ backgroundImage: "url('/images/hero-active-programs.png')" }}
       >
         {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-slate-950/80" />
+        <div className="absolute inset-0 bg-white/90" />
 
         <div
           className="absolute inset-0 opacity-[0.15]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+              "linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)",
             backgroundSize: "60px 60px",
           }}
         />
@@ -42,10 +42,10 @@ export default function ActiveProgramsPage() {
             </span>
             Live Execution Status
           </span>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 tracking-tight leading-[1.1]">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-foreground mb-6 tracking-tight leading-[1.1]">
             Active <span className="text-accent">Programs</span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 font-medium leading-relaxed">
+          <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto mb-10 font-medium leading-relaxed">
             A real-time overview of the strategic manufacturing operations, capability matching pipelines, and cross-border integrations we are executing right now.
           </p>
         </div>
@@ -157,19 +157,19 @@ export default function ActiveProgramsPage() {
             </Card>
 
             {/* CTA Card */}
-            <Card className="p-8 bg-slate-900 text-white flex flex-col justify-center border-none">
+            <Card className="p-8 bg-slate-50 text-foreground flex flex-col justify-center border-none">
               <div className="text-center">
                 <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Activity className="w-8 h-8 text-accent animate-pulse" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4">Want to participate in an active program?</h3>
-                <p className="text-white/70 mb-8 max-w-sm mx-auto">
+                <p className="text-foreground/70 mb-8 max-w-sm mx-auto">
                   Whether you are a manufacturer, buyer, or strategic partner, there is a role for you in our execution ecosystem.
                 </p>
                 <div className="flex flex-col items-center gap-4 w-full max-w-sm mx-auto">
                   <Link
                     href="/request-strategic-discussion"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-accent text-accent-foreground font-bold rounded-md hover:bg-accent/90 transition-all w-full"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-accent text-white font-bold rounded-md hover:bg-accent/90 transition-all w-full"
                   >
                     Join a Program <ArrowRight className="w-4 h-4" />
                   </Link>

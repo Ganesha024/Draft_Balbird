@@ -137,13 +137,13 @@ export default function StakeholdersPage() {
         style={{ backgroundImage: "url('/images/hero-stakeholders.png')" }}
       >
         {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-slate-950/80" />
+        <div className="absolute inset-0 bg-white/90" />
 
         <div
           className="absolute inset-0 opacity-[0.15]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+              "linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)",
             backgroundSize: "60px 60px",
           }}
         />
@@ -153,11 +153,11 @@ export default function StakeholdersPage() {
           <span className="inline-block text-accent font-bold tracking-widest uppercase text-sm mb-6 px-5 py-1.5 border border-accent/30 rounded-full bg-accent/10 backdrop-blur-sm">
             Who&apos;s Involved
           </span>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 tracking-tight leading-[1.1]">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-foreground mb-6 tracking-tight leading-[1.1]">
             Stakeholder<br />
             <span className="text-accent">Ecosystem</span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 font-medium leading-relaxed">
+          <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto mb-10 font-medium leading-relaxed">
             Balbird operates with a defined set of stakeholders — each with a clear role, structured access, and aligned outcomes. Every participant is role-defined by design.
           </p>
         </div>

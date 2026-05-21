@@ -19,13 +19,13 @@ export default function MultiRolePage() {
             ].map((role) => (
               <Card key={role.label} className="p-3">
                 <role.icon className="w-6 h-6 text-accent mb-1" />
-                <h3 className="font-semibold text-sm text-white mb-0.5">{role.label}</h3>
-                <p className="text-xs text-muted-foreground mb-2">{role.desc}</p>
+                <h3 className="font-semibold text-sm text-foreground mb-0.5">{role.label}</h3>
+                <p className="text-xs text-foreground/70 mb-2">{role.desc}</p>
                 <div className="space-y-1 mb-3">
                   {role.stats.map(([label, value]) => (
                     <div key={label} className="flex justify-between text-xs">
-                      <span className="text-muted-foreground">{label}</span>
-                      <span className="font-semibold text-white">{value}</span>
+                      <span className="text-foreground/70">{label}</span>
+                      <span className="font-semibold text-foreground">{value}</span>
                     </div>
                   ))}
                 </div>
@@ -34,22 +34,22 @@ export default function MultiRolePage() {
             ))}
           </div>
 
-          <h3 className="text-sm font-semibold text-white mb-3">Role Management</h3>
+          <h3 className="text-sm font-semibold text-foreground mb-3">Role Management</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             <div className="flex justify-between text-sm">
-              <span className="text-muted-foreground">Total Roles</span>
-              <span className="font-semibold text-white">8</span>
+              <span className="text-foreground/70">Total Roles</span>
+              <span className="font-semibold text-foreground">8</span>
             </div>
             <div className="flex justify-between text-sm">
-              <span className="text-muted-foreground">Active Users</span>
-              <span className="font-semibold text-white">156</span>
+              <span className="text-foreground/70">Active Users</span>
+              <span className="font-semibold text-foreground">156</span>
             </div>
             <div className="flex justify-between text-sm">
-              <span className="text-muted-foreground">Pending</span>
+              <span className="text-foreground/70">Pending</span>
               <span className="font-semibold text-orange-600">3</span>
             </div>
             <div className="flex justify-between text-sm">
-              <span className="text-muted-foreground">Changes</span>
+              <span className="text-foreground/70">Changes</span>
               <span className="font-semibold text-accent">2 this week</span>
             </div>
           </div>

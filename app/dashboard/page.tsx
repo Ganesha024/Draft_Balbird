@@ -56,7 +56,7 @@ export default function DashboardPage() {
       {/* Welcome Section */}
       <div className="mb-6">
         <h1 className="text-2xl font-bold mb-1">Welcome back, {userName}!</h1>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-sm text-foreground/70">
           Here&apos;s your execution overview — projects, matches, and operational status.
         </p>
       </div>
@@ -69,12 +69,12 @@ export default function DashboardPage() {
               <div className="h-8 w-8 rounded-lg bg-accent/20 flex items-center justify-center">
                 <stat.icon className="h-4 w-4 text-accent" />
               </div>
-              <span className={`text-xs font-medium ${stat.change.startsWith('+') ? 'text-green-600' : stat.change.startsWith('-') ? 'text-red-600' : 'text-muted-foreground'}`}>
+              <span className={`text-xs font-medium ${stat.change.startsWith('+') ? 'text-green-600' : stat.change.startsWith('-') ? 'text-red-600' : 'text-foreground/70'}`}>
                 {stat.change}
               </span>
             </div>
             <div className="text-xl font-bold">{stat.value}</div>
-            <div className="text-xs text-muted-foreground">{stat.title}</div>
+            <div className="text-xs text-foreground/70">{stat.title}</div>
           </Card>
         ))}
       </div>
@@ -85,13 +85,13 @@ export default function DashboardPage() {
         <CardDescription>Status of core operational systems</CardDescription>
         <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {operationalVerticals.map((v, idx) => (
-            <div key={idx} className="flex items-center gap-3 p-3 rounded-xl bg-background/5/5 border border-white/10">
+            <div key={idx} className="flex items-center gap-3 p-3 rounded-xl bg-background/5/5 border border-border">
               <div className="h-10 w-10 shrink-0 rounded-lg bg-accent/10 flex items-center justify-center">
                 <v.icon className="h-5 w-5 text-accent" />
               </div>
               <div className="flex-1 min-w-0">
                 <p className="text-sm font-bold truncate">{v.name}</p>
-                <p className="text-xs text-muted-foreground truncate">{v.desc}</p>
+                <p className="text-xs text-foreground/70 truncate">{v.desc}</p>
               </div>
             </div>
           ))}
@@ -105,12 +105,12 @@ export default function DashboardPage() {
           <CardDescription>Latest execution updates</CardDescription>
           <div className="mt-4 space-y-3">
             {recentActivities.map(activity => (
-              <div key={activity.id} className="flex items-start gap-3 p-3 rounded-xl bg-background/5/5 border border-white/10">
+              <div key={activity.id} className="flex items-start gap-3 p-3 rounded-xl bg-background/5/5 border border-border">
                 <Activity className="h-4 w-4 text-accent mt-0.5" />
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-bold truncate">{activity.action}</p>
-                  <p className="text-xs text-muted-foreground truncate">{activity.detail}</p>
-                  <p className="text-xs text-muted-foreground mt-1">{activity.time}</p>
+                  <p className="text-xs text-foreground/70 truncate">{activity.detail}</p>
+                  <p className="text-xs text-foreground/70 mt-1">{activity.time}</p>
                 </div>
               </div>
             ))}
@@ -125,15 +125,15 @@ export default function DashboardPage() {
               <Plus className="h-5 w-5" />
               <span className="text-sm font-medium">New Project</span>
             </Button>
-            <Button className="h-auto p-4 flex flex-col gap-2 rounded-xl bg-background/5/10 text-white hover:bg-background/5/20">
+            <Button className="h-auto p-4 flex flex-col gap-2 rounded-xl bg-background/5/10 text-foreground hover:bg-background/5/20">
               <Network className="h-5 w-5 text-accent" />
               <span className="text-sm font-medium">Find Partner</span>
             </Button>
-            <Button className="h-auto p-4 flex flex-col gap-2 rounded-xl bg-background/5/10 text-white hover:bg-background/5/20">
+            <Button className="h-auto p-4 flex flex-col gap-2 rounded-xl bg-background/5/10 text-foreground hover:bg-background/5/20">
               <Workflow className="h-5 w-5 text-accent" />
               <span className="text-sm font-medium">Track Tasks</span>
             </Button>
-            <Button className="h-auto p-4 flex flex-col gap-2 rounded-xl bg-background/5/10 text-white hover:bg-background/5/20">
+            <Button className="h-auto p-4 flex flex-col gap-2 rounded-xl bg-background/5/10 text-foreground hover:bg-background/5/20">
               <HelpCircle className="h-5 w-5 text-accent" />
               <span className="text-sm font-medium">Get Support</span>
             </Button>
@@ -151,16 +151,16 @@ export default function DashboardPage() {
               <Factory className="h-4 w-4 text-accent" />
               <span className="font-bold text-sm">Matchmaking Engine Updated</span>
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed">AI-assisted capability matching now considers certification compatibility and geographic proximity.</p>
-            <p className="text-xs text-muted-foreground mt-3 font-medium">2 days ago</p>
+            <p className="text-sm text-foreground/70 leading-relaxed">AI-assisted capability matching now considers certification compatibility and geographic proximity.</p>
+            <p className="text-xs text-foreground/70 mt-3 font-medium">2 days ago</p>
           </div>
-          <div className="p-4 rounded-xl bg-background/5/5 border border-white/10">
+          <div className="p-4 rounded-xl bg-background/5/5 border border-border">
             <div className="flex items-center gap-2 mb-2">
-              <Shield className="h-4 w-4 text-muted-foreground" />
+              <Shield className="h-4 w-4 text-foreground/70" />
               <span className="font-bold text-sm">Traceability Module v2</span>
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed">End-to-end documentation flow now supports IATF 16949 and AS9100 compliance templates.</p>
-            <p className="text-xs text-muted-foreground mt-3 font-medium">5 days ago</p>
+            <p className="text-sm text-foreground/70 leading-relaxed">End-to-end documentation flow now supports IATF 16949 and AS9100 compliance templates.</p>
+            <p className="text-xs text-foreground/70 mt-3 font-medium">5 days ago</p>
           </div>
         </div>
       </Card>

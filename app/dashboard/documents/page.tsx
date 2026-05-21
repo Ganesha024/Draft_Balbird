@@ -10,7 +10,7 @@ export default function DocumentsPage() {
       <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold mb-1">Documents</h1>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-foreground/70">
             Access, upload, and manage traceability and compliance documents.
           </p>
         </div>
@@ -21,8 +21,8 @@ export default function DocumentsPage() {
 
       <Card className="p-5 mb-6">
         <div className="flex flex-col sm:flex-row items-center gap-3">
-          <div className="flex-1 w-full flex items-center gap-2 bg-background/5/5 rounded-lg px-3 py-2 border border-white/10 focus-within:border-accent/30 focus-within:ring-2 focus-within:ring-accent/20 transition-all">
-            <Search className="h-4 w-4 text-muted-foreground" />
+          <div className="flex-1 w-full flex items-center gap-2 bg-background/5/5 rounded-lg px-3 py-2 border border-border focus-within:border-accent/30 focus-within:ring-2 focus-within:ring-accent/20 transition-all">
+            <Search className="h-4 w-4 text-foreground/70" />
             <input
               type="text"
               placeholder="Search by filename, project, or tag..."
@@ -44,10 +44,10 @@ export default function DocumentsPage() {
         ].map((doc) => (
           <Card key={doc.title} className="p-5 hover:shadow-md transition-all">
             <FileText className="w-8 h-8 text-accent/80 mb-3" />
-            <h3 className="font-bold text-sm text-white mb-1">{doc.title}</h3>
-            <p className="text-xs text-muted-foreground mb-4">{doc.desc}</p>
-            <div className="flex justify-between items-center text-xs mb-4 pt-4 border-t border-white/10/50">
-              <span className="text-muted-foreground">Updated</span>
+            <h3 className="font-bold text-sm text-foreground mb-1">{doc.title}</h3>
+            <p className="text-xs text-foreground/70 mb-4">{doc.desc}</p>
+            <div className="flex justify-between items-center text-xs mb-4 pt-4 border-t border-border/50">
+              <span className="text-foreground/70">Updated</span>
               <span className="font-medium">{doc.updated}</span>
             </div>
             <Button size="sm" variant="secondary" className="w-full">View Document</Button>
@@ -65,8 +65,8 @@ export default function DocumentsPage() {
                   <FileText className="w-5 h-5 text-accent" />
                 </div>
                 <div>
-                  <div className="text-sm font-bold text-white">Traceability_Report_v{doc}.pdf</div>
-                  <div className="text-xs text-muted-foreground mt-0.5">PDF Document • 2.4 MB • Uploaded by Ganesh</div>
+                  <div className="text-sm font-bold text-foreground">Traceability_Report_v{doc}.pdf</div>
+                  <div className="text-xs text-foreground/70 mt-0.5">PDF Document • 2.4 MB • Uploaded by Ganesh</div>
                 </div>
               </div>
               <Button variant="ghost" size="sm" className="h-9 w-9 p-0 rounded-full hover:bg-accent/10 hover:text-accent">

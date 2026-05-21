@@ -10,7 +10,7 @@ export default function ProgramsPage() {
       <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold mb-1">Programs</h1>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-foreground/70">
             Manage strategic, performance, and training programs.
           </p>
         </div>
@@ -24,8 +24,8 @@ export default function ProgramsPage() {
           <div className="h-12 w-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
             <Calendar className="w-6 h-6 text-accent" />
           </div>
-          <h3 className="font-bold text-base text-white mb-2">Strategic Programs</h3>
-          <p className="text-sm text-muted-foreground mb-6 flex-1">Long-term strategic initiatives and ecosystem alignment.</p>
+          <h3 className="font-bold text-base text-foreground mb-2">Strategic Programs</h3>
+          <p className="text-sm text-foreground/70 mb-6 flex-1">Long-term strategic initiatives and ecosystem alignment.</p>
           <Button size="sm" variant="outline" className="w-full">View Programs</Button>
         </Card>
 
@@ -33,8 +33,8 @@ export default function ProgramsPage() {
           <div className="h-12 w-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
             <TrendingUp className="w-6 h-6 text-accent" />
           </div>
-          <h3 className="font-bold text-base text-white mb-2">Performance Programs</h3>
-          <p className="text-sm text-muted-foreground mb-6 flex-1">Capacity enhancement and performance improvement initiatives.</p>
+          <h3 className="font-bold text-base text-foreground mb-2">Performance Programs</h3>
+          <p className="text-sm text-foreground/70 mb-6 flex-1">Capacity enhancement and performance improvement initiatives.</p>
           <Button size="sm" variant="outline" className="w-full">View Programs</Button>
         </Card>
 
@@ -42,30 +42,30 @@ export default function ProgramsPage() {
           <div className="h-12 w-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4">
             <Calendar className="w-6 h-6 text-accent" />
           </div>
-          <h3 className="font-bold text-base text-white mb-2">Training Programs</h3>
-          <p className="text-sm text-muted-foreground mb-6 flex-1">Employee training, certification prep, and development.</p>
+          <h3 className="font-bold text-base text-foreground mb-2">Training Programs</h3>
+          <p className="text-sm text-foreground/70 mb-6 flex-1">Employee training, certification prep, and development.</p>
           <Button size="sm" variant="outline" className="w-full">View Programs</Button>
         </Card>
       </div>
 
       <Card className="p-6">
-        <h3 className="text-lg font-bold text-white mb-4 border-b border-white/10/50 pb-2">Program Overview</h3>
+        <h3 className="text-lg font-bold text-foreground mb-4 border-b border-border/50 pb-2">Program Overview</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="p-4 bg-background/5/5 rounded-xl border border-white/10">
-            <span className="text-xs text-muted-foreground uppercase tracking-wider font-semibold block mb-1">Active</span>
-            <span className="text-2xl font-bold text-white">18</span>
+          <div className="p-4 bg-background/5/5 rounded-xl border border-border">
+            <span className="text-xs text-foreground/70 uppercase tracking-wider font-semibold block mb-1">Active</span>
+            <span className="text-2xl font-bold text-foreground">18</span>
           </div>
-          <div className="p-4 bg-background/5/5 rounded-xl border border-white/10">
-            <span className="text-xs text-muted-foreground uppercase tracking-wider font-semibold block mb-1">Participants</span>
-            <span className="text-2xl font-bold text-white">247</span>
+          <div className="p-4 bg-background/5/5 rounded-xl border border-border">
+            <span className="text-xs text-foreground/70 uppercase tracking-wider font-semibold block mb-1">Participants</span>
+            <span className="text-2xl font-bold text-foreground">247</span>
           </div>
           <div className="p-4 bg-green-50 rounded-xl border border-green-100">
             <span className="text-xs text-green-700 uppercase tracking-wider font-semibold block mb-1">Completion Rate</span>
             <span className="text-2xl font-bold text-green-700">87%</span>
           </div>
-          <div className="p-4 bg-background/5/5 rounded-xl border border-white/10">
-            <span className="text-xs text-muted-foreground uppercase tracking-wider font-semibold block mb-1">Avg Duration</span>
-            <span className="text-2xl font-bold text-white">6 months</span>
+          <div className="p-4 bg-background/5/5 rounded-xl border border-border">
+            <span className="text-xs text-foreground/70 uppercase tracking-wider font-semibold block mb-1">Avg Duration</span>
+            <span className="text-2xl font-bold text-foreground">6 months</span>
           </div>
         </div>
       </Card>

@@ -34,14 +34,14 @@ export default function Home() {
         style={{ backgroundImage: "url('/images/hero-home.png')" }}
       >
         {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-slate-950/80" />
+        <div className="absolute inset-0 bg-white/90" />
         
         {/* Subtle grid overlay */}
         <div
           className="absolute inset-0 opacity-[0.15]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+              "linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px)",
             backgroundSize: "60px 60px",
           }}
         />
@@ -52,11 +52,11 @@ export default function Home() {
           <span className="inline-block text-accent font-bold tracking-widest uppercase text-sm mb-6 px-5 py-1.5 border border-accent/30 rounded-full bg-accent/10 backdrop-blur-sm">
             Cross-Border Manufacturing Execution Partner
           </span>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 tracking-tight leading-[1.1]">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-foreground mb-6 tracking-tight leading-[1.1]">
             We Execute Manufacturing<br />
             <span className="text-accent">Projects Together.</span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 font-medium leading-relaxed">
+          <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto mb-10 font-medium leading-relaxed">
             Balbird helps manufacturers, buyers, and strategic partners execute
             mobility component manufacturing operations — with full traceability,
             execution consistency, and consortium coordination.
@@ -64,13 +64,13 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/request-strategic-discussion"
-              className="w-full sm:w-auto px-8 py-4 bg-accent text-accent-foreground font-bold rounded hover:bg-accent/90 transition-all text-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+              className="w-full sm:w-auto px-8 py-4 bg-accent text-white font-bold rounded hover:bg-accent/90 transition-all text-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             >
               Start a Project →
             </Link>
             <Link
               href="/stakeholders"
-              className="w-full sm:w-auto px-8 py-4 bg-transparent text-white font-bold rounded border-2 border-white/20 hover:border-white transition-all text-lg hover:-translate-y-0.5"
+              className="w-full sm:w-auto px-8 py-4 bg-transparent text-foreground font-bold rounded border-2 border-border hover:border-foreground transition-all text-lg hover:-translate-y-0.5"
             >
               Explore Our Ecosystem
             </Link>
@@ -78,12 +78,12 @@ export default function Home() {
         </div>
 
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <ChevronDown className="text-white/50 w-8 h-8" />
+          <ChevronDown className="text-foreground/50 w-8 h-8" />
         </div>
       </section>
 
       {/* SECTION B — Operational Snapshot */}
-      <section className="bg-slate-900 text-white border-y border-white/10">
+      <section className="bg-slate-50 text-foreground border-y border-border">
         <div className="container mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-white/10">
             <StatCounter value={6} suffix="+" label="Stakeholder Types" />
@@ -247,7 +247,7 @@ export default function Home() {
                 },
               ].map((item, idx) => (
                 <div key={idx} className="flex flex-col items-center text-center">
-                  <div className="w-16 h-16 bg-accent text-accent-foreground rounded-full flex items-center justify-center text-2xl font-bold mb-6 shadow-lg border-4 border-white">
+                  <div className="w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6 shadow-lg border-4 border-white">
                     {item.step}
                   </div>
                   <h4 className="text-xl font-bold mb-2">{item.title}</h4>
@@ -260,7 +260,7 @@ export default function Home() {
       </section>
 
       {/* SECTION F — Sector Focus: Mobility */}
-      <section className="py-24 md:py-32 bg-slate-900 text-white">
+      <section className="py-24 md:py-32 bg-slate-50 text-foreground">
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
           <SectionHeader
             eyebrow="Sector Focus"
@@ -276,11 +276,11 @@ export default function Home() {
             ].map((sector, idx) => (
               <div
                 key={idx}
-                className="group p-8 border border-white/10 rounded-xl hover:bg-background/5 transition-all cursor-pointer flex flex-col items-center text-center"
+                className="group p-8 border border-border rounded-xl hover:bg-background/5 transition-all cursor-pointer flex flex-col items-center text-center"
               >
                 <sector.icon className="w-12 h-12 mb-4 text-accent group-hover:scale-110 transition-transform" />
                 <h4 className="font-bold text-lg mb-1">{sector.name}</h4>
-                <p className="text-sm text-white/60">{sector.desc}</p>
+                <p className="text-sm text-foreground/60">{sector.desc}</p>
               </div>
             ))}
           </div>
@@ -444,7 +444,7 @@ export default function Home() {
       </section>
 
       {/* SECTION J — CTA Banner */}
-      <section className="py-24 md:py-32 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 text-white relative overflow-hidden">
+      <section className="py-24 md:py-32 bg-slate-50 text-foreground relative overflow-hidden">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/10 rounded-full blur-[100px]" />
         <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-accent/5 rounded-full blur-[80px]" />
 
@@ -452,20 +452,20 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
             Have a Manufacturing Project?
           </h2>
-          <p className="text-xl md:text-2xl mb-10 font-medium max-w-2xl mx-auto text-white/80">
+          <p className="text-xl md:text-2xl mb-10 font-medium max-w-2xl mx-auto text-foreground/80">
             Let&apos;s discuss how Balbird can structure, coordinate, and execute
             it with the right partners.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/request-strategic-discussion"
-              className="inline-block px-10 py-5 bg-accent text-accent-foreground font-bold rounded hover:bg-accent/90 transition-all text-xl shadow-xl hover:-translate-y-1"
+              className="inline-block px-10 py-5 bg-accent text-white font-bold rounded hover:bg-accent/90 transition-all text-xl shadow-xl hover:-translate-y-1"
             >
               Request a Strategic Discussion
             </Link>
             <Link
               href="/join-network"
-              className="inline-block px-10 py-5 bg-transparent text-white font-bold rounded border-2 border-white/20 hover:border-white transition-all text-lg hover:-translate-y-0.5"
+              className="inline-block px-10 py-5 bg-transparent text-foreground font-bold rounded border-2 border-border hover:border-foreground transition-all text-lg hover:-translate-y-0.5"
             >
               Join Our Network
             </Link>
