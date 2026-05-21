@@ -61,7 +61,7 @@ export default function JoinNetworkPage() {
             Join the<br />
             <span className="text-accent">Network</span>
           </h1>
-          <p className="text-lg md:text-xl text-slate-300 max-w-2xl mb-8 font-medium leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-8 font-medium leading-relaxed">
             Role-based registration for a structured mobility manufacturing capacity & capability network.
           </p>
         </div>
@@ -72,12 +72,12 @@ export default function JoinNetworkPage() {
       </section>
 
       {/* Stakeholder Roles */}
-      <section className="py-24 md:py-32 bg-white">
+      <section className="py-24 md:py-32 bg-background">
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
           <div className="flex flex-col gap-3 mb-12">
             <span className="text-accent font-bold tracking-widest uppercase text-xs">Roles</span>
             <h2 className="text-3xl font-extrabold tracking-tight">Stakeholder Roles</h2>
-            <p className="max-w-3xl text-foreground/75">
+            <p className="max-w-3xl text-foreground/80">
               Select your role to understand how you can contribute to and benefit from the network.
             </p>
           </div>
@@ -89,7 +89,7 @@ export default function JoinNetworkPage() {
                 className={`p-5 rounded-xl border transition-all cursor-pointer ${
                   role === r.key
                     ? "border-accent bg-accent/5 shadow-md"
-                    : "border-black/5 bg-slate-50 hover:border-accent/30"
+                    : "border-border bg-card hover:border-accent/30"
                 }`}
                 onClick={() => setRole(r.key)}
               >
@@ -170,7 +170,7 @@ export default function JoinNetworkPage() {
                   </div>
 
                   {roleFields.length > 0 ? (
-                    <div className="rounded-2xl border border-border bg-slate-50 p-5">
+                    <div className="rounded-2xl border border-border bg-card p-5">
                       <h4 className="font-bold text-sm mb-4">Role-specific fields</h4>
                       <div className="grid gap-3">
                         {roleFields.map((f) => (
@@ -186,7 +186,7 @@ export default function JoinNetworkPage() {
                       </div>
                     </div>
                   ) : (
-                    <div className="rounded-2xl border border-border bg-slate-50 p-5 text-sm text-foreground/70">
+                    <div className="rounded-2xl border border-border bg-card p-5 text-sm text-foreground/70">
                       No additional role-specific fields for this role yet.
                     </div>
                   )}
@@ -202,7 +202,7 @@ export default function JoinNetworkPage() {
           </Card>
 
           {/* WhatsApp Bot Section */}
-          <div className="mt-16 text-center max-w-2xl mx-auto bg-slate-50 border border-black/5 rounded-2xl p-8 hover:shadow-md transition-shadow">
+          <div className="mt-16 text-center max-w-2xl mx-auto bg-card border border-border rounded-2xl p-8 hover:shadow-md transition-shadow">
             <div className="w-16 h-16 bg-[#25D366]/10 rounded-full flex items-center justify-center mx-auto mb-4">
               <MessageCircle className="w-8 h-8 text-[#25D366]" />
             </div>

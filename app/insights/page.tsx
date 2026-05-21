@@ -43,7 +43,7 @@ export default function InsightsPage() {
             Industry<br />
             <span className="text-accent">Insights</span>
           </h1>
-          <p className="text-lg md:text-xl text-slate-300 max-w-2xl mb-8 font-medium leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-8 font-medium leading-relaxed">
             Structured articles tagged to sectors and programs, connected to resources and active requirements for informed decision-making.
           </p>
         </div>
@@ -54,12 +54,12 @@ export default function InsightsPage() {
       </section>
 
       {/* Knowledge Areas */}
-      <section className="py-24 md:py-32 bg-white">
+      <section className="py-24 md:py-32 bg-background">
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
           <div className="flex flex-col gap-3 mb-12">
             <span className="text-accent font-bold tracking-widest uppercase text-xs">Categories</span>
             <h2 className="text-3xl font-extrabold tracking-tight">Knowledge Areas</h2>
-            <p className="max-w-3xl text-foreground/75">
+            <p className="max-w-3xl text-foreground/80">
               Access industry analysis, market trends, compliance updates, and strategic insights across all mobility manufacturing sectors. Click on any section below to download its detailed PDF report.
             </p>
           </div>
@@ -79,12 +79,12 @@ export default function InsightsPage() {
                   className={`p-5 rounded-xl border transition-all duration-300 cursor-pointer ${
                     isExpanded 
                       ? 'bg-accent/5 border-accent shadow-md' 
-                      : 'bg-slate-50 border-black/5 hover:shadow-md hover:border-black/10'
+                      : 'bg-card border-border hover:shadow-md hover:border-black/10'
                   }`}
                 >
                   <div className="flex items-start justify-between">
                     <item.icon className={`w-6 h-6 mb-3 ${isExpanded ? 'text-accent' : 'text-accent/80'}`} />
-                    <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isExpanded ? 'rotate-180 text-accent' : 'text-slate-400'}`} />
+                    <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isExpanded ? 'rotate-180 text-accent' : 'text-muted-foreground'}`} />
                   </div>
                   <h4 className="font-bold text-sm mb-1">{item.title}</h4>
                   <p className="text-xs text-foreground/60 mb-4">{item.desc}</p>
@@ -131,7 +131,7 @@ export default function InsightsPage() {
                   <CardDescription>Each insight follows a structured format for consistency.</CardDescription>
                   <div className="mt-4 grid gap-3 sm:grid-cols-2">
                     {articleStructure.map((item, index) => (
-                      <div key={item} className="flex items-center gap-3 px-4 py-3 bg-slate-50 rounded-xl border border-black/5">
+                      <div key={item} className="flex items-center gap-3 px-4 py-3 bg-card rounded-xl border border-border">
                         <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent text-xs font-bold text-accent-foreground">
                           {String(index + 1).padStart(2, "0")}
                         </span>
@@ -147,7 +147,7 @@ export default function InsightsPage() {
       </section>
 
       {/* Latest Articles Placeholder */}
-      <section className="py-24 md:py-32 bg-slate-50 border-y border-border/30">
+      <section className="py-24 md:py-32 bg-card border-y border-border/30">
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
           <div className="flex flex-col gap-3 mb-12">
             <span className="text-accent font-bold tracking-widest uppercase text-xs">Latest</span>
@@ -175,7 +175,7 @@ export default function InsightsPage() {
             <ButtonLink href="/join-network" variant="primary" className="px-10 py-5 text-lg">
               Join Network
             </ButtonLink>
-            <ButtonLink href="/capacity-ecosystem" variant="outline" className="px-10 py-5 text-lg border-2 border-white/20 text-white hover:text-black hover:bg-white hover:border-white">
+            <ButtonLink href="/capacity-ecosystem" variant="outline" className="px-10 py-5 text-lg border-2 border-white/20 text-white hover:text-foreground hover:bg-background hover:border-white">
               Capacity Ecosystem
             </ButtonLink>
           </div>

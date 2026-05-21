@@ -17,11 +17,11 @@ export default function NotificationsPage() {
       <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold mb-1">Notifications</h1>
-          <p className="text-sm text-slate-400">
+          <p className="text-sm text-muted-foreground">
             Stay updated on project milestones and team activity.
           </p>
         </div>
-        <Button variant="outline" className="shrink-0 bg-white/5">
+        <Button variant="outline" className="shrink-0 bg-background/5">
           <Settings className="w-4 h-4 mr-2" /> Notification Settings
         </Button>
       </div>
@@ -29,7 +29,7 @@ export default function NotificationsPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 space-y-4">
           <Card className="p-0 overflow-hidden">
-            <div className="flex items-center justify-between p-4 border-b border-white/10 bg-white/5/5">
+            <div className="flex items-center justify-between p-4 border-b border-white/10 bg-background/5/5">
               <h3 className="font-bold text-white flex items-center gap-2">
                 <Bell className="w-4 h-4 text-accent" /> Recent Alerts
               </h3>
@@ -37,7 +37,7 @@ export default function NotificationsPage() {
             </div>
             <div className="divide-y divide-border">
               {notifications.map((notification, index) => (
-                <div key={index} className={`flex items-start gap-4 p-4 ${notification.read ? 'bg-white/5' : 'bg-accent/5'}`}>
+                <div key={index} className={`flex items-start gap-4 p-4 ${notification.read ? 'bg-background/5' : 'bg-accent/5'}`}>
                   <div className={`w-2 h-2 rounded-full mt-1.5 shrink-0 ${
                     notification.type === 'success' ? 'bg-green-500' :
                     notification.type === 'warning' ? 'bg-orange-500' :
@@ -48,11 +48,11 @@ export default function NotificationsPage() {
                       <h4 className="font-bold text-sm text-white">{notification.title}</h4>
                       <span className="text-xs font-medium text-muted-foreground whitespace-nowrap">{notification.time}</span>
                     </div>
-                    <p className="text-sm text-slate-400 mb-3">{notification.message}</p>
+                    <p className="text-sm text-muted-foreground mb-3">{notification.message}</p>
                     
                     {!notification.read && (
                       <div className="flex items-center gap-2">
-                        <Button variant="outline" size="sm" className="h-7 text-xs bg-white/5">
+                        <Button variant="outline" size="sm" className="h-7 text-xs bg-background/5">
                           <Check className="w-3 h-3 mr-1" /> Mark Read
                         </Button>
                         <Button variant="ghost" size="sm" className="h-7 text-xs">

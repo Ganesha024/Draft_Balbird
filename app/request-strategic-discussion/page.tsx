@@ -28,14 +28,14 @@ export default function RequestStrategicDiscussionPage() {
             Request Strategic<br />
             <span className="text-accent">Discussion</span>
           </h1>
-          <p className="text-lg md:text-xl text-slate-300 max-w-2xl mb-8 font-medium leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-8 font-medium leading-relaxed">
             Connect with our strategic team for in-depth discussions on mobility manufacturing opportunities, capacity planning, and ecosystem participation.
           </p>
         </div>
       </section>
 
       {/* Process Steps */}
-      <section className="py-24 md:py-32 bg-white">
+      <section className="py-24 md:py-32 bg-background">
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-16">
             {[
@@ -44,7 +44,7 @@ export default function RequestStrategicDiscussionPage() {
               { icon: Target, title: "Customized Solutions", desc: "Tailored recommendations for your sector and requirements." },
               { icon: Shield, title: "Actionable Outcomes", desc: "Clear next steps and implementation strategies." },
             ].map((item, idx) => (
-              <div key={idx} className="p-5 bg-slate-50 rounded-xl border border-black/5">
+              <div key={idx} className="p-5 bg-card rounded-xl border border-border">
                 <item.icon className="w-6 h-6 text-accent mb-3" />
                 <h4 className="font-bold text-sm mb-1">{item.title}</h4>
                 <p className="text-xs text-foreground/60">{item.desc}</p>
@@ -200,10 +200,10 @@ export default function RequestStrategicDiscussionPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 md:py-32 bg-slate-50 border-t border-border/30">
+      <section className="py-24 md:py-32 bg-card border-t border-border/30">
         <div className="container mx-auto px-4 md:px-8 lg:px-16 text-center">
           <h2 className="text-3xl font-extrabold mb-4 tracking-tight">Explore the Ecosystem</h2>
-          <p className="text-foreground/75 max-w-xl mx-auto mb-8">
+          <p className="text-foreground/80 max-w-xl mx-auto mb-8">
             Learn more about our network and strategic programs while we prepare your discussion.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

@@ -95,7 +95,7 @@ export default function Navbar() {
               pathname?.startsWith('/dashboard')
                 ? 'bg-accent/20 text-accent-foreground'
                 : isTransparent
-                  ? 'text-white/80 hover:text-white hover:bg-white/10'
+                  ? 'text-white/80 hover:text-white hover:bg-background/10'
                   : 'text-foreground/60 hover:text-foreground hover:bg-foreground/5'
             }`}
             title="Dashboard"
@@ -109,7 +109,7 @@ export default function Navbar() {
             href="/request-strategic-discussion"
             className={`shrink-0 px-5 py-2 rounded-md font-medium text-sm whitespace-nowrap transition-all ${
               isTransparent
-                ? 'bg-white text-black hover:bg-gray-100'
+                ? 'bg-background text-foreground hover:bg-gray-100'
                 : 'bg-foreground text-background hover:bg-foreground/90'
             }`}
           >

@@ -10,7 +10,7 @@ export default function CapabilitiesPage() {
       <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold mb-1">Matchmaking & Capabilities</h1>
-          <p className="text-sm text-slate-400">
+          <p className="text-sm text-muted-foreground">
             AI-driven partner matching and capability validation.
           </p>
         </div>
@@ -48,15 +48,15 @@ export default function CapabilitiesPage() {
           <Settings2 className="w-4 h-4 text-muted-foreground cursor-pointer" />
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="p-4 bg-white/5/5 rounded-xl border border-white/10">
+          <div className="p-4 bg-background/5/5 rounded-xl border border-white/10">
             <span className="text-xs text-muted-foreground uppercase tracking-wider font-semibold block mb-1">Active Modules</span>
             <span className="text-2xl font-bold text-white">24</span>
           </div>
-          <div className="p-4 bg-white/5/5 rounded-xl border border-white/10">
+          <div className="p-4 bg-background/5/5 rounded-xl border border-white/10">
             <span className="text-xs text-muted-foreground uppercase tracking-wider font-semibold block mb-1">Integrations</span>
             <span className="text-2xl font-bold text-accent">12</span>
           </div>
-          <div className="p-4 bg-white/5/5 rounded-xl border border-white/10">
+          <div className="p-4 bg-background/5/5 rounded-xl border border-white/10">
             <span className="text-xs text-muted-foreground uppercase tracking-wider font-semibold block mb-1">API Calls Today</span>
             <span className="text-2xl font-bold text-white">1,247</span>
           </div>

@@ -34,9 +34,9 @@ export default function DashboardLayout({
   const [profileOpen, setProfileOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col">
+    <div className="min-h-screen bg-card flex flex-col">
       {/* Dashboard Top Header (Horizontal) */}
-      <header className="sticky top-0 z-40 bg-white border-b border-border shrink-0 shadow-sm">
+      <header className="sticky top-0 z-40 bg-background border-b border-border shrink-0 shadow-sm">
         <div className="flex items-center justify-between px-4 h-14 gap-4 max-w-7xl mx-auto w-full">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
@@ -46,7 +46,7 @@ export default function DashboardLayout({
           </Link>
 
           {/* Search */}
-          <div className="flex-1 max-w-md mx-auto hidden md:flex items-center gap-2 bg-slate-50 rounded-lg px-3 py-1.5 border border-transparent focus-within:border-accent/30 focus-within:ring-2 focus-within:ring-accent/10 transition-all">
+          <div className="flex-1 max-w-md mx-auto hidden md:flex items-center gap-2 bg-card rounded-lg px-3 py-1.5 border border-transparent focus-within:border-accent/30 focus-within:ring-2 focus-within:ring-accent/10 transition-all">
             <Search className="h-4 w-4 text-foreground/40" />
             <input
               type="text"
@@ -77,8 +77,8 @@ export default function DashboardLayout({
               {profileOpen && (
                 <>
                   <div className="fixed inset-0 z-40" onClick={() => setProfileOpen(false)} />
-                  <div className="absolute right-0 mt-2 w-56 bg-white border border-border rounded-xl shadow-lg z-50 overflow-hidden">
-                    <div className="p-4 border-b border-border bg-slate-50">
+                  <div className="absolute right-0 mt-2 w-56 bg-background border border-border rounded-xl shadow-lg z-50 overflow-hidden">
+                    <div className="p-4 border-b border-border bg-card">
                       <p className="font-bold text-sm text-foreground">Ganesh</p>
                       <p className="text-xs text-muted-foreground mt-0.5">ganesh5006pal@gmail.com</p>
                     </div>
@@ -101,7 +101,7 @@ export default function DashboardLayout({
         </div>
 
         {/* Secondary Navigation (Horizontal Scrollable Tabs) */}
-        <div className="border-t border-border bg-white">
+        <div className="border-t border-border bg-background">
           <div className="max-w-7xl mx-auto w-full px-4 overflow-x-auto custom-scrollbar">
             <nav className="flex items-center gap-1 min-w-max py-2">
               {navItems.map((item) => {

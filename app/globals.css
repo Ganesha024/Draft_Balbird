@@ -1,14 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f2f2f2;
-  --foreground: #000000;
-  --accent: #b6b09f;
-  --accent-foreground: #000000;
-  --muted: #eae4d5;
-  --border: #b6b09f;
-  --card: #f2f2f2;
-  --ring: rgba(182, 176, 159, 0.35);
+  --background: #003049; /* Deep Space Blue */
+  --foreground: #FDF0D5; /* Papaya Whip */
+  --accent: #FDF0D5; /* Papaya Whip */
+  --accent-foreground: #003049; /* Deep Space Blue */
+  --muted: #002233; /* Darker Space Blue for muted backgrounds */
+  --muted-foreground: rgba(253, 240, 213, 0.7); /* Papaya Whip 70% */
+  --border: rgba(253, 240, 213, 0.2); /* Papaya Whip 20% */
+  --card: #002233; /* Darker Space Blue for cards */
+  --ring: rgba(253, 240, 213, 0.35); /* Papaya Whip 35% */
 }
 
 @theme inline {

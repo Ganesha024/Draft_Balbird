@@ -46,7 +46,7 @@ export default function AboutPage() {
             Cross-Border Manufacturing<br />
             <span className="text-accent">Execution Partner</span>
           </h1>
-          <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10 font-medium leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 font-medium leading-relaxed">
             Balbird is an execution partner operating in the mobility components manufacturing sector. We help stakeholders execute operations together — with structure, traceability, and consistency.
           </p>
         </div>
@@ -57,7 +57,7 @@ export default function AboutPage() {
         <section className="container mx-auto px-4 md:px-8 lg:px-16 space-y-6">
         <div className="flex flex-col gap-3">
           <h2 className="text-3xl font-extrabold tracking-tight">Our Identity</h2>
-          <p className="max-w-3xl text-foreground/75">
+          <p className="max-w-3xl text-foreground/80">
             Understanding what Balbird is — and what it is not — is critical to how we work with every stakeholder.
           </p>
         </div>
@@ -109,7 +109,7 @@ export default function AboutPage() {
       <section className="container mx-auto px-4 md:px-8 lg:px-16 space-y-6">
         <div className="flex flex-col gap-3">
           <h2 className="text-3xl font-extrabold tracking-tight">What We Provide</h2>
-          <p className="max-w-3xl text-foreground/75">
+          <p className="max-w-3xl text-foreground/80">
             Contract Development Manufacturing Operations (CDMO) — structured execution across the mobility supply chain.
           </p>
         </div>
@@ -141,7 +141,7 @@ export default function AboutPage() {
       <section className="container mx-auto px-4 md:px-8 lg:px-16 space-y-6">
         <div className="flex flex-col gap-3">
           <h2 className="text-3xl font-extrabold tracking-tight">Operational Verticals</h2>
-          <p className="max-w-3xl text-foreground/75">
+          <p className="max-w-3xl text-foreground/80">
             Four operational verticals structure everything we build and execute.
           </p>
         </div>
@@ -168,7 +168,7 @@ export default function AboutPage() {
             Leadership
           </span>
           <h2 className="text-4xl font-extrabold tracking-tight">Executive Team</h2>
-          <p className="text-lg text-foreground/75 leading-relaxed">
+          <p className="text-lg text-foreground/80 leading-relaxed">
             A lean, highly focused leadership team structured entirely around execution — blending technical innovation with global manufacturing expertise.
           </p>
         </div>
@@ -224,7 +224,7 @@ export default function AboutPage() {
       <section className="container mx-auto px-4 md:px-8 lg:px-16 space-y-6">
         <div className="flex flex-col gap-3">
           <h2 className="text-3xl font-extrabold tracking-tight">Resources & Network</h2>
-          <p className="max-w-3xl text-foreground/75">
+          <p className="max-w-3xl text-foreground/80">
             We leverage a strong network of advisors, associations, and industry connections.
           </p>
         </div>
@@ -243,7 +243,7 @@ export default function AboutPage() {
             'Financial Stability',
             'LinkedIn Premium',
           ].map((resource, idx) => (
-            <div key={idx} className="flex items-center gap-3 p-4 bg-slate-50 rounded-xl border border-black/5">
+            <div key={idx} className="flex items-center gap-3 p-4 bg-card rounded-xl border border-border">
               <CheckCircle className="w-4 h-4 text-accent shrink-0" />
               <span className="text-sm font-medium text-foreground/80">{resource}</span>
             </div>
@@ -256,7 +256,7 @@ export default function AboutPage() {
       <section className="container mx-auto px-4 md:px-8 lg:px-16 space-y-6">
         <div className="flex flex-col gap-3">
           <h2 className="text-3xl font-extrabold tracking-tight">What We Build Towards</h2>
-          <p className="max-w-3xl text-foreground/75">
+          <p className="max-w-3xl text-foreground/80">
             Our standards for everything we build and deploy.
           </p>
         </div>
@@ -289,7 +289,7 @@ export default function AboutPage() {
       <section className="container mx-auto px-4 md:px-8 lg:px-16">
         <div className="rounded-2xl border border-border bg-muted px-8 py-10 text-center">
           <h3 className="text-2xl font-extrabold tracking-tight">Ready to Work Together?</h3>
-          <p className="mt-2 text-foreground/75">
+          <p className="mt-2 text-foreground/80">
             Join a structured ecosystem built for mobility manufacturing execution.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">

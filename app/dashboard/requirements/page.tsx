@@ -10,7 +10,7 @@ export default function RequirementsPage() {
       <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold mb-1">Requirements</h1>
-          <p className="text-sm text-slate-400">
+          <p className="text-sm text-muted-foreground">
             Manage your project requirements and specifications.
           </p>
         </div>
@@ -51,11 +51,11 @@ export default function RequirementsPage() {
       <Card className="p-6">
         <h3 className="text-lg font-bold text-white mb-4 border-b border-white/10/50 pb-2">Overview Statistics</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="p-4 bg-white/5/5 rounded-xl border border-white/10">
+          <div className="p-4 bg-background/5/5 rounded-xl border border-white/10">
             <span className="text-xs text-muted-foreground uppercase tracking-wider font-semibold block mb-1">Total</span>
             <span className="text-2xl font-bold text-white">45</span>
           </div>
-          <div className="p-4 bg-white/5/5 rounded-xl border border-white/10">
+          <div className="p-4 bg-background/5/5 rounded-xl border border-white/10">
             <span className="text-xs text-muted-foreground uppercase tracking-wider font-semibold block mb-1">This Month</span>
             <span className="text-2xl font-bold text-accent">+12</span>
           </div>

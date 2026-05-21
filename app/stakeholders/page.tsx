@@ -157,7 +157,7 @@ export default function StakeholdersPage() {
             Stakeholder<br />
             <span className="text-accent">Ecosystem</span>
           </h1>
-          <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10 font-medium leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 font-medium leading-relaxed">
             Balbird operates with a defined set of stakeholders — each with a clear role, structured access, and aligned outcomes. Every participant is role-defined by design.
           </p>
         </div>
@@ -168,7 +168,7 @@ export default function StakeholdersPage() {
         <section className="container mx-auto px-4 md:px-8 lg:px-16 space-y-6">
         <div className="flex flex-col gap-3">
           <h2 className="text-3xl font-extrabold tracking-tight">Why Defined Roles Matter</h2>
-          <p className="max-w-3xl text-foreground/75">
+          <p className="max-w-3xl text-foreground/80">
             In mobility manufacturing, unstructured collaboration creates risk. Defined roles create predictability.
           </p>
         </div>
@@ -220,7 +220,7 @@ export default function StakeholdersPage() {
       <section className="container mx-auto px-4 md:px-8 lg:px-16 space-y-6">
         <div className="flex flex-col gap-3">
           <h2 className="text-3xl font-extrabold tracking-tight">Stakeholder Roles</h2>
-          <p className="max-w-3xl text-foreground/75">
+          <p className="max-w-3xl text-foreground/80">
             Each stakeholder type has defined responsibilities and receives structured value
             from the ecosystem.
           </p>
@@ -239,7 +239,7 @@ export default function StakeholdersPage() {
                   </div>
                 </div>
                 <div className="grid gap-6 md:grid-cols-2">
-                  <div className="bg-slate-50 rounded-xl p-5 border border-black/5">
+                  <div className="bg-card rounded-xl p-5 border border-border">
                     <h4 className="font-bold text-sm mb-3 text-foreground/90">What they contribute</h4>
                     <ul className="space-y-2">
                       {s.whatTheyDo.map((item, idx) => (
@@ -272,7 +272,7 @@ export default function StakeholdersPage() {
       <section className="container mx-auto px-4 md:px-8 lg:px-16">
         <div className="rounded-2xl border border-border bg-muted px-8 py-10 text-center">
           <h3 className="text-2xl font-extrabold tracking-tight">Find Your Role in the Ecosystem</h3>
-          <p className="mt-2 text-foreground/75 max-w-xl mx-auto">
+          <p className="mt-2 text-foreground/80 max-w-xl mx-auto">
             Whether you&apos;re a manufacturer, buyer, association, or student —
             there&apos;s a defined role for you in the Balbird ecosystem.
           </p>

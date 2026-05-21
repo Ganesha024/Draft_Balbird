@@ -45,19 +45,19 @@ export default function ActiveProgramsPage() {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 tracking-tight leading-[1.1]">
             Active <span className="text-accent">Programs</span>
           </h1>
-          <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10 font-medium leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 font-medium leading-relaxed">
             A real-time overview of the strategic manufacturing operations, capability matching pipelines, and cross-border integrations we are executing right now.
           </p>
         </div>
       </section>
 
-      <div className="flex flex-col gap-12 py-12 md:py-20 bg-slate-50">
+      <div className="flex flex-col gap-12 py-12 md:py-20 bg-card">
         
         {/* Active Tasks Overview */}
         <section className="container mx-auto px-4 md:px-8 lg:px-16">
           <div className="mb-12 text-center md:text-left">
             <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">Current Active Tasks</h2>
-            <p className="text-lg text-foreground/75 max-w-3xl">
+            <p className="text-lg text-foreground/80 max-w-3xl">
               Balbird is currently driving execution across multiple strategic mobility corridors. Here is a transparent look at the core initiatives active this quarter.
             </p>
           </div>
@@ -74,7 +74,7 @@ export default function ActiveProgramsPage() {
                 </span>
               </div>
               <CardTitle className="text-2xl mb-3">Cross-Border OEM Capability Matching</CardTitle>
-              <CardDescription className="text-base text-foreground/75 mb-6 leading-relaxed">
+              <CardDescription className="text-base text-foreground/80 mb-6 leading-relaxed">
                 We are actively matching Tier-1 and Tier-2 automotive component manufacturers in emerging hubs with direct OEM procurement pipelines in Europe. This involves auditing production capacities and aligning ISO compliance standards.
               </CardDescription>
               <div className="space-y-3 pt-6 border-t border-border">
@@ -105,7 +105,7 @@ export default function ActiveProgramsPage() {
                 </span>
               </div>
               <CardTitle className="text-2xl mb-3">Mobility Components Traceability Rollout</CardTitle>
-              <CardDescription className="text-base text-foreground/75 mb-6 leading-relaxed">
+              <CardDescription className="text-base text-foreground/80 mb-6 leading-relaxed">
                 Implementing a standardized, end-to-end traceability protocol across our existing consortium of EV component suppliers. We are deploying our structured execution software to track material provenance and production batches.
               </CardDescription>
               <div className="space-y-3 pt-6 border-t border-border">
@@ -136,7 +136,7 @@ export default function ActiveProgramsPage() {
                 </span>
               </div>
               <CardTitle className="text-2xl mb-3">Execution Cell Deployment (Phase 1)</CardTitle>
-              <CardDescription className="text-base text-foreground/75 mb-6 leading-relaxed">
+              <CardDescription className="text-base text-foreground/80 mb-6 leading-relaxed">
                 Activating our student workforce model to assist manufacturers with operational tasks. We are currently integrating engineering and management students into live project environments to handle process documentation and vendor outreach.
               </CardDescription>
               <div className="space-y-3 pt-6 border-t border-border">

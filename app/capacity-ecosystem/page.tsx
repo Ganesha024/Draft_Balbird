@@ -61,7 +61,7 @@ export default function CapacityEcosystemPage() {
             Capacity<br />
             <span className="text-accent">Ecosystem</span>
           </h1>
-          <p className="text-lg md:text-xl text-slate-300 max-w-2xl mb-8 font-medium leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-8 font-medium leading-relaxed">
             A structured network model connecting manufacturing units, OEM programs, workforce, associations, and strategic finance using standardized data.
           </p>
         </div>
@@ -72,12 +72,12 @@ export default function CapacityEcosystemPage() {
       </section>
 
       {/* Ecosystem Overview */}
-      <section className="py-24 md:py-32 bg-white">
+      <section className="py-24 md:py-32 bg-background">
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
           <div className="flex flex-col gap-3 mb-12">
             <span className="text-accent font-bold tracking-widest uppercase text-xs">Overview</span>
             <h2 className="text-3xl font-extrabold tracking-tight">Five Interconnected Pillars</h2>
-            <p className="max-w-3xl text-foreground/75">
+            <p className="max-w-3xl text-foreground/80">
               The Capacity Ecosystem integrates verified manufacturing nodes with OEM requirements, skilled workforce, industry standards, and strategic financing.
             </p>
           </div>
@@ -89,7 +89,7 @@ export default function CapacityEcosystemPage() {
               { icon: BarChart3, title: "Real-time Visibility", desc: "Live utilization, performance, and readiness data for all stakeholders." },
               { icon: Globe, title: "Scalability Focus", desc: "Built-in planning for capacity expansion and new program integration." },
             ].map((item, idx) => (
-              <div key={idx} className="p-5 bg-slate-50 rounded-xl border border-black/5">
+              <div key={idx} className="p-5 bg-card rounded-xl border border-border">
                 <item.icon className="w-6 h-6 text-accent mb-3" />
                 <h4 className="font-bold text-sm mb-1">{item.title}</h4>
                 <p className="text-xs text-foreground/60">{item.desc}</p>
@@ -127,12 +127,12 @@ export default function CapacityEcosystemPage() {
       </section>
 
       {/* Why This Matters */}
-      <section className="py-24 md:py-32 bg-slate-50 border-y border-border/30">
+      <section className="py-24 md:py-32 bg-card border-y border-border/30">
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
           <div className="flex flex-col gap-3 mb-12">
             <span className="text-accent font-bold tracking-widest uppercase text-xs">Why It Matters</span>
             <h2 className="text-3xl font-extrabold tracking-tight">Long-Term Manufacturing Strength</h2>
-            <p className="max-w-3xl text-foreground/75">
+            <p className="max-w-3xl text-foreground/80">
               In mobility sectors, programs are long-term. Compliance is strict. Traceability is non-negotiable. Only structured ecosystems survive this environment.
             </p>
           </div>

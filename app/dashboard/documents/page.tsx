@@ -10,7 +10,7 @@ export default function DocumentsPage() {
       <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold mb-1">Documents</h1>
-          <p className="text-sm text-slate-400">
+          <p className="text-sm text-muted-foreground">
             Access, upload, and manage traceability and compliance documents.
           </p>
         </div>
@@ -21,8 +21,8 @@ export default function DocumentsPage() {
 
       <Card className="p-5 mb-6">
         <div className="flex flex-col sm:flex-row items-center gap-3">
-          <div className="flex-1 w-full flex items-center gap-2 bg-white/5/5 rounded-lg px-3 py-2 border border-white/10 focus-within:border-accent/30 focus-within:ring-2 focus-within:ring-accent/20 transition-all">
-            <Search className="h-4 w-4 text-slate-400" />
+          <div className="flex-1 w-full flex items-center gap-2 bg-background/5/5 rounded-lg px-3 py-2 border border-white/10 focus-within:border-accent/30 focus-within:ring-2 focus-within:ring-accent/20 transition-all">
+            <Search className="h-4 w-4 text-muted-foreground" />
             <input
               type="text"
               placeholder="Search by filename, project, or tag..."
@@ -59,7 +59,7 @@ export default function DocumentsPage() {
       <Card className="overflow-hidden">
         <div className="divide-y divide-border">
           {[1, 2, 3, 4, 5].map((doc) => (
-            <div key={doc} className="flex items-center justify-between p-4 hover:bg-white/5/5 transition-colors">
+            <div key={doc} className="flex items-center justify-between p-4 hover:bg-background/5/5 transition-colors">
               <div className="flex items-center gap-4">
                 <div className="h-10 w-10 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
                   <FileText className="w-5 h-5 text-accent" />

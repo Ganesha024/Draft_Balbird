@@ -56,7 +56,7 @@ export default function Home() {
             We Execute Manufacturing<br />
             <span className="text-accent">Projects Together.</span>
           </h1>
-          <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10 font-medium leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 font-medium leading-relaxed">
             Balbird helps manufacturers, buyers, and strategic partners execute
             mobility component manufacturing operations — with full traceability,
             execution consistency, and consortium coordination.
@@ -95,7 +95,7 @@ export default function Home() {
       </section>
 
       {/* SECTION C — Who We Are */}
-      <section className="py-24 md:py-32 bg-slate-50">
+      <section className="py-24 md:py-32 bg-card">
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             <div className="w-full lg:w-2/5">
@@ -136,7 +136,7 @@ export default function Home() {
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  className="flex gap-4 items-start p-6 bg-white rounded-xl shadow-sm border border-black/5 hover:shadow-md transition-shadow"
+                  className="flex gap-4 items-start p-6 bg-background rounded-xl shadow-sm border border-border hover:shadow-md transition-shadow"
                 >
                   <CheckCircle2 className="w-6 h-6 text-accent shrink-0 mt-1" />
                   <div>
@@ -153,7 +153,7 @@ export default function Home() {
       </section>
 
       {/* SECTION D — What We Do (Services) */}
-      <section className="py-24 md:py-32 bg-white">
+      <section className="py-24 md:py-32 bg-background">
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
           <SectionHeader
             eyebrow="Our Services"
@@ -195,7 +195,7 @@ export default function Home() {
             ].map((service, idx) => (
               <div
                 key={idx}
-                className="group relative p-8 bg-slate-50 rounded-xl border border-black/5 hover:bg-white hover:shadow-lg hover:border-accent/20 transition-all duration-300"
+                className="group relative p-8 bg-card rounded-xl border border-border hover:bg-background hover:shadow-lg hover:border-accent/20 transition-all duration-300"
               >
                 <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-5 group-hover:bg-accent/20 transition-colors">
                   <service.icon className="w-6 h-6 text-accent" />
@@ -212,7 +212,7 @@ export default function Home() {
       </section>
 
       {/* SECTION E — How It Works */}
-      <section className="py-24 md:py-32 bg-slate-50 border-y border-border/30">
+      <section className="py-24 md:py-32 bg-card border-y border-border/30">
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
           <SectionHeader
             eyebrow="The Process"
@@ -276,7 +276,7 @@ export default function Home() {
             ].map((sector, idx) => (
               <div
                 key={idx}
-                className="group p-8 border border-white/10 rounded-xl hover:bg-white/5 transition-all cursor-pointer flex flex-col items-center text-center"
+                className="group p-8 border border-white/10 rounded-xl hover:bg-background/5 transition-all cursor-pointer flex flex-col items-center text-center"
               >
                 <sector.icon className="w-12 h-12 mb-4 text-accent group-hover:scale-110 transition-transform" />
                 <h4 className="font-bold text-lg mb-1">{sector.name}</h4>
@@ -288,7 +288,7 @@ export default function Home() {
       </section>
 
       {/* SECTION G — Stakeholder Ecosystem */}
-      <section className="py-24 md:py-32 bg-white">
+      <section className="py-24 md:py-32 bg-background">
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
           <SectionHeader
             eyebrow="Who's Involved"
@@ -330,7 +330,7 @@ export default function Home() {
             ].map((stakeholder, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-xl bg-slate-50 border border-black/5 hover:shadow-md transition-shadow group"
+                className="p-6 rounded-xl bg-card border border-border hover:shadow-md transition-shadow group"
               >
                 <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
                   <stakeholder.icon className="w-5 h-5 text-accent" />
@@ -385,7 +385,7 @@ export default function Home() {
             ].map((v, idx) => (
               <div
                 key={idx}
-                className="text-center p-6 rounded-xl bg-white border border-black/5 hover:shadow-md transition-shadow"
+                className="text-center p-6 rounded-xl bg-background border border-border hover:shadow-md transition-shadow"
               >
                 <div className="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-5">
                   <v.icon className="w-7 h-7 text-accent" />
@@ -401,7 +401,7 @@ export default function Home() {
       </section>
 
       {/* SECTION I — What We Are Not */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4 md:px-8 lg:px-16 max-w-4xl">
           <div className="text-center mb-12">
             <span className="inline-block text-accent font-bold tracking-widest uppercase text-xs mb-4">
@@ -428,7 +428,7 @@ export default function Home() {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-xl bg-slate-50 border border-slate-200 text-center"
+                className="p-6 rounded-xl bg-card border border-slate-200 text-center"
               >
                 <div className="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-red-400 font-bold text-lg">✕</span>

@@ -48,7 +48,7 @@ export default function ServicesPage() {
             Contract Development<br />
             <span className="text-accent">Manufacturing Operations</span>
           </h1>
-          <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10 font-medium leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 font-medium leading-relaxed">
             We provide end-to-end manufacturing execution services — from operations
             coordination to traceability — for cross-border mobility component projects.
           </p>
@@ -60,7 +60,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CDMO Core Services — Detailed Breakdown */}
-      <section className="py-24 md:py-32 bg-white">
+      <section className="py-24 md:py-32 bg-background">
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
           <SectionHeader
             eyebrow="CDMO Services"
@@ -97,7 +97,7 @@ export default function ServicesPage() {
                   ))}
                 </ul>
               </div>
-              <div className="w-full lg:w-1/2 bg-slate-50 rounded-2xl p-8 border border-black/5">
+              <div className="w-full lg:w-1/2 bg-card rounded-2xl p-8 border border-border">
                 <h4 className="font-bold text-lg mb-4">How it works in practice</h4>
                 <div className="space-y-4">
                   {[
@@ -147,7 +147,7 @@ export default function ServicesPage() {
                   ))}
                 </ul>
               </div>
-              <div className="w-full lg:w-1/2 bg-slate-50 rounded-2xl p-8 border border-black/5">
+              <div className="w-full lg:w-1/2 bg-card rounded-2xl p-8 border border-border">
                 <h4 className="font-bold text-lg mb-4">Execution model</h4>
                 <p className="text-foreground/70 text-sm mb-4">
                   Every project has a defined execution structure with clear phases, ownership, and deliverables:
@@ -159,7 +159,7 @@ export default function ServicesPage() {
                     { label: 'Execution', desc: 'Coordinate production & quality' },
                     { label: 'Closure', desc: 'Delivery, documentation & review' },
                   ].map((phase, idx) => (
-                    <div key={idx} className="p-4 bg-white rounded-xl border border-black/5">
+                    <div key={idx} className="p-4 bg-background rounded-xl border border-border">
                       <h5 className="font-bold text-sm mb-1">{phase.label}</h5>
                       <p className="text-foreground/60 text-xs">{phase.desc}</p>
                     </div>
@@ -211,7 +211,7 @@ export default function ServicesPage() {
                     'Rail: EN 15085 welding standards',
                     'EV: Battery component tracing',
                   ].map((item, idx) => (
-                    <div key={idx} className="flex items-center gap-3 px-4 py-2 bg-white/5 rounded-lg">
+                    <div key={idx} className="flex items-center gap-3 px-4 py-2 bg-background/5 rounded-lg">
                       <Shield className="w-4 h-4 text-accent shrink-0" />
                       <span className="text-sm">{item}</span>
                     </div>
@@ -250,7 +250,7 @@ export default function ServicesPage() {
                   ))}
                 </ul>
               </div>
-              <div className="w-full lg:w-1/2 bg-slate-50 rounded-2xl p-8 border border-black/5">
+              <div className="w-full lg:w-1/2 bg-card rounded-2xl p-8 border border-border">
                 <h4 className="font-bold text-lg mb-4">Consortium participants</h4>
                 <div className="space-y-3">
                   {[
@@ -259,7 +259,7 @@ export default function ServicesPage() {
                     { icon: Users, label: 'Associations', desc: 'Enable standards and cluster development' },
                     { icon: Handshake, label: 'Advisors', desc: 'Legal, financial, and technical guidance' },
                   ].map((p, idx) => (
-                    <div key={idx} className="flex items-center gap-4 p-3 bg-white rounded-xl border border-black/5">
+                    <div key={idx} className="flex items-center gap-4 p-3 bg-background rounded-xl border border-border">
                       <p.icon className="w-5 h-5 text-accent shrink-0" />
                       <div>
                         <h5 className="font-bold text-sm">{p.label}</h5>
@@ -275,7 +275,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Execution Cell Services */}
-      <section className="py-24 md:py-32 bg-slate-50 border-y border-border/30">
+      <section className="py-24 md:py-32 bg-card border-y border-border/30">
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
           <SectionHeader
             eyebrow="Execution Cell"
@@ -302,7 +302,7 @@ export default function ServicesPage() {
             ].map((service, idx) => (
               <div
                 key={idx}
-                className="p-8 bg-white rounded-xl border border-black/5 hover:shadow-lg transition-shadow group"
+                className="p-8 bg-background rounded-xl border border-border hover:shadow-lg transition-shadow group"
               >
                 <div className="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-accent/20 transition-colors">
                   <service.icon className="w-7 h-7 text-accent" />
@@ -316,7 +316,7 @@ export default function ServicesPage() {
       </section>
 
       {/* AI & Matchmaking */}
-      <section className="py-24 md:py-32 bg-white">
+      <section className="py-24 md:py-32 bg-background">
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             <div className="w-full lg:w-1/2">
@@ -355,7 +355,7 @@ export default function ServicesPage() {
                   { icon: Shield, label: 'Quality Verification', value: 'Structured' },
                   { icon: Network, label: 'Stakeholder Insights', value: 'Data-Backed' },
                 ].map((item, idx) => (
-                  <div key={idx} className="p-6 bg-slate-50 rounded-xl border border-black/5 text-center">
+                  <div key={idx} className="p-6 bg-card rounded-xl border border-border text-center">
                     <item.icon className="w-8 h-8 text-accent mx-auto mb-3" />
                     <p className="font-bold text-sm mb-1">{item.label}</p>
                     <p className="text-accent text-xs font-medium">{item.value}</p>

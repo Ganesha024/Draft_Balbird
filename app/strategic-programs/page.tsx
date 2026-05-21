@@ -73,7 +73,7 @@ export default function StrategicProgramsPage() {
             Strategic<br />
             <span className="text-accent">Programs</span>
           </h1>
-          <p className="text-lg md:text-xl text-slate-300 max-w-2xl mb-8 font-medium leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-8 font-medium leading-relaxed">
             Comprehensive programs designed to strengthen capacity, compliance maturity, workforce integration, and cross-border alignment.
           </p>
         </div>
@@ -84,12 +84,12 @@ export default function StrategicProgramsPage() {
       </section>
 
       {/* Program Initiatives */}
-      <section className="py-24 md:py-32 bg-white">
+      <section className="py-24 md:py-32 bg-background">
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
           <div className="flex flex-col gap-3 mb-12">
             <span className="text-accent font-bold tracking-widest uppercase text-xs">Initiatives</span>
             <h2 className="text-3xl font-extrabold tracking-tight">Program Initiatives</h2>
-            <p className="max-w-3xl text-foreground/75">
+            <p className="max-w-3xl text-foreground/80">
               Detailed programs addressing key areas of mobility manufacturing development and collaboration.
             </p>
           </div>

@@ -61,7 +61,7 @@ export default function MobilitySectorsPage() {
             Mobility<br />
             <span className="text-accent">Sectors</span>
           </h1>
-          <p className="text-lg md:text-xl text-slate-300 max-w-2xl mb-8 font-medium leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-8 font-medium leading-relaxed">
             Structured capacity focus areas across mobility manufacturing sectors — from aerospace precision to heavy machinery production.
           </p>
         </div>
@@ -72,12 +72,12 @@ export default function MobilitySectorsPage() {
       </section>
 
       {/* Sector Characteristics */}
-      <section className="py-24 md:py-32 bg-white">
+      <section className="py-24 md:py-32 bg-background">
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
           <div className="flex flex-col gap-3 mb-12">
             <span className="text-accent font-bold tracking-widest uppercase text-xs">Characteristics</span>
             <h2 className="text-3xl font-extrabold tracking-tight">What Mobility Manufacturing Demands</h2>
-            <p className="max-w-3xl text-foreground/75">
+            <p className="max-w-3xl text-foreground/80">
               Programs are long-term. Compliance is strict. Traceability is non-negotiable. Only structured ecosystems survive this environment.
             </p>
           </div>
@@ -99,12 +99,12 @@ export default function MobilitySectorsPage() {
       </section>
 
       {/* Sector Details */}
-      <section className="py-24 md:py-32 bg-slate-50 border-y border-border/30">
+      <section className="py-24 md:py-32 bg-card border-y border-border/30">
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
           <div className="flex flex-col gap-3 mb-12">
             <span className="text-accent font-bold tracking-widest uppercase text-xs">Details</span>
             <h2 className="text-3xl font-extrabold tracking-tight">Sector Details</h2>
-            <p className="max-w-3xl text-foreground/75">
+            <p className="max-w-3xl text-foreground/80">
               Explore specific capabilities and focus areas across each mobility sector.
             </p>
           </div>

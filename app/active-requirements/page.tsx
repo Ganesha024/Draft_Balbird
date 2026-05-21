@@ -172,7 +172,7 @@ export default function ExecutionReadyFacilitiesPage() {
             Execution-Ready<br />
             <span className="text-accent">Manufacturing Facilities</span>
           </h1>
-          <p className="text-lg md:text-xl text-slate-300 max-w-2xl mb-8 font-medium leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-8 font-medium leading-relaxed">
             Explore the manufacturing infrastructure across our verified network — from precision machining to advanced fabrication, scaled for mobility component production.
           </p>
         </div>
@@ -183,12 +183,12 @@ export default function ExecutionReadyFacilitiesPage() {
       </section>
 
       {/* Capabilities Grid */}
-      <section className="py-24 md:py-32 bg-white">
+      <section className="py-24 md:py-32 bg-background">
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
           <div className="flex flex-col gap-3 mb-12">
             <span className="text-accent font-bold tracking-widest uppercase text-xs">Manufacturing Processes</span>
             <h2 className="text-3xl font-extrabold tracking-tight">Network Capabilities</h2>
-            <p className="max-w-3xl text-foreground/75">
+            <p className="max-w-3xl text-foreground/80">
               Our distributed network spans comprehensive manufacturing processes. Each capability is verified, standardized, and scaled for flexible capacity allocation.
             </p>
           </div>
@@ -221,21 +221,21 @@ export default function ExecutionReadyFacilitiesPage() {
       </section>
 
       {/* Production Capacity */}
-      <section className="py-24 md:py-32 bg-slate-50 border-y border-border/30">
+      <section className="py-24 md:py-32 bg-card border-y border-border/30">
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
           <div className="flex flex-col lg:flex-row gap-12 items-start">
             <div className="w-full lg:w-1/2">
               <span className="text-accent font-bold tracking-widest uppercase text-xs">Capacity</span>
               <h2 className="text-3xl font-extrabold tracking-tight mt-2 mb-6">Production Capacity</h2>
               <div className="space-y-4">
-                <div className="flex items-start gap-4 p-4 bg-white rounded-xl border border-black/5">
+                <div className="flex items-start gap-4 p-4 bg-background rounded-xl border border-border">
                   <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
                   <div>
                     <p className="font-bold">Precision machining & advanced processes</p>
                     <p className="text-sm text-foreground/70">1 – 1,000 units per batch</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4 p-4 bg-white rounded-xl border border-black/5">
+                <div className="flex items-start gap-4 p-4 bg-background rounded-xl border border-border">
                   <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
                   <div>
                     <p className="font-bold">Forming, stamping & casting</p>
@@ -254,7 +254,7 @@ export default function ExecutionReadyFacilitiesPage() {
                   'Carbon Steel', 'Alloy Steel', 'Stainless Steel', 'Aluminum',
                   'MS (Mild Steel)', 'Composites', 'Plastics', 'Specialty Alloys',
                 ].map((m, idx) => (
-                  <div key={idx} className="flex items-center gap-2 px-3 py-2 bg-white/5 rounded-lg">
+                  <div key={idx} className="flex items-center gap-2 px-3 py-2 bg-background/5 rounded-lg">
                     <div className="w-2 h-2 rounded-full bg-accent" />
                     <span className="text-sm">{m}</span>
                   </div>

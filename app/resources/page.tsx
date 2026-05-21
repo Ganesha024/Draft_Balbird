@@ -67,7 +67,7 @@ export default function ResourcesPage() {
             Guides &<br />
             <span className="text-accent">Resources</span>
           </h1>
-          <p className="text-lg md:text-xl text-slate-300 max-w-2xl mb-8 font-medium leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-8 font-medium leading-relaxed">
             Comprehensive guides and templates supporting onboarding, compliance structuring, traceability, and capacity alignment across all stakeholders.
           </p>
         </div>
@@ -78,12 +78,12 @@ export default function ResourcesPage() {
       </section>
 
       {/* Resource Categories */}
-      <section className="py-24 md:py-32 bg-white">
+      <section className="py-24 md:py-32 bg-background">
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
           <div className="flex flex-col gap-3 mb-12">
             <span className="text-accent font-bold tracking-widest uppercase text-xs">By Stakeholder</span>
             <h2 className="text-3xl font-extrabold tracking-tight">Resource Categories</h2>
-            <p className="max-w-3xl text-foreground/75">
+            <p className="max-w-3xl text-foreground/80">
               Browse resources tailored to your stakeholder type and operational needs.
             </p>
           </div>
@@ -101,7 +101,7 @@ export default function ResourcesPage() {
                       <CardDescription>{r.description}</CardDescription>
                       <div className="mt-4 space-y-2">
                         {r.items.map((item) => (
-                          <div key={item} className="flex items-center gap-3 p-3 bg-slate-50 rounded-lg border border-black/5 hover:bg-slate-100 transition-colors cursor-pointer">
+                          <div key={item} className="flex items-center gap-3 p-3 bg-card rounded-lg border border-border hover:bg-slate-100 transition-colors cursor-pointer">
                             <Download className="w-4 h-4 text-accent shrink-0" />
                             <span className="text-sm font-medium text-foreground/80">{item}</span>
                           </div>
